@@ -9,7 +9,7 @@ private:
 	map<wstring, Skill*> _skillContainer;
 
 public:
-	void CreateSkill();
+	void Init();
 	Skill* GetSkill(wstring key) {
 
 		return _skillContainer[key];
