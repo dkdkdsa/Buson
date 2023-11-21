@@ -1,4 +1,8 @@
 #pragma once
+#include<xstring>
+#include<vector>
+
+class Skill;
 
 struct PokemonStats
 {
@@ -34,9 +38,11 @@ enum class PokemonType
 
 struct Pokemon {
 
-	PokemonType Type;
-	PokemonStats Stats;
-
+	std::vector<PokemonType> Type;
+    PokemonStats Stats;
+	std::wstring SkillsKey[4];
+	std::wstring SpriteKey;
+	int EvolutionCount;
 
 };
 
