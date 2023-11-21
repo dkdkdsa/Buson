@@ -1,5 +1,6 @@
 #pragma once
-#include"pch.h"
+#include<xstring>
+#include<vector>
 
 class Skill;
 
@@ -23,11 +24,11 @@ enum class PokemonType
 
 struct Pokemon {
 
-	PokemonType Type;
-	PokemonStats Stats;
-	Skill* Skills[4];
+	std::vector<PokemonType> Type;
+    PokemonStats Stats;
+	std::wstring SkillsKey[4];
+	std::wstring SpriteKey;
 	int EvolutionCount;
-	wstring SpriteKey;
 
 };
 
