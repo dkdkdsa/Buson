@@ -1,4 +1,7 @@
 #pragma once
+#include"pch.h"
+
+class Skill;
 
 struct PokemonStats
 {
@@ -22,7 +25,9 @@ struct Pokemon {
 
 	PokemonType Type;
 	PokemonStats Stats;
-
+	Skill* Skills[4];
+	int EvolutionCount;
+	wstring SpriteKey;
 
 };
 
