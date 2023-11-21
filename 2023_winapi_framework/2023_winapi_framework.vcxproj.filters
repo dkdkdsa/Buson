@@ -65,6 +65,9 @@
     <Filter Include="Engine\09.Class">
       <UniqueIdentifier>{acd36ec9-7798-405c-845c-50908cfb54b1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Manager\SkillManager">
+      <UniqueIdentifier>{94877182-d034-4b3f-be87-1d94a546ea64}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -163,6 +166,9 @@
     <ClInclude Include="Skill.h">
       <Filter>Engine\09.Class</Filter>
     </ClInclude>
+    <ClInclude Include="SkillManager.h">
+      <Filter>Engine\03. Manager\SkillManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2023_winapi_framework.rc">
@@ -252,6 +258,9 @@
     </ClCompile>
     <ClCompile Include="Skill.cpp">
       <Filter>Engine\09.Class</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillManager.cpp">
+      <Filter>Engine\03. Manager\SkillManager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
