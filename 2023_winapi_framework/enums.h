@@ -48,3 +48,11 @@ enum class EVENT_TYPE
 	SCENE_CHANGE,
 	END
 };
+
+enum class PokemonSprite_Type {
+
+	Field,
+	Battle_Front,
+	Battle_Back
+
+};

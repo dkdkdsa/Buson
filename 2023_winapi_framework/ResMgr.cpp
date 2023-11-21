@@ -2,6 +2,16 @@
 #include "ResMgr.h"
 #include "PathMgr.h"
 #include "Texture.h"
+
+Texture* ResMgr::FindPokemonTexture(const wstring& key, const PokemonSprite_Type& type)
+{
+
+    auto key = _pokemonTextureContainer[key][type];
+
+    return TexFind(key);
+
+}
+
 Texture* ResMgr::TexLoad(const wstring& _strKey, const wstring& _strRelativePath)
 {
     // 잘 찾았으면 그거 던져주기
@@ -63,6 +73,9 @@ void ResMgr::Init()
     // 채널수, 사운드 모드
     if (m_pSystem != nullptr)
         m_pSystem->init((int)SOUND_CHANNEL::END, FMOD_INIT_NORMAL, nullptr);
+
+    CreatePokemonTexture();
+
 }
 
 void ResMgr::LoadSound(const wstring& _strKey, const wstring& _strReleativePath, bool _IsLoop)
@@ -128,4 +141,11 @@ tSoundInfo* ResMgr::FindSound(const wstring& _strKey)
     if (iter == m_mapSod.end())
         return nullptr;
     return iter->second;
+}
+
+void ResMgr::CreatePokemonTexture()
+{
+
+    //포켓몬 스프라이트는 여기서 생성
+
 }
