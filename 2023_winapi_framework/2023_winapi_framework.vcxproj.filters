@@ -68,6 +68,12 @@
     <Filter Include="Engine\03. Manager\SkillManager">
       <UniqueIdentifier>{94877182-d034-4b3f-be87-1d94a546ea64}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\05. Scene\BuildScene">
+      <UniqueIdentifier>{a89bc8ae-ce00-41ba-8271-b80b84310772}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04. Object\BuildObject">
+      <UniqueIdentifier>{00f8d4cd-cf42-4255-8595-3ff584ce180b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -169,6 +175,12 @@
     <ClInclude Include="SkillManager.h">
       <Filter>Engine\03. Manager\SkillManager</Filter>
     </ClInclude>
+    <ClInclude Include="FieldScene.h">
+      <Filter>Engine\05. Scene\BuildScene</Filter>
+    </ClInclude>
+    <ClInclude Include="FieldObject.h">
+      <Filter>Engine\04. Object\BuildObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2023_winapi_framework.rc">
@@ -261,6 +273,12 @@
     </ClCompile>
     <ClCompile Include="SkillManager.cpp">
       <Filter>Engine\03. Manager\SkillManager</Filter>
+    </ClCompile>
+    <ClCompile Include="FieldScene.cpp">
+      <Filter>Engine\05. Scene\BuildScene</Filter>
+    </ClCompile>
+    <ClCompile Include="FieldObject.cpp">
+      <Filter>Engine\04. Object\BuildObject</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
