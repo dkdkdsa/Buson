@@ -146,6 +146,11 @@ tSoundInfo* ResMgr::FindSound(const wstring& _strKey)
 void ResMgr::CreatePokemonTexture()
 {
 
-    //포켓몬 스프라이트는 여기서 생성
+#pragma region 이상해씨
+
+    TexLoad(L"001_Field", L"Texture\\Pokemon\\001_Field.bmp");
+
+#pragma endregion
+
 
 }
