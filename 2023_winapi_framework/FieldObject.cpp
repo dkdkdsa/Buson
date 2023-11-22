@@ -3,10 +3,11 @@
 #include "Texture.h"
 #include "ResMgr.h"
 
-FieldObject::FieldObject(wstring key)
+FieldObject::FieldObject(Pokemon pokemon)
 {
 
-	_texture = ResMgr::GetInst()->FindPokemonTexture(key, PokemonSprite_Type::Field);
+	_texture = ResMgr::GetInst()->FindPokemonTexture(pokemon.SpriteKey, PokemonSprite_Type::Field);
+	_pokemon = pokemon;
 
 }
 
@@ -24,7 +25,7 @@ void FieldObject::Render(HDC _dc)
 	auto width = _texture->GetWidth();
 	auto height = _texture->GetHeight();
 
-	BitBlt(
+	TransparentBlt(
 		_dc,
 		(int)(m_vPos.x - m_vScale.x / 2),
 		(int)(m_vPos.y - m_vScale.y / 2),
@@ -33,6 +34,8 @@ void FieldObject::Render(HDC _dc)
 		_texture->GetDC(),
 		0, 
 		0,
-		SRCCOPY);
+		width,
+		height,
+		RGB(255, 0, 255));
 
 }

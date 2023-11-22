@@ -74,6 +74,9 @@
     <Filter Include="Engine\04. Object\BuildObject">
       <UniqueIdentifier>{00f8d4cd-cf42-4255-8595-3ff584ce180b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\04. Object\BuildObject\Pokemon">
+      <UniqueIdentifier>{9b80407e-f595-48b8-93bf-282f450ec9cc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -178,11 +181,11 @@
     <ClInclude Include="FieldScene.h">
       <Filter>Engine\05. Scene\BuildScene</Filter>
     </ClInclude>
-    <ClInclude Include="FieldObject.h">
-      <Filter>Engine\04. Object\BuildObject</Filter>
-    </ClInclude>
     <ClInclude Include="BattleEffect.h">
       <Filter>Engine\09.Class</Filter>
+    </ClInclude>
+    <ClInclude Include="FieldObject.h">
+      <Filter>Engine\04. Object\BuildObject\Pokemon</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -280,11 +283,11 @@
     <ClCompile Include="FieldScene.cpp">
       <Filter>Engine\05. Scene\BuildScene</Filter>
     </ClCompile>
-    <ClCompile Include="FieldObject.cpp">
-      <Filter>Engine\04. Object\BuildObject</Filter>
-    </ClCompile>
     <ClCompile Include="BattleEffect.cpp">
       <Filter>Engine\09.Class</Filter>
+    </ClCompile>
+    <ClCompile Include="FieldObject.cpp">
+      <Filter>Engine\04. Object\BuildObject\Pokemon</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
