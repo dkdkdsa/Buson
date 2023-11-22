@@ -187,6 +187,9 @@
     <ClInclude Include="FieldObject.h">
       <Filter>Engine\04. Object\BuildObject\Pokemon</Filter>
     </ClInclude>
+    <ClInclude Include="Field.h">
+      <Filter>Engine\04. Object\BuildObject\Pokemon</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2023_winapi_framework.rc">
@@ -287,6 +290,9 @@
       <Filter>Engine\09.Class</Filter>
     </ClCompile>
     <ClCompile Include="FieldObject.cpp">
+      <Filter>Engine\04. Object\BuildObject\Pokemon</Filter>
+    </ClCompile>
+    <ClCompile Include="Field.cpp">
       <Filter>Engine\04. Object\BuildObject\Pokemon</Filter>
     </ClCompile>
   </ItemGroup>

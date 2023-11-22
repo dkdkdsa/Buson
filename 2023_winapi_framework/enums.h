@@ -27,6 +27,7 @@ enum class OBJECT_GROUP
 	BULLET,
 	MONSTER,
 	FIELD_OBJECT,
+	FIELD,
 	END = 30
 };
 
