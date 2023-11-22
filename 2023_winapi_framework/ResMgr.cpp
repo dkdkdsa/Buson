@@ -6,7 +6,7 @@
 Texture* ResMgr::FindPokemonTexture(const wstring& key, const PokemonSprite_Type& type)
 {
 
-    auto key = _pokemonTextureContainer[key][type];
+    auto curkey = _pokemonTextureContainer[key][type];
 
     return TexFind(key);
 

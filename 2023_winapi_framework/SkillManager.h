@@ -1,4 +1,6 @@
 #pragma once
+#include "pokemon.h"
+
 class Skill;
 class SkillManager
 {
@@ -6,7 +8,9 @@ class SkillManager
 	SINGLE(SkillManager);
 
 private:
+
 	map<wstring, Skill*> _skillContainer;
+	map<PokemonType, map<int, vector<wstring>>> _learnSkillContainer;
 
 public:
 	void Init();
@@ -15,6 +19,9 @@ public:
 		return _skillContainer[key];
 
 	}
+
+private:
+	void CreateSkill();
 
 };
 
