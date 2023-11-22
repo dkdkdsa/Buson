@@ -23,6 +23,9 @@ enum class KEY_TYPE
 enum class OBJECT_GROUP
 {
 	DEFAULT,
+	PLAYER,
+	BULLET,
+	MONSTER,
 	FIELD_OBJECT,
 	END = 30
 };

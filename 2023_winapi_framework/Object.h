@@ -37,12 +37,14 @@ private:
 public:
 	void CreateCollider();
 	void CreateAnimator();
-private:
+
+protected:
 	Vec2 m_vPos; // 위치
 	Vec2 m_vScale; // 크기
 	Collider* m_pCollider;
 	wstring m_strName; // 이름.
 	bool m_IsAlive;
 	Animator* m_pAnimator;
+
 };
 

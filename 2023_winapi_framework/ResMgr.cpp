@@ -6,9 +6,9 @@
 Texture* ResMgr::FindPokemonTexture(const wstring& key, const PokemonSprite_Type& type)
 {
 
-    auto curkey = _pokemonTextureContainer[key][type];
+    auto &curkey = _pokemonTextureContainer[key][type];
 
-    return TexFind(key);
+    return TexFind(curkey);
 
 }
 
@@ -149,6 +149,8 @@ void ResMgr::CreatePokemonTexture()
 #pragma region ÀÌ»óÇØ¾¾
 
     TexLoad(L"001_Field", L"Texture\\Pokemon\\001_Field.bmp");
+    //TexLoad(L"001_Field", L"Texture\\jiwoo.bmp");
+    _pokemonTextureContainer[L"001"][PokemonSprite_Type::Field] = L"001_Field";
 
 #pragma endregion
 
