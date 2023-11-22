@@ -17,8 +17,8 @@ struct PokemonStats
 enum class PokemonType
 {
 
-	Normal,		
-	Fire,		
+	Normal = 1,
+	Fire,
 	Water,		
 	Grass,		
 	Electric,	
