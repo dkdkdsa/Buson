@@ -8,6 +8,7 @@
 #include "CollisionMgr.h"
 #include "EventMgr.h"
 #include "SkillManager.h"
+#include <time.h>
 
 bool Core::Init(HWND _hWnd, POINT _ptResolution)
 {
@@ -26,6 +27,8 @@ bool Core::Init(HWND _hWnd, POINT _ptResolution)
 
 	// 2. ¿¬°á
 	SelectObject(m_hbackDC, m_hbackbit);
+
+	srand(time(NULL));
 
 //	m_obj.SetPos(Vec2({ m_ptResolution.x / 2, m_ptResolution.y / 2 }));
 ////	m_obj.m_ptPos = ;

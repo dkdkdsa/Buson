@@ -19,6 +19,7 @@ public:
 		return _skillContainer[key];
 
 	}
+	void LearnSkill(PokemonType type, int evolutionCount, wstring* arr);
 
 private:
 	void CreateSkill();

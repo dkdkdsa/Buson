@@ -24,3 +24,10 @@ void SkillManager::CreateSkill()
 	_learnSkillContainer.insert({PokemonType::Dark, dark});
 
 }
+
+void SkillManager::LearnSkill(PokemonType type, int evolutionCount, wstring* arr)
+{
+
+
+
+}
