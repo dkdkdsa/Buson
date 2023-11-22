@@ -1,6 +1,7 @@
 #pragma once
 #include "Object.h"
 #include "pokemon.h"
+#include <unordered_set>
 
 class FieldObject;
 class Field :
@@ -16,7 +17,7 @@ public:
     void AddPokemon(Pokemon pokemon);
 
 private:
-    vector<FieldObject*> _thisFieldObject;
+    std::vector<FieldObject*> _thisFieldObject;
 
 };
 

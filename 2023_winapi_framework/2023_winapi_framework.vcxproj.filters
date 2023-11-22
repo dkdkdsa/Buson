@@ -77,6 +77,9 @@
     <Filter Include="Engine\04. Object\BuildObject\Pokemon">
       <UniqueIdentifier>{9b80407e-f595-48b8-93bf-282f450ec9cc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Manager\PokemonManager">
+      <UniqueIdentifier>{48f292eb-5962-49c8-98e7-21c92c3f599d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -190,6 +193,9 @@
     <ClInclude Include="Field.h">
       <Filter>Engine\04. Object\BuildObject\Pokemon</Filter>
     </ClInclude>
+    <ClInclude Include="PokemonManager.h">
+      <Filter>Engine\03. Manager\PokemonManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2023_winapi_framework.rc">
@@ -294,6 +300,9 @@
     </ClCompile>
     <ClCompile Include="Field.cpp">
       <Filter>Engine\04. Object\BuildObject\Pokemon</Filter>
+    </ClCompile>
+    <ClCompile Include="PokemonManager.cpp">
+      <Filter>Engine\03. Manager\PokemonManager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

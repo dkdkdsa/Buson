@@ -13,14 +13,31 @@ Field::Field(Vec2 center, Vec2 fieldSize)
 
 Field::~Field()
 {
+
+
+	for (size_t i = 0; i < _thisFieldObject.size(); ++i)
+	{
+
+		if (!_thisFieldObject[i]->GetIsDead()) {
+
+			delete _thisFieldObject[i];
+
+		}
+
+	}
+
+	_thisFieldObject.clear();
+
 }
 
 void Field::Update()
 {
 
-	for (const auto& obj : _thisFieldObject) {
+	for (size_t i = 0; i < _thisFieldObject.size(); ++i)
+	{
 
-		obj->Update();
+		if (!_thisFieldObject[i]->GetIsDead())
+			_thisFieldObject[i]->Update();
 
 	}
 
@@ -35,19 +52,30 @@ void Field::Render(HDC _dc)
 
 #endif // RENDER_DEBUG
 
+	for (size_t i = 0; i < _thisFieldObject.size();)
+	{
 
+		if (!_thisFieldObject[i]->GetIsDead()) {
 
-	for (const auto& obj : _thisFieldObject) {
+			_thisFieldObject[i]->Update();
+			i++;
 
-		obj->Render(_dc);
+		}
+		else {
+
+			_thisFieldObject.erase(_thisFieldObject.begin() + i);
+
+		}
 
 	}
+
 
 }
 
 void Field::AddPokemon(Pokemon pokemon)
 {
 
-
-
+	auto fieldObject = new FieldObject(pokemon);
+	_thisFieldObject.push_back(fieldObject);
+	
 }
