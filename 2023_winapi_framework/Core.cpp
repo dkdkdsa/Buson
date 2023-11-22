@@ -8,6 +8,7 @@
 #include "CollisionMgr.h"
 #include "EventMgr.h"
 #include "SkillManager.h"
+#include "PokemonManager.h"
 #include <time.h>
 
 bool Core::Init(HWND _hWnd, POINT _ptResolution)
@@ -42,6 +43,7 @@ bool Core::Init(HWND _hWnd, POINT _ptResolution)
 	ResMgr::GetInst()->Init();
 	SceneMgr::GetInst()->Init();
 	SkillManager::GetInst()->Init();
+	PokemonManager::GetInst()->Init();
 
 	return true;
 }

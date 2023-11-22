@@ -38,6 +38,11 @@ enum class PokemonType
 
 struct Pokemon {
 
+	Pokemon() {
+
+
+	}
+
 	Pokemon(
 		vector<PokemonType> type,
 		PokemonStats stats,

@@ -1,6 +1,7 @@
 #pragma once
 #include "Object.h"
 #include "pokemon.h"
+
 class Texture;
 class FieldObject :
     public Object
