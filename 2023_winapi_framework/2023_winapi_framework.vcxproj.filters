@@ -283,7 +283,7 @@
     <ClCompile Include="FieldObject.cpp">
       <Filter>Engine\04. Object\BuildObject</Filter>
     </ClCompile>
-     <ClCompile Include="BattleEffect.cpp">
+    <ClCompile Include="BattleEffect.cpp">
       <Filter>Engine\09.Class</Filter>
     </ClCompile>
   </ItemGroup>
