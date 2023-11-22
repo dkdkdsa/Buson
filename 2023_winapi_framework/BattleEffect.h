@@ -3,8 +3,8 @@
 class BattleEffect
 {
 public:
-	BattleEffect(BattleEffectGroup battleEffectGroup);
+	BattleEffect();
 	~BattleEffect();
 public:
-	void Execution(BattleEffectGroup battleEffectGroup);
+	void Execution();
 };

@@ -17,7 +17,7 @@ enum class BattleEffectGroup
 	Sleep,
 	Freeze,
 	Confusion,
-	Flinch
+	Flinch,
 
 };
 
@@ -34,5 +34,4 @@ public:
 	int _damage;
 	int Accuracy;
 	PokemonType _type;
-	BattleEffectGroup _battleEffectGroup;
 };
