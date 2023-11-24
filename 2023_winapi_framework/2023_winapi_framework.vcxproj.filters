@@ -74,6 +74,9 @@
     <Filter Include="Engine\04. Object\BuildObject">
       <UniqueIdentifier>{00f8d4cd-cf42-4255-8595-3ff584ce180b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\04. Object\UI">
+      <UniqueIdentifier>{5b9085f4-349d-469d-bbca-e52bbebacc24}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -184,6 +187,7 @@
     <ClInclude Include="BattleEffect.h">
       <Filter>Engine\09.Class</Filter>
     </ClInclude>
+    <ClInclude Include="FieldUI.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2023_winapi_framework.rc">
@@ -286,5 +290,6 @@
     <ClCompile Include="BattleEffect.cpp">
       <Filter>Engine\09.Class</Filter>
     </ClCompile>
+    <ClCompile Include="FieldUI.cpp" />
   </ItemGroup>
 </Project>

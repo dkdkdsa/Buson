@@ -181,6 +181,7 @@
     <ClInclude Include="EventMgr.h" />
     <ClInclude Include="FieldObject.h" />
     <ClInclude Include="FieldScene.h" />
+    <ClInclude Include="FieldUI.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Game_Scene.h" />
     <ClInclude Include="KeyMgr.h" />
@@ -216,6 +217,7 @@
     <ClCompile Include="EventMgr.cpp" />
     <ClCompile Include="FieldObject.cpp" />
     <ClCompile Include="FieldScene.cpp" />
+    <ClCompile Include="FieldUI.cpp" />
     <ClCompile Include="Game_Scene.cpp" />
     <ClCompile Include="KeyMgr.cpp" />
     <ClCompile Include="main.cpp" />
