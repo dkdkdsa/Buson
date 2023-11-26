@@ -184,6 +184,9 @@
     <ClInclude Include="BattleEffect.h">
       <Filter>Engine\09.Class</Filter>
     </ClInclude>
+    <ClInclude Include="BattleScene.h">
+      <Filter>Engine\05. Scene\BuildScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2023_winapi_framework.rc">
@@ -285,6 +288,9 @@
     </ClCompile>
     <ClCompile Include="BattleEffect.cpp">
       <Filter>Engine\09.Class</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleScene.cpp">
+      <Filter>Engine\05. Scene\BuildScene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
