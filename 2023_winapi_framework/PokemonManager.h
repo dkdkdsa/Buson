@@ -13,12 +13,20 @@ public:
 
 	}
 
+	Pokemon* GetRamdomPokemonByLevel(int lv) {
+
+		int size = _levelPokemonContainer[lv].size();
+
+		int idx = rand() % size;
+
+		return _levelPokemonContainer[lv][idx];
+
+	}
+
 	void CreatePokemon();
 
 private:
 	map<int, Pokemon*> _pokemonContainer;
-	vector<Pokemon*> _level_1_Pokemon;
-	vector<Pokemon*> _level_2_Pokemon;
-	vector<Pokemon*> _level_3_Pokemon;
+	map<int, vector<Pokemon*>> _levelPokemonContainer;
 
 };

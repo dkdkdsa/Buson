@@ -80,6 +80,9 @@
     <Filter Include="Engine\04. Object\UI\Button">
       <UniqueIdentifier>{ca7641a7-9be6-477d-88a6-49100ea74e7b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Manager\PokemonManager">
+      <UniqueIdentifier>{4fc11505-4899-4718-b0e5-c4c0ef763c35}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -190,15 +193,17 @@
     <ClInclude Include="BattleEffect.h">
       <Filter>Engine\09.Class</Filter>
     </ClInclude>
-    <ClInclude Include="FieldUI.h">
-      <Filter>Engine\04. Object\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="UIButton.h">
-      <Filter>Engine\04. Object\UI</Filter>
-    </ClInclude>
-
     <ClInclude Include="PokemonMakeBtn.h">
       <Filter>Engine\04. Object\UI\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="UIButton.h">
+      <Filter>Engine\04. Object\UI\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="PokemonManager.h">
+      <Filter>Engine\03. Manager\PokemonManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Field.h">
+      <Filter>Engine\04. Object\BuildObject</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -302,15 +307,17 @@
     <ClCompile Include="BattleEffect.cpp">
       <Filter>Engine\09.Class</Filter>
     </ClCompile>
-    <ClCompile Include="FieldUI.cpp">
-      <Filter>Engine\04. Object\UI</Filter>
-    </ClCompile>
-
     <ClCompile Include="PokemonMakeBtn.cpp">
       <Filter>Engine\04. Object\UI\Button</Filter>
     </ClCompile>
     <ClCompile Include="UIButton.cpp">
       <Filter>Engine\04. Object\UI\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="PokemonManager.cpp">
+      <Filter>Engine\03. Manager\PokemonManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Field.cpp">
+      <Filter>Engine\04. Object\BuildObject</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

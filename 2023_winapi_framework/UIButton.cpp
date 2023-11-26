@@ -5,8 +5,6 @@
 #include "Texture.h"
 
 
-
-
 UIButton::UIButton(wstring textureKey, wstring path, Vec2 pos, Vec2 scale)
 {
 
@@ -15,7 +13,7 @@ UIButton::UIButton(wstring textureKey, wstring path, Vec2 pos, Vec2 scale)
 
 	if (_mainTex != nullptr) {
 
-		m_vScale = Vec2(_mainTex->GetWidth(), _mainTex->GetHeight());
+		m_vScale = Vec2({_mainTex->GetWidth(), _mainTex->GetHeight()});
 
 	}
 	else {

@@ -9,6 +9,7 @@ public:
 	void Update() override;
 	void Render(HDC _dc) override;
 	void Release() override;
+	Field* GetAbleField() { return _fieldList[_currentAbleField]; }
 
 private:
 	int _currentAbleField;

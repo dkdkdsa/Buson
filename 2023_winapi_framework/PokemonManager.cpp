@@ -13,13 +13,13 @@ void PokemonManager::Init()
 void PokemonManager::CreatePokemon()
 {
 
+	Pokemon* curPokemon;
+
 #pragma region 이상해씨_개열
 
-	_pokemonContainer.insert(
-		{ 1,
-		new Pokemon
-		(
-			{ PokemonType::Grass },
+	curPokemon = new Pokemon
+	(
+		{ PokemonType::Grass },
 			{
 
 				1, //HP
@@ -33,7 +33,10 @@ void PokemonManager::CreatePokemon()
 			1,
 			2
 
-		) });
+	);
+
+	_pokemonContainer[1] = curPokemon;
+	_levelPokemonContainer[1].push_back(curPokemon);
 
 #pragma endregion
 
