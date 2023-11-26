@@ -74,14 +74,8 @@
     <Filter Include="Engine\04. Object\BuildObject">
       <UniqueIdentifier>{00f8d4cd-cf42-4255-8595-3ff584ce180b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\04. Object\BuildObject\Pokemon">
-      <UniqueIdentifier>{9b80407e-f595-48b8-93bf-282f450ec9cc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\03. Manager\PokemonManager">
-      <UniqueIdentifier>{48f292eb-5962-49c8-98e7-21c92c3f599d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\04. Object\BuildObject\Pokemon\Field">
-      <UniqueIdentifier>{d7c91ad7-8dbf-4a56-b464-10fa0879e4ce}</UniqueIdentifier>
+    <Filter Include="Engine\04. Object\UI">
+      <UniqueIdentifier>{5b9085f4-349d-469d-bbca-e52bbebacc24}</UniqueIdentifier>
     </Filter>
     <Filter Include="Engine\04. Object\UI\Button">
       <UniqueIdentifier>{ca7641a7-9be6-477d-88a6-49100ea74e7b}</UniqueIdentifier>
@@ -190,19 +184,15 @@
     <ClInclude Include="FieldScene.h">
       <Filter>Engine\05. Scene\BuildScene</Filter>
     </ClInclude>
+    <ClInclude Include="FieldObject.h">
+      <Filter>Engine\04. Object\BuildObject</Filter>
+    </ClInclude>
     <ClInclude Include="BattleEffect.h">
       <Filter>Engine\09.Class</Filter>
     </ClInclude>
-    <ClInclude Include="PokemonManager.h">
-      <Filter>Engine\03. Manager\PokemonManager</Filter>
-    </ClInclude>
-    <ClInclude Include="Field.h">
-      <Filter>Engine\04. Object\BuildObject\Pokemon\Field</Filter>
     <ClInclude Include="UIButton.h">
       <Filter>Engine\04. Object\UI\Button</Filter>
     </ClInclude>
-    <ClInclude Include="FieldObject.h">
-      <Filter>Engine\04. Object\BuildObject\Pokemon\Field</Filter>
     <ClInclude Include="PokemonMakeBtn.h">
       <Filter>Engine\04. Object\UI\Button</Filter>
     </ClInclude>
@@ -302,19 +292,15 @@
     <ClCompile Include="FieldScene.cpp">
       <Filter>Engine\05. Scene\BuildScene</Filter>
     </ClCompile>
+    <ClCompile Include="FieldObject.cpp">
+      <Filter>Engine\04. Object\BuildObject</Filter>
+    </ClCompile>
     <ClCompile Include="BattleEffect.cpp">
       <Filter>Engine\09.Class</Filter>
     </ClCompile>
-    <ClCompile Include="PokemonManager.cpp">
-      <Filter>Engine\03. Manager\PokemonManager</Filter>
-    </ClCompile>
-    <ClCompile Include="Field.cpp">
-      <Filter>Engine\04. Object\BuildObject\Pokemon\Field</Filter>
     <ClCompile Include="PokemonMakeBtn.cpp">
       <Filter>Engine\04. Object\UI\Button</Filter>
     </ClCompile>
-    <ClCompile Include="FieldObject.cpp">
-      <Filter>Engine\04. Object\BuildObject\Pokemon\Field</Filter>
     <ClCompile Include="UIButton.cpp">
       <Filter>Engine\04. Object\UI\Button</Filter>
     </ClCompile>
