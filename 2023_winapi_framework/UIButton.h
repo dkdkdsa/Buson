@@ -7,7 +7,6 @@ class UIButton :
     public Object
 {
 
-public:
     UIButton(wstring textureKey, wstring path, Vec2 pos, Vec2 scale);
     void Update() override;
     void Render(HDC _dc) override;

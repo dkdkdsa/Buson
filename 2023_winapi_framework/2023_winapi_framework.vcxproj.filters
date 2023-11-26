@@ -190,9 +190,13 @@
     <ClInclude Include="BattleEffect.h">
       <Filter>Engine\09.Class</Filter>
     </ClInclude>
-    <ClInclude Include="UIButton.h">
-      <Filter>Engine\04. Object\UI\Button</Filter>
+    <ClInclude Include="FieldUI.h">
+      <Filter>Engine\04. Object\UI</Filter>
     </ClInclude>
+    <ClInclude Include="UIButton.h">
+      <Filter>Engine\04. Object\UI</Filter>
+    </ClInclude>
+
     <ClInclude Include="PokemonMakeBtn.h">
       <Filter>Engine\04. Object\UI\Button</Filter>
     </ClInclude>
@@ -298,6 +302,10 @@
     <ClCompile Include="BattleEffect.cpp">
       <Filter>Engine\09.Class</Filter>
     </ClCompile>
+    <ClCompile Include="FieldUI.cpp">
+      <Filter>Engine\04. Object\UI</Filter>
+    </ClCompile>
+
     <ClCompile Include="PokemonMakeBtn.cpp">
       <Filter>Engine\04. Object\UI\Button</Filter>
     </ClCompile>
