@@ -7,9 +7,10 @@ public:
 	virtual void Init() override;
 private:
 	void PlayEnterBattleIntro();
-	void BattleCycle();
+	void BattleCycle(Skill selectedSkill);
 private:
 	std::vector<Pokemon*> _playerPokemons;
 	std::vector<Pokemon*> _wildPokemons;
+	
 };
 

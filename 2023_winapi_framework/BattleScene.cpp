@@ -5,10 +5,13 @@ void BattleScene::PlayEnterBattleIntro()
 {
 }
 
-void BattleScene::BattleCycle()
+void BattleScene::BattleCycle(Skill selectedSkill)
 {
 	// Player skill select
+
 	// Wild_Pokemon skill random select
+
+
 	Pokemon* firstActionPokemon;
 	Pokemon* secondActionPokemon;
 	if (_playerPokemons[0]->Stats.Speed > _wildPokemons[0]->Stats.Speed) {			// Player first
@@ -32,10 +35,10 @@ void BattleScene::BattleCycle()
 	}
 
 	// First action process
-	//secondActionPokemon->TakeSkill();
+	firstActionPokemon->UseSkill(secondActionPokemon, selectedSkill);
 
 	// Second action process
-	//firstActionPokemon->TakeSkill();
+	secondActionPokemon->UseSkill(firstActionPokemon, selectedSkill);
 }
 
 void BattleScene::Init()

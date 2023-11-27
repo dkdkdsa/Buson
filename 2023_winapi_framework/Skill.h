@@ -30,10 +30,10 @@ public:
 public:
 	void BattleEffect();
 public:
-	wstring				_name;					// 기술 이름
-	SkillGroup			_skillGroup;			// 기술 분류
-	int					_damage;				// 위력
-	int					_accuracy;				// 명중률
-	PokemonType			_type;					// 기술 타입
-	BattleEffectGroup	_battleEffectGroup;		// 부가효과
+	wstring				Name;					// 기술 이름
+	SkillGroup			SkillGroup;				// 기술 분류
+	int					Damage;					// 위력
+	int					Accuracy;				// 명중률
+	PokemonType			Type;					// 기술 타입
+	BattleEffectGroup	BattleEffectGroup;		// 부가효과
 };
