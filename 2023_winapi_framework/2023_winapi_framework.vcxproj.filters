@@ -83,6 +83,9 @@
     <Filter Include="Engine\03. Manager\PokemonManager">
       <UniqueIdentifier>{4fc11505-4899-4718-b0e5-c4c0ef763c35}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Manager\FieldDragManager">
+      <UniqueIdentifier>{c328e5da-53b3-4765-86fb-d7d65000203d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">

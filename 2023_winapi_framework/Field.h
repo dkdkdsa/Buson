@@ -14,11 +14,15 @@ public:
 
     void Update() override;
     void Render(HDC _dc) override;
-    void AddPokemon(Pokemon pokemon);
+    FieldObject* AddPokemon(Pokemon pokemon);
+    void SetDrag();
+    void ReleaseDrag();
+    void Drag();
     FieldObject* ChackBound(FieldObject* currentObject, POINT mousePos);
 
 private:
     std::vector<FieldObject*> _thisFieldObject;
+    FieldObject* _dragObject;
 
 };
 
