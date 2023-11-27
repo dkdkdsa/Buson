@@ -29,7 +29,7 @@ void PokemonManager::CreatePokemon()
 
 			},
 			SkillManager::GetInst()->LearnSkill(PokemonType::Grass, 1),
-			L"OO1",
+			L"001",
 			1,
 			2
 

@@ -8,7 +8,8 @@
 UIButton::UIButton(wstring textureKey, wstring path, Vec2 pos, Vec2 scale)
 {
 
-	_mainTex = ResMgr::GetInst()->TexLoad(textureKey, path);
+	//_mainTex = ResMgr::GetInst()->TexLoad(textureKey, path);
+	_mainTex = nullptr;
 	m_vPos = pos;
 
 	if (_mainTex != nullptr) {

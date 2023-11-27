@@ -2,12 +2,15 @@
 #include "FieldObject.h"
 #include "Texture.h"
 #include "ResMgr.h"
+#include "KeyMgr.h"
 
 FieldObject::FieldObject(Pokemon pokemon)
 {
 
 	_texture = ResMgr::GetInst()->FindPokemonTexture(pokemon.SpriteKey, PokemonSprite_Type::Field);
 	_pokemon = pokemon;
+
+	m_vScale = Vec2({ _texture->GetWidth(), _texture->GetHeight() });
 
 }
 
@@ -17,6 +20,15 @@ FieldObject::~FieldObject()
 
 void FieldObject::Update()
 {
+
+	_objRect = RECT_MAKE((int)m_vPos.x, (int)m_vPos.y, (int)m_vScale.x, (int)m_vScale.y);
+
+	if (KEY_DOWN(KEY_TYPE::LBUTTON) && PtInRect(&_objRect, KeyMgr::GetInst()->GetMousePos())) {
+
+
+
+	}
+
 }
 
 void FieldObject::Render(HDC _dc)
@@ -27,8 +39,8 @@ void FieldObject::Render(HDC _dc)
 
 	TransparentBlt(
 		_dc,
-		(int)(m_vPos.x - m_vScale.x / 2),
-		(int)(m_vPos.y - m_vScale.y / 2),
+		(int)(m_vPos.x - width / 2),
+		(int)(m_vPos.y - height / 2),
 		width,
 		height,
 		_texture->GetDC(),

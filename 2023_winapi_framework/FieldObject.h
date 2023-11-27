@@ -19,6 +19,7 @@ public:
 private:
     Texture* _texture;
     Pokemon _pokemon;
+    RECT _objRect;
 
 };
 

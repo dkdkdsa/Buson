@@ -2,6 +2,7 @@
 #include "FieldScene.h"
 #include "Field.h"
 #include "Core.h"
+#include "PokemonMakeBtn.h"
 
 void FieldScene::Init()
 {
@@ -17,6 +18,15 @@ void FieldScene::Init()
 	_fieldList.push_back(field_1);
 
 #pragma endregion
+
+#pragma region UI
+
+	auto* addBtn = new PokemonMakeBtn();
+	addBtn->SetFieldScene(this);
+	AddObject(addBtn, OBJECT_GROUP::DEFAULT);
+
+#pragma endregion
+
 
 
 }
