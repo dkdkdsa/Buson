@@ -3,7 +3,7 @@
 enum class SkillGroup 
 {
 
-	Status, // 분류 - 변화 (스테이터스 관련 변화, 상태이상 관련 변화 등)
+	Status = 0, // 분류 - 변화 (스테이터스 관련 변화, 상태이상 관련 변화 등)
 	Attack	// 분류 - 공격 (물리, 특수 통합)
 
 };
@@ -11,7 +11,7 @@ enum class SkillGroup
 enum class BattleEffectGroup 
 {
 
-	None,		// 부가효과 없음
+	None = 0,		// 부가효과 없음
 	Poison,		// 독
 	Burn,		// 화상
 	Paralysis,	// 마비
