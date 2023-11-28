@@ -14,22 +14,23 @@ void SkillManager::CreateSkill()
 {
 
 	//ex
-	map<int, vector<wstring>> dark
+	map<int, vector<wstring>> grass
 	{
 
 		{1, {L"ex1", L"ex2", L"ex3", L"ex4"}}
 
 	};
 
-	_learnSkillContainer.insert({PokemonType::Dark, dark});
+	_learnSkillContainer.insert({PokemonType::Grass, grass});
 
 }
 
-void SkillManager::LearnSkill(PokemonType type, int evolutionCount, wstring* arr)
+vector<wstring> SkillManager::LearnSkill(PokemonType type, int evolutionCount)
 {
 
 	//복사로 가져오기
 	auto container = _learnSkillContainer[type][evolutionCount];
+	vector<wstring> result;
 
 	for (int i = 0; i < 1000; i++) {
 
@@ -43,8 +44,10 @@ void SkillManager::LearnSkill(PokemonType type, int evolutionCount, wstring* arr
 	for (int i = 0; i < 4; i++) {
 
 
-		*(arr + i) = container[i];
+		result.push_back(container[i]);
 
 	}
+
+	return result;
 
 }

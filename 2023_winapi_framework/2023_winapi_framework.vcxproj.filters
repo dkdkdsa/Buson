@@ -74,6 +74,18 @@
     <Filter Include="Engine\04. Object\BuildObject">
       <UniqueIdentifier>{00f8d4cd-cf42-4255-8595-3ff584ce180b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\04. Object\UI">
+      <UniqueIdentifier>{5b9085f4-349d-469d-bbca-e52bbebacc24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04. Object\UI\Button">
+      <UniqueIdentifier>{ca7641a7-9be6-477d-88a6-49100ea74e7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Manager\PokemonManager">
+      <UniqueIdentifier>{4fc11505-4899-4718-b0e5-c4c0ef763c35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Manager\FieldDragManager">
+      <UniqueIdentifier>{c328e5da-53b3-4765-86fb-d7d65000203d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -184,8 +196,17 @@
     <ClInclude Include="BattleEffect.h">
       <Filter>Engine\09.Class</Filter>
     </ClInclude>
-    <ClInclude Include="BattleScene.h">
-      <Filter>Engine\05. Scene\BuildScene</Filter>
+    <ClInclude Include="PokemonMakeBtn.h">
+      <Filter>Engine\04. Object\UI\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="UIButton.h">
+      <Filter>Engine\04. Object\UI\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="PokemonManager.h">
+      <Filter>Engine\03. Manager\PokemonManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Field.h">
+      <Filter>Engine\04. Object\BuildObject</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -289,8 +310,17 @@
     <ClCompile Include="BattleEffect.cpp">
       <Filter>Engine\09.Class</Filter>
     </ClCompile>
-    <ClCompile Include="BattleScene.cpp">
-      <Filter>Engine\05. Scene\BuildScene</Filter>
+    <ClCompile Include="PokemonMakeBtn.cpp">
+      <Filter>Engine\04. Object\UI\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="UIButton.cpp">
+      <Filter>Engine\04. Object\UI\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="PokemonManager.cpp">
+      <Filter>Engine\03. Manager\PokemonManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Field.cpp">
+      <Filter>Engine\04. Object\BuildObject</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

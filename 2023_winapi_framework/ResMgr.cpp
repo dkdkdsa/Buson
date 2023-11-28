@@ -146,11 +146,15 @@ tSoundInfo* ResMgr::FindSound(const wstring& _strKey)
 void ResMgr::CreatePokemonTexture()
 {
 
-#pragma region 이상해씨
+#pragma region 이상해씨 계열
 
     TexLoad(L"001_Field", L"Texture\\Pokemon\\001_Field.bmp");
+    TexLoad(L"002_Field", L"Texture\\Pokemon\\002_Field.bmp");
+    TexLoad(L"003_Field", L"Texture\\Pokemon\\003_Field.bmp");
     //TexLoad(L"001_Field", L"Texture\\jiwoo.bmp");
     _pokemonTextureContainer[L"001"][PokemonSprite_Type::Field] = L"001_Field";
+    _pokemonTextureContainer[L"002"][PokemonSprite_Type::Field] = L"002_Field";
+    _pokemonTextureContainer[L"003"][PokemonSprite_Type::Field] = L"003_Field";
 
 #pragma endregion
 
