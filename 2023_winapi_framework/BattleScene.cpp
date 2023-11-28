@@ -14,7 +14,7 @@ void BattleScene::PlayEnterBattleIntro()
 {
 }
 
-void BattleScene::BattleCycle(Skill selectedSkill)
+void BattleScene::BattleCycle(Skill* selectedSkill)
 {
 	// Player skill select
 
@@ -25,22 +25,22 @@ void BattleScene::BattleCycle(Skill selectedSkill)
 
 	// Speed Calculation
 	if (_playerPokemons[0]->Stats.Speed > _wildPokemons[0]->Stats.Speed) {			// Player first
-		firstActionPokemon = _playerPokemons[0];
-		secondActionPokemon = _wildPokemons[0];
+		firstActionPokemon = _playerPokemons.front();
+		secondActionPokemon = _wildPokemons.front();
 	}
 	else if (_playerPokemons[0]->Stats.Speed < _wildPokemons[0]->Stats.Speed) {		// Wild frist
-		firstActionPokemon = _wildPokemons[0];
-		secondActionPokemon = _playerPokemons[0];
+		firstActionPokemon = _wildPokemons.front();
+		secondActionPokemon = _playerPokemons.front();
 	}
 	else { // <----------------------------------------------------------------------- Equals - Random select
 		int randVal = rand() % 2;
 		if (randVal == 0) { // <------------------------------------------------------ Player first
-			firstActionPokemon = _playerPokemons[0];
-			secondActionPokemon = _wildPokemons[0];
+			firstActionPokemon = _playerPokemons.front();
+			secondActionPokemon = _wildPokemons.front();
 		}
 		else { // <------------------------------------------------------------------- Wild first
-			firstActionPokemon = _wildPokemons[0];
-			secondActionPokemon = _playerPokemons[0];
+			firstActionPokemon = _wildPokemons.front();
+			secondActionPokemon = _playerPokemons.front();
 		}
 	} // Speed Calculation End
 

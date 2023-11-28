@@ -171,6 +171,7 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Animator.h" />
     <ClInclude Include="BaseWindow.h" />
+    <ClInclude Include="BattleBtn.h" />
     <ClInclude Include="BattleEffect.h" />
     <ClInclude Include="BattleScene.h" />
     <ClInclude Include="Bullet.h" />
@@ -183,6 +184,7 @@
     <ClInclude Include="Field.h" />
     <ClInclude Include="FieldObject.h" />
     <ClInclude Include="FieldScene.h" />
+    <ClInclude Include="FightBtn.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Game_Scene.h" />
     <ClInclude Include="KeyMgr.h" />
@@ -213,6 +215,7 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Animator.cpp" />
     <ClCompile Include="BaseWindow.cpp" />
+    <ClCompile Include="BattleBtn.cpp" />
     <ClCompile Include="BattleEffect.cpp" />
     <ClCompile Include="BattleScene.cpp" />
     <ClCompile Include="Bullet.cpp" />
@@ -223,6 +226,7 @@
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="FieldObject.cpp" />
     <ClCompile Include="FieldScene.cpp" />
+    <ClCompile Include="FightBtn.cpp" />
     <ClCompile Include="Game_Scene.cpp" />
     <ClCompile Include="KeyMgr.cpp" />
     <ClCompile Include="main.cpp" />

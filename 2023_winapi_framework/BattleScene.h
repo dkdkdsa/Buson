@@ -12,7 +12,7 @@ private:
 	void Update();
 	void Render(HDC _dc);
 	void PlayEnterBattleIntro();
-	void BattleCycle(Skill selectedSkill);
+	void BattleCycle(Skill* selectedSkill);
 private:
 	// Pokemons
 	std::vector<Pokemon*> _playerPokemons;

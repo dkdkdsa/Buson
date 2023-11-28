@@ -34,6 +34,6 @@ public:
 	SkillGroup			SkillGroup;				// 기술 분류
 	int					Damage;					// 위력
 	int					Accuracy;				// 명중률
-	PokemonType			Type;					// 기술 타입
+	PokemonType			SkillType;					// 기술 타입
 	BattleEffectGroup	BattleEffectGroup;		// 부가효과
 };
