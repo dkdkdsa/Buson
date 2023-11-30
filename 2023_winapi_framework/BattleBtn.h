@@ -8,7 +8,5 @@ public:
     ~BattleBtn();
 public:
     void OnClick() override;
-private:
-
 };
 

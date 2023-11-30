@@ -234,6 +234,7 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="PathMgr.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="pokemon.cpp" />
     <ClCompile Include="PokemonMakeBtn.cpp" />
     <ClCompile Include="PokemonManager.cpp" />
     <ClCompile Include="Res.cpp" />

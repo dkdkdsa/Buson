@@ -339,5 +339,8 @@
       <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
     </ClCompile>
     <ClCompile Include="FightBtn.cpp" />
+    <ClCompile Include="pokemon.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

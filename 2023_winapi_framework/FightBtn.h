@@ -9,6 +9,5 @@ public:
 public:
     void OnClick() override;
 private:
-
 };
 
