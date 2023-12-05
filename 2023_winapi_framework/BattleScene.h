@@ -15,7 +15,7 @@ public:
 	void Release() override;
 	void PlayEnterBattleIntro();
 	void BattleCycle(Skill* selectedSkill);
-	void SetCurUI()
+	void SetCurUI();
 private:
 	// Pokemons
 	std::vector<Pokemon*> _playerPokemons;
