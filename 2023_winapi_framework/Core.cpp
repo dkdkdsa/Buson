@@ -41,9 +41,9 @@ bool Core::Init(HWND _hWnd, POINT _ptResolution)
 	TimeMgr::GetInst()->Init();
 	KeyMgr::GetInst()->Init();
 	ResMgr::GetInst()->Init();
-	SceneMgr::GetInst()->Init();
 	SkillManager::GetInst()->Init();
 	PokemonManager::GetInst()->Init();
+	SceneMgr::GetInst()->Init();
 
 	return true;
 }

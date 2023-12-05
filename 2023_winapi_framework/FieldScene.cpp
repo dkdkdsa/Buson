@@ -3,6 +3,7 @@
 #include "Field.h"
 #include "Core.h"
 #include "PokemonMakeBtn.h"
+#include "PokemonBox.h"
 
 void FieldScene::Init()
 {
@@ -21,9 +22,14 @@ void FieldScene::Init()
 
 #pragma region UI
 
+	Vec2 uiCenter = Vec2({ screenPoint.x / 2, screenPoint.y / 2 });
+
 	auto* addBtn = new PokemonMakeBtn();
 	addBtn->SetFieldScene(this);
 	AddObject(addBtn, OBJECT_GROUP::DEFAULT);
+
+	auto* pokemonBox = new PokemonBox(uiCenter + Vec2({ 300, -275 }), Vec2({ 450, 150 }), this);
+	AddObject(pokemonBox, OBJECT_GROUP::DEFAULT);
 
 #pragma endregion
 
@@ -34,16 +40,16 @@ void FieldScene::Init()
 void FieldScene::Update()
 {
 
-	Scene::Update();
 	_fieldList[_currentAbleField]->Update();
+	Scene::Update();
 
 }
 
 void FieldScene::Render(HDC _dc)
 {
 
-	Scene::Render(_dc);
 	_fieldList[_currentAbleField]->Render(_dc);
+	Scene::Render(_dc);
 
 }
 

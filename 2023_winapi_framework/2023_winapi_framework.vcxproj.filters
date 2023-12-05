@@ -208,6 +208,9 @@
     <ClInclude Include="Field.h">
       <Filter>Engine\04. Object\BuildObject</Filter>
     </ClInclude>
+    <ClInclude Include="PokemonBox.h">
+      <Filter>Engine\04. Object\BuildObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2023_winapi_framework.rc">
@@ -320,6 +323,9 @@
       <Filter>Engine\03. Manager\PokemonManager</Filter>
     </ClCompile>
     <ClCompile Include="Field.cpp">
+      <Filter>Engine\04. Object\BuildObject</Filter>
+    </ClCompile>
+    <ClCompile Include="PokemonBox.cpp">
       <Filter>Engine\04. Object\BuildObject</Filter>
     </ClCompile>
   </ItemGroup>

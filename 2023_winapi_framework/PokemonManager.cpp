@@ -30,6 +30,7 @@ void PokemonManager::CreatePokemon()
 			},
 			SkillManager::GetInst()->LearnSkill(PokemonType::Grass, 1),
 			L"001",
+			L"이상해씨",
 			1,
 			2
 	);
@@ -51,6 +52,7 @@ void PokemonManager::CreatePokemon()
 			},
 			SkillManager::GetInst()->LearnSkill(PokemonType::Grass, 1),
 			L"002",
+			L"이상해풀",
 			2,
 			3
 	);
@@ -72,6 +74,7 @@ void PokemonManager::CreatePokemon()
 			},
 			SkillManager::GetInst()->LearnSkill(PokemonType::Grass, 1),
 			L"003",
+			L"이상해꽃",
 			3,
 			0
 			);

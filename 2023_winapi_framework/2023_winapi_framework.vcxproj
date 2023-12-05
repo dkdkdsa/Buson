@@ -191,6 +191,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="pokemon.h" />
+    <ClInclude Include="PokemonBox.h" />
     <ClInclude Include="PokemonMakeBtn.h" />
     <ClInclude Include="PokemonManager.h" />
     <ClInclude Include="Res.h" />
@@ -228,6 +229,7 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="PathMgr.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PokemonBox.cpp" />
     <ClCompile Include="PokemonMakeBtn.cpp" />
     <ClCompile Include="PokemonManager.cpp" />
     <ClCompile Include="Res.cpp" />

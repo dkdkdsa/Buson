@@ -48,6 +48,7 @@ struct Pokemon {
 		PokemonStats stats,
 		std::vector<std::wstring> skillsKey,
 		std::wstring spriteKey,
+		std::wstring pokemonName,
 		int evolutionCount,
 		int evolutionNumber) 
 	{
@@ -58,6 +59,7 @@ struct Pokemon {
 		SpriteKey = spriteKey;
 		EvolutionCount = evolutionCount;
 		EvolutionNumber = evolutionNumber;
+		PokemonName = pokemonName;
 
 	}
 
@@ -65,6 +67,7 @@ struct Pokemon {
     PokemonStats Stats;
 	std::vector<std::wstring> SkillsKey;
 	std::wstring SpriteKey;
+	std::wstring PokemonName;
 	int EvolutionCount;
 	int EvolutionNumber;//다음 진화 도감번호 0이면 진화불가능
 

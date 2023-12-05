@@ -13,7 +13,7 @@ public:
     void Update() override;
     void Render(HDC _dc) override;
 
-    const Pokemon& GetPokemon() const { return _pokemon; }
+    Pokemon& GetPokemon() { return _pokemon; }
     void SetPokemon(Pokemon pokemon) { _pokemon = pokemon; }
     const RECT& GetRect() const { return _objRect; }
     void SetFieldRect(RECT rt) { _fieldRect = rt; }

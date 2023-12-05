@@ -39,6 +39,7 @@ public:
 	void Stop(SOUND_CHANNEL _eChannel);
 	void Volume(SOUND_CHANNEL _eChannel, float _fVol);
 	void Pause(SOUND_CHANNEL _eChannel, bool _Ispause);
+	HFONT LoadFont(const wstring& path, const wstring& fontName, int fontSize);
 
 private:
 

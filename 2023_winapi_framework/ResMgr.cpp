@@ -134,6 +134,19 @@ void ResMgr::Pause(SOUND_CHANNEL _eChannel, bool _Ispause)
     m_pChannel[(UINT)_eChannel]->setPaused(_Ispause);
 }
 
+HFONT ResMgr::LoadFont(const wstring& path, const wstring& fontName, int fontSize)
+{
+
+    wstring strFilepath = PathMgr::GetInst()->GetResPath();
+    strFilepath += path;
+
+    AddFontResource(path.c_str());
+
+    return CreateFont(fontSize, 0, 0, 0, 0, 0, 0, 0, HANGUL_CHARSET, 0, 0, 0, VARIABLE_PITCH
+        | FF_ROMAN, fontName.c_str());
+
+}
+
 tSoundInfo* ResMgr::FindSound(const wstring& _strKey)
 {
     map<wstring, tSoundInfo*>::iterator iter = m_mapSod.find(_strKey);
