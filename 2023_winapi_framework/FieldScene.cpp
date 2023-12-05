@@ -44,7 +44,6 @@ void FieldScene::Render(HDC _dc)
 
 	Scene::Render(_dc);
 	_fieldList[_currentAbleField]->Render(_dc);
-
 }
 
 void FieldScene::Release()

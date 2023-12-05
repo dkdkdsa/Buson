@@ -1,13 +1,27 @@
 #include "pch.h"
 #include "BattleScene.h"
+#include "ActionSelectUI.h"
+
+void BattleScene::Init()
+{
+	AddObject(new ActionSelectUI(), OBJECT_GROUP::Battle_UI);
+
+}
 
 void BattleScene::Update()
 {
-
+	Scene::Update();
 }
 
 void BattleScene::Render(HDC _dc)
 {
+	Scene::Render(_dc);
+}
+
+void BattleScene::Release()
+{
+	Scene::Release();
+	// 추후 UI vector 에 있는 애들 delete 해줘야함
 }
 
 void BattleScene::PlayEnterBattleIntro()
@@ -49,8 +63,4 @@ void BattleScene::BattleCycle(Skill* selectedSkill)
 
 	// Second action process
 	secondActionPokemon->UseSkill(firstActionPokemon, selectedSkill);				// Second action pokemon attack
-}
-
-void BattleScene::Init()
-{
 }

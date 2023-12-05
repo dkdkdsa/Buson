@@ -8,6 +8,5 @@ public:
     ~FightBtn();
 public:
     void OnClick() override;
-private:
 };
 

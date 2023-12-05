@@ -28,6 +28,7 @@ enum class OBJECT_GROUP
 	MONSTER,
 	FIELD_OBJECT,
 	FIELD,
+	Battle_UI,
 	END = 30
 };
 
