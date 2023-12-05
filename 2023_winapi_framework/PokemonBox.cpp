@@ -47,22 +47,7 @@ void PokemonBox::Update()
 
 	}
 
-	if (KEY_DOWN(KEY_TYPE::RBUTTON)) {
-
-		auto* obj = _field->ChackBound(nullptr, KeyMgr::GetInst()->GetMousePos());
-
-		if (obj != nullptr) {
-
-			_curPokemon = &obj->GetPokemon();
-
-		}
-		else {
-
-			_curPokemon = nullptr;
-
-		}
-
-	}
+	SetAblePokemon();
 
 }
 
@@ -71,19 +56,6 @@ void PokemonBox::Render(HDC _dc)
 
 	auto width = _tex->GetWidth();
 	auto height = _tex->GetHeight();
-
-	StretchBlt(
-		_resizeDc,
-		0,
-		0,
-		m_vScale.x,
-		m_vScale.y,
-		_tex->GetDC(),
-		0,
-		0,
-		width,
-		height,
-		SRCCOPY);
 
 	TransparentBlt(
 		_dc,
@@ -118,6 +90,24 @@ void PokemonBox::Render(HDC _dc)
 	TextOut(_dc, m_vPos.x - 70, m_vPos.y + 20, speedText.c_str(), speedText.length());
 	TextOut(_dc, m_vPos.x - 180, m_vPos.y + 30, _curPokemon->PokemonName.c_str(), _curPokemon->PokemonName.length());
 
+	Texture* pokemonTex = ResMgr::GetInst()->FindPokemonTexture(_curPokemon->SpriteKey, PokemonSprite_Type::Field);
+
+	int pW = pokemonTex->GetWidth();
+	int pH = pokemonTex->GetHeight();
+
+	TransparentBlt(
+		_dc,
+		(int)(m_vPos.x - m_vScale.x / 2) + 45,
+		(int)(m_vPos.y - m_vScale.y / 2) + 30,
+		75,
+		75,
+		pokemonTex->GetDC(),
+		0,
+		0,
+		pW,
+		pH,
+		RGB(255, 0, 255));
+
 	SelectObject(_dc, oldFont);
 	SetTextColor(_dc, oldColor);
 	DeleteObject(font);
@@ -126,4 +116,29 @@ void PokemonBox::Render(HDC _dc)
 
 void PokemonBox::SetAblePokemon()
 {
+
+	if (KEY_DOWN(KEY_TYPE::RBUTTON)) {
+
+		auto* obj = _field->ChackBound(nullptr, KeyMgr::GetInst()->GetMousePos());
+
+		if (obj != nullptr) {
+
+			_curPokemon = &obj->GetPokemon();
+
+			_pokemonBitMap = CreateCompatibleBitmap(
+				obj->GetTexture()->GetDC(),
+				obj->GetTexture()->GetWidth(),
+				obj->GetTexture()->GetHeight());
+
+			_pokemonDc = CreateCompatibleDC(obj->GetTexture()->GetDC());
+
+		}
+		else {
+
+			_curPokemon = nullptr;
+
+		}
+
+	}
+
 }

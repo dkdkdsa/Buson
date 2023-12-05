@@ -24,6 +24,8 @@ public:
 
     }
 
+    const Texture* GetTexture() const { return _texture; }
+
 private:
     Texture* _texture;
     Pokemon _pokemon;

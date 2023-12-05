@@ -21,6 +21,8 @@ private:
     Field* _field;
     FieldScene* _fieldScene;
     HDC _resizeDc;
+    HDC _pokemonDc;
     HBITMAP _resizeBitMap;
+    HBITMAP _pokemonBitMap;
 
 };
