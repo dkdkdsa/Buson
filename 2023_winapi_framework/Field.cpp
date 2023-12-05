@@ -4,13 +4,16 @@
 #include "KeyMgr.h"
 #include "EventMgr.h"
 #include "PokemonManager.h"
-#define RENDER_DEBUG
+#include "ResMgr.h"
+#include "Texture.h"
+//#define RENDER_DEBUG
 
 Field::Field(Vec2 center, Vec2 fieldSize)
 {
 
 	m_vPos = center;
 	m_vScale = fieldSize;
+	_tex = ResMgr::GetInst()->TexLoad(L"FieldBg", L"Texture\\Field\\BoxField.bmp");
 
 }
 
@@ -68,6 +71,15 @@ void Field::Render(HDC _dc)
 
 #endif // RENDER_DEBUG
 
+	int width = _tex->GetWidth();
+	int height = _tex->GetHeight();
+
+	StretchBlt(_dc
+		, (int)(m_vPos.x - m_vScale.x / 2)
+		, (int)(m_vPos.y - m_vScale.y / 2)
+		, m_vScale.x, m_vScale.y, _tex->GetDC()
+		, 0, 0, width, height, SRCCOPY);
+
 	for (size_t i = 0; i < _thisFieldObject.size();)
 	{
 
@@ -84,7 +96,6 @@ void Field::Render(HDC _dc)
 		}
 
 	}
-
 
 }
 

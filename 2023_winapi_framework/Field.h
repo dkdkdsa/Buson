@@ -4,6 +4,7 @@
 #include <unordered_set>
 
 class FieldObject;
+class Texture;
 class Field :
     public Object
 {
@@ -23,6 +24,7 @@ public:
 private:
     std::vector<FieldObject*> _thisFieldObject;
     FieldObject* _dragObject;
+    Texture* _tex;
 
 };
 
