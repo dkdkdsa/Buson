@@ -40,7 +40,7 @@ void Object::Update()
 
 //	if (GetAsyncKeyState(VK_LEFT) & 0x8000)
 //	if(KeyMgr::GetInst()->GetKey(KEY_TYPE::LEFT) == KEY_STATE::UP)
-
+	
 	//m_obj.SetPos(vPos);
 }
 
