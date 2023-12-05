@@ -177,6 +177,7 @@
     <ClInclude Include="BattleEffect.h" />
     <ClInclude Include="BattleScene.h" />
     <ClInclude Include="BattleUI.h" />
+    <ClInclude Include="BattleUIMgr.h" />
     <ClInclude Include="Battle_PokemonBtn.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Collider.h" />
@@ -201,6 +202,8 @@
     <ClInclude Include="PokemonBox.h" />
     <ClInclude Include="PokemonMakeBtn.h" />
     <ClInclude Include="PokemonManager.h" />
+    <ClInclude Include="PokemonSelectBtn.h" />
+    <ClInclude Include="PokemonSelectUI.h" />
     <ClInclude Include="Res.h" />
     <ClInclude Include="ResMgr.h" />
     <ClInclude Include="Resource.h" />
@@ -210,6 +213,7 @@
     <ClInclude Include="SelectGDI.h" />
     <ClInclude Include="Skill.h" />
     <ClInclude Include="SkillManager.h" />
+    <ClInclude Include="SkillSelectUI.h" />
     <ClInclude Include="Start_Scene.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Texture.h" />
@@ -227,6 +231,7 @@
     <ClCompile Include="BattleEffect.cpp" />
     <ClCompile Include="BattleScene.cpp" />
     <ClCompile Include="BattleUI.cpp" />
+    <ClCompile Include="BattleUIMgr.cpp" />
     <ClCompile Include="Battle_PokemonBtn.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Collider.cpp" />
@@ -248,6 +253,8 @@
     <ClCompile Include="pokemon.cpp" />
     <ClCompile Include="PokemonMakeBtn.cpp" />
     <ClCompile Include="PokemonManager.cpp" />
+    <ClCompile Include="PokemonSelectBtn.cpp" />
+    <ClCompile Include="PokemonSelectUI.cpp" />
     <ClCompile Include="Res.cpp" />
     <ClCompile Include="ResMgr.cpp" />
     <ClCompile Include="RunBtn.cpp" />
@@ -256,6 +263,7 @@
     <ClCompile Include="SelectGDI.cpp" />
     <ClCompile Include="Skill.cpp" />
     <ClCompile Include="SkillManager.cpp" />
+    <ClCompile Include="SkillSelectUI.cpp" />
     <ClCompile Include="Start_Scene.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TimeMgr.cpp" />

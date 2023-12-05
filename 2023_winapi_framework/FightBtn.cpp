@@ -18,5 +18,6 @@ FightBtn::~FightBtn()
 
 void FightBtn::OnClick()
 {
-	//SceneMgr::GetInst()->GetCurScene()->
+	//SceneMgr::GetInst()->GetCurScene()
+
 }
