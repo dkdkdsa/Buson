@@ -139,6 +139,18 @@ void Core::CreateGDI()
 	m_arrPen[(UINT)PEN_TYPE::HOLLOW] = CreatePen(PS_NULL, 0, RGB(0, 0, 0));
 }
 
+void Core::ResizeWindow(int width, int height)
+{
+
+	int iWinposx = GetSystemMetrics(SM_CXSCREEN) / 2 - width / 2;
+	int iWinposy = GetSystemMetrics(SM_CYSCREEN) / 2 - height / 2;
+
+	SetWindowPos(Core::GetInst()->GetHwnd(), nullptr, iWinposx, iWinposy, width, height, 0);
+
+	m_ptResolution = { width, height };
+
+}
+
 void Core::Release()
 {
 	ReleaseDC(m_hWnd, m_hDC);

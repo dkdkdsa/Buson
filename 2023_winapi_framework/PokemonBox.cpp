@@ -14,9 +14,6 @@ PokemonBox::PokemonBox(Vec2 pos, Vec2 size, FieldScene* field)
 {
 
 	_tex = ResMgr::GetInst()->TexLoad(L"PokemonBox", L"Texture\\Field\\PokemonBox.bmp");
-
-	_resizeBitMap = CreateCompatibleBitmap(_tex->GetDC(), _tex->GetWidth(), _tex->GetHeight());
-	_resizeDc = CreateCompatibleDC(_tex->GetDC());
 	_fieldScene = field;
 
 	SetPos(pos);
@@ -27,8 +24,7 @@ PokemonBox::PokemonBox(Vec2 pos, Vec2 size, FieldScene* field)
 PokemonBox::~PokemonBox()
 {
 
-	DeleteDC(_resizeDc);
-	DeleteObject(_resizeBitMap);
+
 
 }
 
@@ -124,13 +120,6 @@ void PokemonBox::SetAblePokemon()
 		if (obj != nullptr) {
 
 			_curPokemon = &obj->GetPokemon();
-
-			_pokemonBitMap = CreateCompatibleBitmap(
-				obj->GetTexture()->GetDC(),
-				obj->GetTexture()->GetWidth(),
-				obj->GetTexture()->GetHeight());
-
-			_pokemonDc = CreateCompatibleDC(obj->GetTexture()->GetDC());
 
 		}
 		else {

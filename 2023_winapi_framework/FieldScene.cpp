@@ -8,6 +8,7 @@
 void FieldScene::Init()
 {
 
+	Core::GetInst()->ResizeWindow(1280, 720);
 	auto screenPoint = Core::GetInst()->GetResolution();
 
 #pragma region Field

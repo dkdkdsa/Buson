@@ -44,6 +44,7 @@ public:
 	{
 		return m_arrPen[(UINT)_eType];
 	}
+	void ResizeWindow(int width, int height);
 private:
 	void Update();
 	void Render();
