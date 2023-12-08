@@ -186,6 +186,8 @@
     <ClInclude Include="enums.h" />
     <ClInclude Include="EventMgr.h" />
     <ClInclude Include="Field.h" />
+    <ClInclude Include="FieldDeckBtn.h" />
+    <ClInclude Include="FieldDeckPanel.h" />
     <ClInclude Include="FieldObject.h" />
     <ClInclude Include="FieldScene.h" />
     <ClInclude Include="FightBtn.h" />
@@ -234,6 +236,8 @@
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="EventMgr.cpp" />
     <ClCompile Include="Field.cpp" />
+    <ClCompile Include="FieldDeckBtn.cpp" />
+    <ClCompile Include="FieldDeckPanel.cpp" />
     <ClCompile Include="FieldObject.cpp" />
     <ClCompile Include="FieldScene.cpp" />
     <ClCompile Include="FightBtn.cpp" />

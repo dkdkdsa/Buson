@@ -95,6 +95,9 @@
     <Filter Include="Engine\04. Object\UI\InGameUI\BattleUI">
       <UniqueIdentifier>{25c31e7b-123f-4cbe-8ba9-01c77d13eb07}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\04. Object\UI\FieldUI">
+      <UniqueIdentifier>{8215f0e7-4e60-4f44-b59c-4ae6dc062f23}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -205,9 +208,6 @@
     <ClInclude Include="BattleEffect.h">
       <Filter>Engine\09.Class</Filter>
     </ClInclude>
-    <ClInclude Include="PokemonMakeBtn.h">
-      <Filter>Engine\04. Object\UI\Button</Filter>
-    </ClInclude>
     <ClInclude Include="UIButton.h">
       <Filter>Engine\04. Object\UI\Button</Filter>
     </ClInclude>
@@ -242,6 +242,15 @@
       <Filter>Engine\04. Object\UI\InGameUI\BattleUI</Filter>
     </ClInclude>
     <ClInclude Include="RunBtn.h" />
+    <ClInclude Include="FieldDeckPanel.h">
+      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    </ClInclude>
+    <ClInclude Include="FieldDeckBtn.h">
+      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    </ClInclude>
+    <ClInclude Include="PokemonMakeBtn.h">
+      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2023_winapi_framework.rc">
@@ -344,9 +353,6 @@
     <ClCompile Include="BattleEffect.cpp">
       <Filter>Engine\09.Class</Filter>
     </ClCompile>
-    <ClCompile Include="PokemonMakeBtn.cpp">
-      <Filter>Engine\04. Object\UI\Button</Filter>
-    </ClCompile>
     <ClCompile Include="UIButton.cpp">
       <Filter>Engine\04. Object\UI\Button</Filter>
     </ClCompile>
@@ -384,5 +390,14 @@
       <Filter>Engine\04. Object\UI\InGameUI\BattleUI</Filter>
     </ClCompile>
     <ClCompile Include="RunBtn.cpp" />
+    <ClCompile Include="FieldDeckPanel.cpp">
+      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    </ClCompile>
+    <ClCompile Include="FieldDeckBtn.cpp">
+      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    </ClCompile>
+    <ClCompile Include="PokemonMakeBtn.cpp">
+      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
