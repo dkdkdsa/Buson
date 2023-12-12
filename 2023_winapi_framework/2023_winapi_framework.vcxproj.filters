@@ -98,6 +98,9 @@
     <Filter Include="Engine\03. Manager\BattleUIMgr">
       <UniqueIdentifier>{23685a76-0760-4b40-9fcb-a85e01830f53}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\04. Object\UI\FieldUI">
+      <UniqueIdentifier>{8215f0e7-4e60-4f44-b59c-4ae6dc062f23}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -208,9 +211,6 @@
     <ClInclude Include="BattleEffect.h">
       <Filter>Engine\09.Class</Filter>
     </ClInclude>
-    <ClInclude Include="PokemonMakeBtn.h">
-      <Filter>Engine\04. Object\UI\Button</Filter>
-    </ClInclude>
     <ClInclude Include="UIButton.h">
       <Filter>Engine\04. Object\UI\Button</Filter>
     </ClInclude>
@@ -261,6 +261,15 @@
     </ClInclude>
     <ClInclude Include="RunUI.h">
       <Filter>Engine\04. Object\UI\InGameUI\BattleUI</Filter>
+    </ClInclude>
+    <ClInclude Include="FieldDeckPanel.h">
+      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    </ClInclude>
+    <ClInclude Include="FieldDeckBtn.h">
+      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    </ClInclude>
+    <ClInclude Include="PokemonMakeBtn.h">
+      <Filter>Engine\04. Object\UI\FieldUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -364,9 +373,6 @@
     <ClCompile Include="BattleEffect.cpp">
       <Filter>Engine\09.Class</Filter>
     </ClCompile>
-    <ClCompile Include="PokemonMakeBtn.cpp">
-      <Filter>Engine\04. Object\UI\Button</Filter>
-    </ClCompile>
     <ClCompile Include="UIButton.cpp">
       <Filter>Engine\04. Object\UI\Button</Filter>
     </ClCompile>
@@ -420,6 +426,15 @@
     </ClCompile>
     <ClCompile Include="RunUI.cpp">
       <Filter>Engine\04. Object\UI\InGameUI\BattleUI</Filter>
+    </ClCompile>
+    <ClCompile Include="FieldDeckPanel.cpp">
+      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    </ClCompile>
+    <ClCompile Include="FieldDeckBtn.cpp">
+      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    </ClCompile>
+    <ClCompile Include="PokemonMakeBtn.cpp">
+      <Filter>Engine\04. Object\UI\FieldUI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -14,6 +14,7 @@ public:
     void Update() override;
     void Render(HDC _dc) override;
 
+
 private:
     void SetAblePokemon();
     Texture* _tex;
