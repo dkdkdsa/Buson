@@ -8,8 +8,12 @@
 UIButton::UIButton(wstring textureKey, wstring path, Vec2 pos, Vec2 scale)
 {
 
-	//_mainTex = ResMgr::GetInst()->TexLoad(textureKey, path);
-	_mainTex = nullptr;
+	if (textureKey != L"") {
+
+		_mainTex = ResMgr::GetInst()->TexLoad(textureKey, path);
+
+	}
+
 	m_vPos = pos;
 
 	if (_mainTex != nullptr) {
@@ -29,6 +33,8 @@ UIButton::UIButton(wstring textureKey, wstring path, Vec2 pos, Vec2 scale)
 
 void UIButton::Update()
 {
+
+	_btnRt = RECT_MAKE((long)m_vPos.x, (long)m_vPos.y, (long)m_vScale.x, (long)m_vScale.y);
 
 	if (KEY_DOWN(KEY_TYPE::LBUTTON) && PtInRect(&_btnRt, KeyMgr::GetInst()->GetMousePos())) {
 

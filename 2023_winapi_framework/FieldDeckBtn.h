@@ -23,8 +23,8 @@ private:
 
     FieldDeckPanel* _panel;
     float _per;
-    Vec2 _origin;
-    Vec2 _end;
+    Vec2 _origin, _panelOrigin;
+    Vec2 _end, _panelEnd;
     bool _isFold;
     bool _isClick;
 

@@ -5,8 +5,10 @@ class FieldDeckPanel :
 {
 
 public:
-    FieldDeckPanel();
+    FieldDeckPanel(Vec2 pos, Vec2 scale);
     ~FieldDeckPanel();
+
+    void Render(HDC _dc) override;
 
 };
 

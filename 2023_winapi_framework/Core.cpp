@@ -145,9 +145,16 @@ void Core::ResizeWindow(int width, int height)
 	int iWinposx = GetSystemMetrics(SM_CXSCREEN) / 2 - width / 2;
 	int iWinposy = GetSystemMetrics(SM_CYSCREEN) / 2 - height / 2;
 
-	SetWindowPos(Core::GetInst()->GetHwnd(), nullptr, iWinposx, iWinposy, width, height, 0);
+	SetWindowPos(m_hWnd, nullptr, iWinposx, iWinposy, width, height, 0);
 
 	m_ptResolution = { width, height };
+
+	DeleteDC(m_hbackDC);
+	DeleteObject(m_hbackbit);
+
+	m_hbackbit = CreateCompatibleBitmap(m_hDC, m_ptResolution.x, m_ptResolution.y);
+	m_hbackDC = CreateCompatibleDC(m_hDC);
+	SelectObject(m_hbackDC, m_hbackbit);
 
 }
 
