@@ -172,8 +172,8 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Animator.h" />
     <ClInclude Include="BagBtn.h" />
+    <ClInclude Include="BagUI.h" />
     <ClInclude Include="BaseWindow.h" />
-    <ClInclude Include="BattleBtn.h" />
     <ClInclude Include="BattleEffect.h" />
     <ClInclude Include="BattleScene.h" />
     <ClInclude Include="BattleUI.h" />
@@ -208,6 +208,7 @@
     <ClInclude Include="ResMgr.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="RunBtn.h" />
+    <ClInclude Include="RunUI.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneMgr.h" />
     <ClInclude Include="SelectGDI.h" />
@@ -226,8 +227,8 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Animator.cpp" />
     <ClCompile Include="BagBtn.cpp" />
+    <ClCompile Include="BagUI.cpp" />
     <ClCompile Include="BaseWindow.cpp" />
-    <ClCompile Include="BattleBtn.cpp" />
     <ClCompile Include="BattleEffect.cpp" />
     <ClCompile Include="BattleScene.cpp" />
     <ClCompile Include="BattleUI.cpp" />
@@ -258,6 +259,7 @@
     <ClCompile Include="Res.cpp" />
     <ClCompile Include="ResMgr.cpp" />
     <ClCompile Include="RunBtn.cpp" />
+    <ClCompile Include="RunUI.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
     <ClCompile Include="SelectGDI.cpp" />

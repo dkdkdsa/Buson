@@ -5,10 +5,10 @@
 #include "BagBtn.h"
 #include "RunBtn.h"
 #include "Battle_PokemonBtn.h"
-
-ActionSelectUI::ActionSelectUI() : BattleUI(L"BattleSceneBackground.bpm", L"Texture\\Battle\\BattleSceneBackground.bpm", { 0, 0 }, { 1280, 720 })
+#include "Core.h"
+ActionSelectUI::ActionSelectUI() : BattleUI(L"BattleSceneBackground.bmp", L"Texture\\Battle\\BattleSceneBackground.bmp", { 256, 1209 }, { 512, 406 })
 {
-	SetEnable(false);
+	SetEnable(true);
 	_buttons.push_back(new FightBtn());
 	_buttons.push_back(new BagBtn());
 	_buttons.push_back(new RunBtn());

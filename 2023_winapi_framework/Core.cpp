@@ -10,6 +10,7 @@
 #include "SkillManager.h"
 #include "PokemonManager.h"
 #include <time.h>
+#include "BattleUIMgr.h"
 
 bool Core::Init(HWND _hWnd, POINT _ptResolution)
 {
@@ -43,6 +44,7 @@ bool Core::Init(HWND _hWnd, POINT _ptResolution)
 	ResMgr::GetInst()->Init();
 	SkillManager::GetInst()->Init();
 	PokemonManager::GetInst()->Init();
+	BattleUIMgr::GetInst()->Init();
 	SceneMgr::GetInst()->Init();
 
 	return true;

@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "FightBtn.h"
-#include "SceneMgr.h"
-#include "Scene.h"
+#include "BattleUIMgr.h"
 
 FightBtn::FightBtn() : UIButton(L"Battle_FightBtn.bmp", L"Texture\\Battle\\Button\\Battle_FightBtn.bmp", Vec2({ 300, 100 }), Vec2({ 300, 75 }))
 {
@@ -18,6 +17,5 @@ FightBtn::~FightBtn()
 
 void FightBtn::OnClick()
 {
-	//SceneMgr::GetInst()->GetCurScene()
-
+	BattleUIMgr::GetInst()->ChangeBattleUI(BattleUIType::SkillSelect);
 }

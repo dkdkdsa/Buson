@@ -226,9 +226,6 @@
     <ClInclude Include="BattleScene.h">
       <Filter>Engine\05. Scene\BuildScene</Filter>
     </ClInclude>
-    <ClInclude Include="BattleBtn.h">
-      <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
-    </ClInclude>
     <ClInclude Include="FightBtn.h">
       <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
     </ClInclude>
@@ -258,6 +255,12 @@
     </ClInclude>
     <ClInclude Include="PokemonSelectBtn.h">
       <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
+    </ClInclude>
+    <ClInclude Include="BagUI.h">
+      <Filter>Engine\04. Object\UI\InGameUI\BattleUI</Filter>
+    </ClInclude>
+    <ClInclude Include="RunUI.h">
+      <Filter>Engine\04. Object\UI\InGameUI\BattleUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -379,9 +382,6 @@
     <ClCompile Include="BattleScene.cpp">
       <Filter>Engine\05. Scene\BuildScene</Filter>
     </ClCompile>
-    <ClCompile Include="BattleBtn.cpp">
-      <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
-    </ClCompile>
     <ClCompile Include="pokemon.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
@@ -414,6 +414,12 @@
     </ClCompile>
     <ClCompile Include="PokemonSelectBtn.cpp">
       <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
+    </ClCompile>
+    <ClCompile Include="BagUI.cpp">
+      <Filter>Engine\04. Object\UI\InGameUI\BattleUI</Filter>
+    </ClCompile>
+    <ClCompile Include="RunUI.cpp">
+      <Filter>Engine\04. Object\UI\InGameUI\BattleUI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,11 +1,43 @@
 #include "pch.h"
 #include "BattleScene.h"
+#include "Core.h"
 #include "ActionSelectUI.h"
+#include "SkillSelectUI.h"
+#include "PokemonSelectUI.h"
+#include "BagUI.h"
+#include "RunUI.h"
+#include "BattleUIMgr.h"
+#include "ResMgr.h"
+#include "Texture.h"
 
 void BattleScene::Init()
 {
-	AddObject(new ActionSelectUI(), OBJECT_GROUP::Battle_UI);
+	Core::GetInst()->ResizeWindow(528, 812);
+	auto screenPoint = Core::GetInst()->GetResolution();
 
+	_bgPos = Vec2({ 256, 197 });
+	_bgScale = Vec2({ 512, 394 });
+	_bgTex = ResMgr::GetInst()->TexLoad(
+		L"BattleBackground.bmp", 
+		L"Texture\\Battle\\Field\\MainBackground.bmp");
+
+	ActionSelectUI* actionSelectUI = new ActionSelectUI();
+	SkillSelectUI* skillSelectUI = new SkillSelectUI();
+	PokemonSelectUI* pokemonSelectUI = new PokemonSelectUI();
+	BagUI* bagUI = new BagUI();
+	RunUI* runUI = new RunUI();
+	
+	BattleUIMgr::GetInst()->SetBattleUI(actionSelectUI);
+	BattleUIMgr::GetInst()->SetBattleUI(skillSelectUI);
+	BattleUIMgr::GetInst()->SetBattleUI(pokemonSelectUI);
+	BattleUIMgr::GetInst()->SetBattleUI(bagUI);
+	BattleUIMgr::GetInst()->SetBattleUI(runUI);
+
+	AddObject(BattleUIMgr::GetInst()->GetBattleUI(BattleUIType::ActionSelect), OBJECT_GROUP::Battle_UI);
+	AddObject(BattleUIMgr::GetInst()->GetBattleUI(BattleUIType::SkillSelect), OBJECT_GROUP::Battle_UI);
+	AddObject(BattleUIMgr::GetInst()->GetBattleUI(BattleUIType::PokemonSelect), OBJECT_GROUP::Battle_UI);
+	AddObject(BattleUIMgr::GetInst()->GetBattleUI(BattleUIType::Bag), OBJECT_GROUP::Battle_UI);
+	AddObject(BattleUIMgr::GetInst()->GetBattleUI(BattleUIType::Run), OBJECT_GROUP::Battle_UI);
 }
 
 void BattleScene::Update()
@@ -15,6 +47,14 @@ void BattleScene::Update()
 
 void BattleScene::Render(HDC _dc)
 {
+	RECT_RENDER(_bgPos.x, _bgPos.y, _bgScale.x, _bgScale.y, _dc);
+	int width = _bgTex->GetWidth();
+	int height = _bgTex->GetHeight();
+	StretchBlt(_dc
+		, (int)(_bgPos.x - _bgScale.x / 2)
+		, (int)(_bgPos.y - _bgScale.y / 2)
+		, _bgScale.x, _bgScale.y, _bgTex->GetDC()
+		, 0, 0, width, height, SRCCOPY);
 	Scene::Render(_dc);
 }
 

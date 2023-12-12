@@ -3,6 +3,7 @@
 #include "Start_Scene.h"
 #include "Game_Scene.h"
 #include "FieldScene.h"
+#include "BattleScene.h"
 void SceneMgr::Init()
 {
 
@@ -11,9 +12,10 @@ void SceneMgr::Init()
 	RegisterScene(L"Start_Scene",std::make_shared<Start_Scene>());
 	RegisterScene(L"Game_Scene", std::make_shared<Game_Scene>());
 	RegisterScene(L"Field_Scene", std::make_shared<FieldScene>());
+	RegisterScene(L"Battle_Scene", std::make_shared<BattleScene>());
 
 	// Ã¹ ¾À ÁöÁ¤
-	LoadScene(L"Field_Scene");
+	LoadScene(L"Battle_Scene");
 
 }
 

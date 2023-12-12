@@ -21,7 +21,20 @@ private:
 	std::vector<Pokemon*> _playerPokemons;
 	std::vector<Pokemon*> _wildPokemons;
 
+	// Background
 	Texture* _bgTex;
+	Vec2 _bgScale;
+	Vec2 _bgPos;
+	// Platform - enemy
+	Texture* _enemyPlatform;
+	Vec2 _enemyPlatformPos;
+	Vec2 _enemyPlatformScale;
+	// Platform - player
+	Texture* _playerplatform;
+	Vec2 _playerPlatformPos;
+	Vec2 _playerPlatformScale;
+
+	
 
 
 	// Battle UI
