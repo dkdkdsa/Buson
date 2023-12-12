@@ -32,7 +32,7 @@ void PokemonMakeBtn::Update()
 
 	per = std::clamp(per, 0.f, 1.f);
 
-	m_vScale = EasingManager::GetInst()->EasingVec(originScale, originScale + Vec2(20, 20), per, Ease::InOutBack);
+	m_vScale = EasingManager::GetInst()->EasingVec(originScale, originScale + Vec2(20, 20), per, Ease::OutElastic);
 
 }
 

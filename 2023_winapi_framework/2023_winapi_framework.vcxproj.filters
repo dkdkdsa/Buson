@@ -104,6 +104,9 @@
     <Filter Include="Engine\03. Manager\EasingManager">
       <UniqueIdentifier>{ab6af3db-323c-49ab-8266-9c1367772b4a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\05. Scene\IntroScene">
+      <UniqueIdentifier>{d694d139-a56f-4193-ac9c-8f99b3e55393}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -286,6 +289,9 @@
     <ClInclude Include="SceneChangeBtn.h">
       <Filter>Engine\04. Object\UI\FieldUI</Filter>
     </ClInclude>
+    <ClInclude Include="IntroScene.h">
+      <Filter>Engine\05. Scene\IntroScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2023_winapi_framework.rc">
@@ -462,6 +468,9 @@
     </ClCompile>
     <ClCompile Include="SceneChangeBtn.cpp">
       <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    </ClCompile>
+    <ClCompile Include="IntroScene.cpp">
+      <Filter>Engine\05. Scene\IntroScene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

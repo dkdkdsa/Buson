@@ -4,6 +4,8 @@
 #include "Texture.h"
 #include "KeyMgr.h"
 #include "ResMgr.h"
+#include "EasingManager.h"
+#include "TimeMgr.h"
 
 SceneChangeBtn::SceneChangeBtn(Vec2 pos, Vec2 scale, wstring texKey, wstring path, wstring sceneName)
 	:UIButton(texKey, path, pos ,scale)
@@ -12,6 +14,7 @@ SceneChangeBtn::SceneChangeBtn(Vec2 pos, Vec2 scale, wstring texKey, wstring pat
 	this->sceneName = sceneName;
 	m_vPos = pos;
 	m_vScale = scale;
+	originScale = scale;
 
 }
 
@@ -29,6 +32,22 @@ void SceneChangeBtn::Update()
 		OnClick();
 
 	}
+
+	CheckHover();
+	if (isHover) {
+
+		per += fDT * 2.f;
+
+	}
+	else {
+
+		per -= fDT * 2.f;
+
+	}
+
+	per = std::clamp(per, 0.f, 1.f);
+
+	m_vScale = EasingManager::GetInst()->EasingVec(originScale, originScale + Vec2(20, 20), per, Ease::InOutBack);
 
 }
 

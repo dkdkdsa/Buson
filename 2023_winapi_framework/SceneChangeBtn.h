@@ -14,7 +14,9 @@ public:
     Vec2 offset;
 
 private:
+    Vec2 originScale;
     wstring sceneName;
+    float per;
 
 };
 

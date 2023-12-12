@@ -43,13 +43,15 @@ void FieldDeckBtn::Update()
 
 	if (!_isClick) return;
 
-	_per += fDT * 3;
+	_per += fDT * 2;
+
+	float ePer = EasingManager::GetInst()->Easing(_per, Ease::InOutBack);
 
 	if (_per < 1) {
 
 
-		SetPos(Lerp(_origin, _end, _per));
-		_panel->SetPos(Lerp(_panelOrigin, _panelEnd, _per));
+		SetPos(Lerp(_origin, _end, ePer));
+		_panel->SetPos(Lerp(_panelOrigin, _panelEnd, ePer));
 
 	}
 	else {
