@@ -12,7 +12,7 @@
 
 void BattleScene::Init()
 {
-	Core::GetInst()->ResizeWindow(528, 812);
+	Core::GetInst()->ResizeWindow(528, 816);
 	auto screenPoint = Core::GetInst()->GetResolution();
 
 	_bgPos = Vec2({ 256, 197 });
