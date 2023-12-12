@@ -4,8 +4,6 @@
 #include "Core.h"
 #include "PokemonMakeBtn.h"
 #include "PokemonBox.h"
-#include "FieldDeckBtn.h"
-#include "FieldDeckPanel.h"
 
 void FieldScene::Init()
 {
@@ -42,7 +40,6 @@ void FieldScene::Init()
 	AddObject(fieldDeckBtn, OBJECT_GROUP::DEFAULT);
 
 #pragma endregion
-
 
 
 }

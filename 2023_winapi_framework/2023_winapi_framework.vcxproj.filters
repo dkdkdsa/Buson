@@ -95,8 +95,8 @@
     <Filter Include="Engine\04. Object\UI\InGameUI\BattleUI">
       <UniqueIdentifier>{25c31e7b-123f-4cbe-8ba9-01c77d13eb07}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\04. Object\UI\FieldUI">
-      <UniqueIdentifier>{8215f0e7-4e60-4f44-b59c-4ae6dc062f23}</UniqueIdentifier>
+    <Filter Include="Engine\03. Manager\BattleUIMgr">
+      <UniqueIdentifier>{23685a76-0760-4b40-9fcb-a85e01830f53}</UniqueIdentifier>
     </Filter>
     <Filter Include="Engine\03. Manager\DeckManager">
       <UniqueIdentifier>{e73f777a-120c-4d69-abfe-1ba13e304bf7}</UniqueIdentifier>
@@ -211,6 +211,9 @@
     <ClInclude Include="BattleEffect.h">
       <Filter>Engine\09.Class</Filter>
     </ClInclude>
+    <ClInclude Include="PokemonMakeBtn.h">
+      <Filter>Engine\04. Object\UI\Button</Filter>
+    </ClInclude>
     <ClInclude Include="UIButton.h">
       <Filter>Engine\04. Object\UI\Button</Filter>
     </ClInclude>
@@ -225,9 +228,6 @@
     </ClInclude>
     <ClInclude Include="BattleScene.h">
       <Filter>Engine\05. Scene\BuildScene</Filter>
-    </ClInclude>
-    <ClInclude Include="BattleBtn.h">
-      <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
     </ClInclude>
     <ClInclude Include="FightBtn.h">
       <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
@@ -244,15 +244,26 @@
     <ClInclude Include="ActionSelectUI.h">
       <Filter>Engine\04. Object\UI\InGameUI\BattleUI</Filter>
     </ClInclude>
-    <ClInclude Include="RunBtn.h" />
-    <ClInclude Include="FieldDeckPanel.h">
-      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    <ClInclude Include="BattleUIMgr.h">
+      <Filter>Engine\03. Manager\BattleUIMgr</Filter>
     </ClInclude>
-    <ClInclude Include="FieldDeckBtn.h">
-      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    <ClInclude Include="SkillSelectUI.h">
+      <Filter>Engine\04. Object\UI\InGameUI\BattleUI</Filter>
     </ClInclude>
-    <ClInclude Include="PokemonMakeBtn.h">
-      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    <ClInclude Include="PokemonSelectUI.h">
+      <Filter>Engine\04. Object\UI\InGameUI\BattleUI</Filter>
+    </ClInclude>
+    <ClInclude Include="RunBtn.h">
+      <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
+    </ClInclude>
+    <ClInclude Include="PokemonSelectBtn.h">
+      <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
+    </ClInclude>
+    <ClInclude Include="BagUI.h">
+      <Filter>Engine\04. Object\UI\InGameUI\BattleUI</Filter>
+    </ClInclude>
+    <ClInclude Include="RunUI.h">
+      <Filter>Engine\04. Object\UI\InGameUI\BattleUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -356,6 +367,9 @@
     <ClCompile Include="BattleEffect.cpp">
       <Filter>Engine\09.Class</Filter>
     </ClCompile>
+    <ClCompile Include="PokemonMakeBtn.cpp">
+      <Filter>Engine\04. Object\UI\Button</Filter>
+    </ClCompile>
     <ClCompile Include="UIButton.cpp">
       <Filter>Engine\04. Object\UI\Button</Filter>
     </ClCompile>
@@ -370,9 +384,6 @@
     </ClCompile>
     <ClCompile Include="BattleScene.cpp">
       <Filter>Engine\05. Scene\BuildScene</Filter>
-    </ClCompile>
-    <ClCompile Include="BattleBtn.cpp">
-      <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
     </ClCompile>
     <ClCompile Include="pokemon.cpp">
       <Filter>Engine</Filter>
@@ -392,15 +403,26 @@
     <ClCompile Include="ActionSelectUI.cpp">
       <Filter>Engine\04. Object\UI\InGameUI\BattleUI</Filter>
     </ClCompile>
-    <ClCompile Include="RunBtn.cpp" />
-    <ClCompile Include="FieldDeckPanel.cpp">
-      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    <ClCompile Include="BattleUIMgr.cpp">
+      <Filter>Engine\03. Manager\BattleUIMgr</Filter>
     </ClCompile>
-    <ClCompile Include="FieldDeckBtn.cpp">
-      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    <ClCompile Include="SkillSelectUI.cpp">
+      <Filter>Engine\04. Object\UI\InGameUI\BattleUI</Filter>
     </ClCompile>
-    <ClCompile Include="PokemonMakeBtn.cpp">
-      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    <ClCompile Include="PokemonSelectUI.cpp">
+      <Filter>Engine\04. Object\UI\InGameUI\BattleUI</Filter>
+    </ClCompile>
+    <ClCompile Include="RunBtn.cpp">
+      <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
+    </ClCompile>
+    <ClCompile Include="PokemonSelectBtn.cpp">
+      <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
+    </ClCompile>
+    <ClCompile Include="BagUI.cpp">
+      <Filter>Engine\04. Object\UI\InGameUI\BattleUI</Filter>
+    </ClCompile>
+    <ClCompile Include="RunUI.cpp">
+      <Filter>Engine\04. Object\UI\InGameUI\BattleUI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
