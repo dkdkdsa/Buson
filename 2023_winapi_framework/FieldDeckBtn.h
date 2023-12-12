@@ -12,6 +12,7 @@ public:
 
     void Update() override;
     void OnClick() override;
+    void Render(HDC _dc) override;
     void SetFieldPanel(FieldDeckPanel* panel) { _panel = panel; }
 
 private:

@@ -27,17 +27,17 @@ void FieldScene::Init()
 
 	Vec2 uiCenter = Vec2({ screenPoint.x / 2, screenPoint.y / 2 });
 
-	//auto* addBtn = new PokemonMakeBtn();
-	//addBtn->SetFieldScene(this);
-	//AddObject(addBtn, OBJECT_GROUP::DEFAULT);
+	auto* addBtn = new PokemonMakeBtn();
+	addBtn->SetFieldScene(this);
+	AddObject(addBtn, OBJECT_GROUP::DEFAULT);
 
 	auto* pokemonBox = new PokemonBox(uiCenter + Vec2({ 300, -275 }), Vec2({ 450, 150 }), this);
 	AddObject(pokemonBox, OBJECT_GROUP::DEFAULT);
 
-	auto* fieldDeckPanel = new FieldDeckPanel(Vec2({ 100, 500 }), Vec2({ 100, 100 }));
+	auto* fieldDeckPanel = new FieldDeckPanel(Vec2({ -250, 450 }), Vec2({ 500, 500 }));
 	AddObject(fieldDeckPanel, OBJECT_GROUP::DEFAULT);
 
-	auto* fieldDeckBtn = new FieldDeckBtn(Vec2({ 50, 500 }), Vec2({ 100, 100 }));
+	auto* fieldDeckBtn = new FieldDeckBtn(Vec2({ 35, 300 }), Vec2({ 75, 200 }));
 	fieldDeckBtn->SetFieldPanel(fieldDeckPanel);
 	AddObject(fieldDeckBtn, OBJECT_GROUP::DEFAULT);
 

@@ -101,6 +101,9 @@
     <Filter Include="Engine\04. Object\UI\FieldUI">
       <UniqueIdentifier>{8215f0e7-4e60-4f44-b59c-4ae6dc062f23}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Manager\DeckManager">
+      <UniqueIdentifier>{e73f777a-120c-4d69-abfe-1ba13e304bf7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
