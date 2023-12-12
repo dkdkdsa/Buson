@@ -4,6 +4,7 @@ struct tEvent
 {
 	EVENT_TYPE eEve; // 이벤트 타입
 	Object* Obj;
+	wstring key;
 	OBJECT_GROUP ObjType;
 };
 class EventMgr
@@ -12,6 +13,7 @@ class EventMgr
 public:
 	void Update();
 	void DeleteObject(Object* _pObj);
+	void ChangeScene(wstring sceneName);
 private:
 	void Excute(const tEvent& _eve);
 private:

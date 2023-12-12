@@ -4,6 +4,7 @@
 #include "DeckPokemonPanel.h"
 #include "ResMgr.h"
 #include "Texture.h"
+#include "SceneChangeBtn.h"
 
 FieldDeckPanel::FieldDeckPanel(Vec2 pos, Vec2 scale, Field* field)
 {
@@ -34,6 +35,8 @@ FieldDeckPanel::FieldDeckPanel(Vec2 pos, Vec2 scale, Field* field)
 
 	mainTex = ResMgr::GetInst()->TexLoad(L"DeckBG", L"Texture\\Field\\DeckBG.bmp");
 
+	sceneChangeBtn = new SceneChangeBtn(Vec2({ 0, 170 }), Vec2(300, 100), L"PokemonBox", L"Texture\\Field\\PokemonBox.bmp", L"Battle_Scene");
+
 }
 
 FieldDeckPanel::~FieldDeckPanel()
@@ -44,6 +47,8 @@ FieldDeckPanel::~FieldDeckPanel()
 		delete renders[i];
 
 	}
+
+	delete sceneChangeBtn;
 
 }
 
@@ -74,6 +79,8 @@ void FieldDeckPanel::Render(HDC _dc)
 
 	}
 
+	sceneChangeBtn->Render(_dc);
+
 }
 
 void FieldDeckPanel::Update()
@@ -85,6 +92,9 @@ void FieldDeckPanel::Update()
 		renders[i]->SetOffset(m_vPos);
 
 	}
+
+	sceneChangeBtn->Update();
+	sceneChangeBtn->offset = m_vPos;
 
 
 }

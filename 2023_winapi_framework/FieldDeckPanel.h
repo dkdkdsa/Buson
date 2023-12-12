@@ -3,6 +3,7 @@
 class Field;
 class DeckPokemonPanel;
 class Texture;
+class SceneChangeBtn;
 class FieldDeckPanel :
     public Object
 {
@@ -17,6 +18,7 @@ public:
 
 private:
     Texture* mainTex;
+    SceneChangeBtn* sceneChangeBtn;
 
 };
 

@@ -186,6 +186,7 @@
     <ClInclude Include="DeckManager.h" />
     <ClInclude Include="DeckPokemonPanel.h" />
     <ClInclude Include="define.h" />
+    <ClInclude Include="EasingManager.h" />
     <ClInclude Include="enums.h" />
     <ClInclude Include="EventMgr.h" />
     <ClInclude Include="Field.h" />
@@ -214,6 +215,7 @@
     <ClInclude Include="RunBtn.h" />
     <ClInclude Include="RunUI.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneChangeBtn.h" />
     <ClInclude Include="SceneMgr.h" />
     <ClInclude Include="SelectGDI.h" />
     <ClInclude Include="Skill.h" />
@@ -244,6 +246,7 @@
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="DeckManager.cpp" />
     <ClCompile Include="DeckPokemonPanel.cpp" />
+    <ClCompile Include="EasingManager.cpp" />
     <ClCompile Include="EventMgr.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="FieldDeckBtn.cpp" />
@@ -269,6 +272,7 @@
     <ClCompile Include="RunBtn.cpp" />
     <ClCompile Include="RunUI.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneChangeBtn.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
     <ClCompile Include="SelectGDI.cpp" />
     <ClCompile Include="Skill.cpp" />

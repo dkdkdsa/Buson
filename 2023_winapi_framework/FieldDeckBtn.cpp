@@ -3,6 +3,7 @@
 #include "FieldDeckPanel.h"
 #include "TimeMgr.h"
 #include "Texture.h"
+#include "EasingManager.h"
 
 FieldDeckBtn::FieldDeckBtn(Vec2 pos, Vec2 scale) : UIButton(L"DeckBtn", L"Texture\\Field\\PkBtn.bmp", pos, scale)
 {
@@ -12,6 +13,7 @@ FieldDeckBtn::FieldDeckBtn(Vec2 pos, Vec2 scale) : UIButton(L"DeckBtn", L"Textur
 	_per = 0;
 	_origin = pos;
 	m_vScale = scale;
+	originScale = scale;
 
 }
 
@@ -23,6 +25,21 @@ void FieldDeckBtn::Update()
 {
 
 	UIButton::Update();
+
+	if (isHover && _isFold) {
+
+		_hoverPer += fDT * 2.f;
+
+	}
+	else {
+
+		_hoverPer -= fDT * 2.f;
+
+	}
+
+	_hoverPer = std::clamp(_hoverPer, 0.f, 1.f);
+
+	m_vScale = EasingManager::GetInst()->EasingVec(originScale, originScale + Vec2(20, 20), _hoverPer, Ease::InOutBack);
 
 	if (!_isClick) return;
 

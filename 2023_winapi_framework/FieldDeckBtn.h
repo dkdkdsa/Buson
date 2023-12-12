@@ -23,9 +23,10 @@ private:
     }
 
     FieldDeckPanel* _panel;
-    float _per;
+    float _per, _hoverPer;
     Vec2 _origin, _panelOrigin;
     Vec2 _end, _panelEnd;
+    Vec2 originScale;
     bool _isFold;
     bool _isClick;
 

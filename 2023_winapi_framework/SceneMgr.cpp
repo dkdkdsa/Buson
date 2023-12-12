@@ -32,6 +32,9 @@ void SceneMgr::Render(HDC _dc)
 
 void SceneMgr::LoadScene(const wstring& _scenename)
 {
+
+	wstring name = _scenename;
+
 	// æ¿¿Ã ¿÷¿∏∏È
 	if (m_pCurScene != nullptr)
 	{
@@ -39,7 +42,7 @@ void SceneMgr::LoadScene(const wstring& _scenename)
 		m_pCurScene = nullptr;
 	}
 
-	auto iter = m_mapScenes.find(_scenename);
+	auto iter = m_mapScenes.find(name);
 
 	if (iter != m_mapScenes.end())
 	{
