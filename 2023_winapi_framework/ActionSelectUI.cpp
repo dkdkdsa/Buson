@@ -9,13 +9,30 @@
 ActionSelectUI::ActionSelectUI() : BattleUI(L"BattleSceneBackground.bmp", L"Texture\\Battle\\BattleSceneBackground.bmp", { 256, 1209 }, { 512, 406 })
 {
 	SetEnable(true);
-	_buttons.push_back(new FightBtn());
-	_buttons.push_back(new BagBtn());
-	_buttons.push_back(new RunBtn());
-	_buttons.push_back(new Battle_PokemonBtn());
+
+	SetBtnVec(new FightBtn());
+	SetBtnVec(new BagBtn());
+	SetBtnVec(new RunBtn());
+	SetBtnVec(new Battle_PokemonBtn());
 }
 
 ActionSelectUI::~ActionSelectUI()
 {
 
 }
+
+void ActionSelectUI::Update()
+{
+	for (int i = 0; i < GetBtnVec().size(); ++i) {
+		GetBtnVec()[i]->Update();
+	}
+	Object::Update();
+}
+
+//void ActionSelectUI::Render(HDC _dc)
+//{
+//	for (int i = 0; i < _buttons.size(); ++i) {
+//		_buttons[i]->Render(_dc);
+//	}
+//	//Object::Render(_dc);
+//}

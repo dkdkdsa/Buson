@@ -7,7 +7,6 @@
 
 UIButton::UIButton(wstring textureKey, wstring path, Vec2 pos, Vec2 scale)
 {
-
 	if (textureKey != L"") {
 
 		_mainTex = ResMgr::GetInst()->TexLoad(textureKey, path);
@@ -18,7 +17,7 @@ UIButton::UIButton(wstring textureKey, wstring path, Vec2 pos, Vec2 scale)
 
 	if (_mainTex != nullptr) {
 
-		m_vScale = Vec2({_mainTex->GetWidth(), _mainTex->GetHeight()});
+		m_vScale = Vec2({ _mainTex->GetWidth(), _mainTex->GetHeight() });
 
 	}
 	else {
@@ -28,7 +27,6 @@ UIButton::UIButton(wstring textureKey, wstring path, Vec2 pos, Vec2 scale)
 	}
 
 	_btnRt = RECT_MAKE((long)pos.x, (long)pos.y, (long)scale.x, (long)scale.y);
-
 }
 
 void UIButton::Update()
@@ -57,8 +55,8 @@ void UIButton::Render(HDC _dc)
 
 		TransparentBlt(
 			_dc,
-			m_vPos.x - m_vScale.x / 2,
-			m_vPos.y - m_vScale.y / 2,
+			m_vPos.x,
+			m_vPos.y,
 			m_vScale.x,
 			m_vScale.y,
 			_mainTex->GetDC(),
@@ -67,7 +65,7 @@ void UIButton::Render(HDC _dc)
 			m_vScale.x,
 			m_vScale.y,
 			RGB(255, 0, 255));
-
 	}
+
 
 }

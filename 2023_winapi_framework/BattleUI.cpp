@@ -12,22 +12,22 @@ BattleUI::BattleUI(wstring textureKey, wstring path, Vec2 pos, Vec2 scale)
 
 	//m_vPos = Vec2({ screenPoint.x / 2, screenPoint.y / 2 });
 	//m_vScale = Vec2({ screenPoint.x, screenPoint.y / 2 });
-	m_vPos = Vec2({ screenPoint.x / 2, 1206 });
+	m_vPos = Vec2({ 256, 1206 });
 	//m_vScale = Vec
 
 	_mainTex = ResMgr::GetInst()->TexLoad(textureKey, path);
 
 	if (_mainTex != nullptr) {
 		//m_vScale = Vec2({ _mainTex->GetWidth(), _mainTex->GetHeight() });
-		m_vScale = Vec2({ screenPoint.x, screenPoint.y / 2 });
+		m_vScale = Vec2({ 512, 406 });
 	}
 	else {
 
 		m_vScale = scale;
 	}
 
-	_uiRect = RECT_MAKE((int)pos.x, (int)pos.y, (int)scale.x, (int)scale.y);
-	SetEnable(false);
+	_uiRect = RECT_MAKE((long)pos.x, (long)pos.y, (long)scale.x, (long)scale.y);
+	SetEnable(true);
 }
 
 BattleUI::~BattleUI()
@@ -37,14 +37,15 @@ BattleUI::~BattleUI()
 
 void BattleUI::Update()
 {
-	Object::Update();
 	for (int i = 0; i < _buttons.size(); ++i) {
-		_buttons[i].Update();
+		_buttons[i]->Update();
 	}
+	Object::Update();
 }
 
 void BattleUI::Render(HDC _dc)
 {
+	
 	if (_mainTex == nullptr) {
 		RECT_RENDER(m_vPos.x, m_vPos.y, m_vScale.x, m_vScale.y, _dc);
 	}
@@ -61,5 +62,8 @@ void BattleUI::Render(HDC _dc)
 			_mainTex->GetWidth(),
 			_mainTex->GetHeight(),
 			RGB(255, 0, 255));
+	}
+	for (int i = 0; i < _buttons.size(); ++i) {
+		_buttons[i]->Render(_dc);
 	}
 }

@@ -7,6 +7,8 @@ class ActionSelectUI :
 public:
     ActionSelectUI();
     ~ActionSelectUI();
+    void Update() override;
+    //void Render(HDC _dc) override;
 private:
-    std::vector<UIButton*> _buttons;
+    //std::vector<UIButton*> _buttons;
 };

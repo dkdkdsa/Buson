@@ -15,8 +15,14 @@ public:
 	void SetEnable(bool value) {
 		m_IsAlive = value;
 	}
+	std::vector<UIButton*>& GetBtnVec() {
+		return _buttons;
+	}
+	void SetBtnVec(UIButton* uibtn) {
+		_buttons.push_back(uibtn);
+	}
 private:
-	std::vector<UIButton> _buttons;
+	std::vector<UIButton*> _buttons;
 	Texture* _mainTex;
 	Texture* _backgroundTex;
 	RECT _uiRect;
