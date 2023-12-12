@@ -5,7 +5,7 @@
 #include "FieldScene.h"
 #include "Field.h"
 
-PokemonMakeBtn::PokemonMakeBtn() : UIButton(L"asdf", L"asdf", Vec2({ 300, 100 }), Vec2({300, 75}))
+PokemonMakeBtn::PokemonMakeBtn() : UIButton(L"", L"asdf", Vec2({ 300, 100 }), Vec2({300, 75}))
 {
 }
 
