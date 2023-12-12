@@ -151,7 +151,6 @@ void Core::ResizeWindow(int width, int height)
 
 	m_ptResolution = { width, height };
 
-	
 }
 
 void Core::Release()
