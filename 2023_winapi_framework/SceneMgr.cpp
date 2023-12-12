@@ -15,7 +15,7 @@ void SceneMgr::Init()
 	RegisterScene(L"Battle_Scene", std::make_shared<BattleScene>());
 
 	// Ã¹ ¾À ÁöÁ¤
-	LoadScene(L"Battle_Scene");
+	LoadScene(L"Field_Scene");
 
 }
 

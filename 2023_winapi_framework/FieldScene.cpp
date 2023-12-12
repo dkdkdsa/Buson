@@ -6,12 +6,16 @@
 #include "PokemonBox.h"
 #include "FieldDeckBtn.h"
 #include "FieldDeckPanel.h"
+#include "Texture.h"
+#include "ResMgr.h"
 
 void FieldScene::Init()
 {
 
 	Core::GetInst()->ResizeWindow(1280, 720);
 	auto screenPoint = Core::GetInst()->GetResolution();
+
+	bgTex = ResMgr::GetInst()->TexLoad(L"FieldBG", L"Texture\\Field\\FieldBG.bmp");
 
 #pragma region Field
 
@@ -34,7 +38,7 @@ void FieldScene::Init()
 	auto* pokemonBox = new PokemonBox(uiCenter + Vec2({ 300, -275 }), Vec2({ 450, 150 }), this);
 	AddObject(pokemonBox, OBJECT_GROUP::DEFAULT);
 
-	auto* fieldDeckPanel = new FieldDeckPanel(Vec2({ -250, 450 }), Vec2({ 500, 500 }));
+	auto* fieldDeckPanel = new FieldDeckPanel(Vec2({ -250, 450 }), Vec2({ 500, 500 }), field_1);
 	AddObject(fieldDeckPanel, OBJECT_GROUP::DEFAULT);
 
 	auto* fieldDeckBtn = new FieldDeckBtn(Vec2({ 35, 300 }), Vec2({ 75, 200 }));
@@ -57,6 +61,22 @@ void FieldScene::Update()
 
 void FieldScene::Render(HDC _dc)
 {
+
+	int w = bgTex->GetWidth();
+	int h = bgTex->GetHeight();
+
+	TransparentBlt(
+		_dc,
+		0,
+		0,
+		1280,
+		720,
+		bgTex->GetDC(),
+		0,
+		0,
+		w,
+		h,
+		RGB(255, 0, 255));
 
 	_fieldList[_currentAbleField]->Render(_dc);
 	Scene::Render(_dc);

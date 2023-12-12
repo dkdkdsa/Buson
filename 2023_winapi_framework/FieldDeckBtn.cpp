@@ -37,6 +37,8 @@ void FieldDeckBtn::Update()
 	}
 	else {
 
+		_panel->SetPos(_panelEnd);
+		SetPos(_end);
 		_isClick = false;
 
 	}

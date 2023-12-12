@@ -1,6 +1,7 @@
 #pragma once
 #include "Scene.h"
 class Field;
+class Texture;
 class FieldScene : public Scene
 {
 
@@ -14,6 +15,7 @@ public:
 private:
 	int _currentAbleField;
 	vector<Field*> _fieldList;
+	Texture* bgTex;
 
 };
 

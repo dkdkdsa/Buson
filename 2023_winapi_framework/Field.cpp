@@ -6,6 +6,7 @@
 #include "PokemonManager.h"
 #include "ResMgr.h"
 #include "Texture.h"
+#include "DeckManager.h"
 //#define RENDER_DEBUG
 
 Field::Field(Vec2 center, Vec2 fieldSize)
@@ -45,6 +46,13 @@ void Field::Update()
 			_thisFieldObject[i]->Update();
 
 	}
+
+	if (KEY_DOWN(KEY_TYPE::MBUTTON)) {
+
+		AddDeck();
+
+	}
+
 
 	if (KEY_DOWN(KEY_TYPE::LBUTTON)) {
 
@@ -176,16 +184,9 @@ void Field::ReleaseDrag()
 
 			if (!PtInRect(&rt, mPos)) {
 
-				int xa = ((int)(m_vPos.x - m_vScale.x / 2));
-				int xb = ((int)(m_vPos.x + m_vScale.x / 2));
-
-				int ya = ((int)(m_vPos.y - m_vScale.y / 2));
-				int yb = ((int)(m_vPos.y + m_vScale.y / 2));
-
-				int x = rand() % (xb - xa + 1) + xa;
-				int y = rand() % (yb - ya + 1) + ya;
-
-				_dragObject->SetPos(Vec2({x, y}));
+				EventMgr::GetInst()->DeleteObject(_dragObject);
+				_dragObject = nullptr;
+				return;
 
 			}
 
@@ -232,5 +233,22 @@ FieldObject* Field::ChackBound(FieldObject* currentObject, POINT mousePos)
 	}
 
 	return nullptr;
+
+}
+
+void Field::AddDeck()
+{
+
+	auto obj = ChackBound(nullptr, KeyMgr::GetInst()->GetMousePos());
+
+	if (obj != nullptr) {
+
+		if (DeckManager::GetInst()->AddPokemon(obj->GetPokemon())) {
+
+			EventMgr::GetInst()->DeleteObject(obj);
+
+		}
+
+	}
 
 }

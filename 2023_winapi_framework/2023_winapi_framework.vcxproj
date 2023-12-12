@@ -183,6 +183,8 @@
     <ClInclude Include="Collider.h" />
     <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="Core.h" />
+    <ClInclude Include="DeckManager.h" />
+    <ClInclude Include="DeckPokemonPanel.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="enums.h" />
     <ClInclude Include="EventMgr.h" />
@@ -240,6 +242,8 @@
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="CollisionMgr.cpp" />
     <ClCompile Include="Core.cpp" />
+    <ClCompile Include="DeckManager.cpp" />
+    <ClCompile Include="DeckPokemonPanel.cpp" />
     <ClCompile Include="EventMgr.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="FieldDeckBtn.cpp" />

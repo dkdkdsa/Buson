@@ -274,6 +274,10 @@
     <ClInclude Include="PokemonMakeBtn.h">
       <Filter>Engine\04. Object\UI\FieldUI</Filter>
     </ClInclude>
+    <ClInclude Include="DeckManager.h">
+      <Filter>Engine\03. Manager\DeckManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DeckPokemonPanel.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2023_winapi_framework.rc">
@@ -439,5 +443,9 @@
     <ClCompile Include="PokemonMakeBtn.cpp">
       <Filter>Engine\04. Object\UI\FieldUI</Filter>
     </ClCompile>
+    <ClCompile Include="DeckManager.cpp">
+      <Filter>Engine\03. Manager\DeckManager</Filter>
+    </ClCompile>
+    <ClCompile Include="DeckPokemonPanel.cpp" />
   </ItemGroup>
 </Project>
