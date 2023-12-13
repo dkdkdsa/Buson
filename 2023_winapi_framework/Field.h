@@ -20,6 +20,7 @@ public:
     void ReleaseDrag();
     void Drag();
     FieldObject* ChackBound(FieldObject* currentObject, POINT mousePos);
+    void AddDeck();
 
 private:
     std::vector<FieldObject*> _thisFieldObject;

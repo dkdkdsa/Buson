@@ -83,9 +83,6 @@
     <Filter Include="Engine\03. Manager\PokemonManager">
       <UniqueIdentifier>{4fc11505-4899-4718-b0e5-c4c0ef763c35}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\03. Manager\FieldDragManager">
-      <UniqueIdentifier>{c328e5da-53b3-4765-86fb-d7d65000203d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\04. Object\UI\Button\BattleBtn">
       <UniqueIdentifier>{464d9389-bb39-4802-8e83-63c92639935b}</UniqueIdentifier>
     </Filter>
@@ -103,6 +100,15 @@
     </Filter>
     <Filter Include="Engine\03. Manager\DeckManager">
       <UniqueIdentifier>{e73f777a-120c-4d69-abfe-1ba13e304bf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Manager\EasingManager">
+      <UniqueIdentifier>{ab6af3db-323c-49ab-8266-9c1367772b4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05. Scene\IntroScene">
+      <UniqueIdentifier>{d694d139-a56f-4193-ac9c-8f99b3e55393}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04. Object\UI\IntroScene">
+      <UniqueIdentifier>{c931cfcc-e2d0-4adc-ad5a-acdaa7597c3d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -274,6 +280,23 @@
     <ClInclude Include="PokemonMakeBtn.h">
       <Filter>Engine\04. Object\UI\FieldUI</Filter>
     </ClInclude>
+    <ClInclude Include="DeckManager.h">
+      <Filter>Engine\03. Manager\DeckManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DeckPokemonPanel.h">
+      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    </ClInclude>
+    <ClInclude Include="EasingManager.h">
+      <Filter>Engine\03. Manager\EasingManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneChangeBtn.h">
+      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    </ClInclude>
+    <ClInclude Include="IntroScene.h">
+      <Filter>Engine\05. Scene\IntroScene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStartBtn.h" />
+    <ClInclude Include="GameExitBtn.h" />
     <ClInclude Include="Battle_CancelBtn.h">
       <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
     </ClInclude>
@@ -448,6 +471,23 @@
     <ClCompile Include="PokemonMakeBtn.cpp">
       <Filter>Engine\04. Object\UI\FieldUI</Filter>
     </ClCompile>
+    <ClCompile Include="DeckManager.cpp">
+      <Filter>Engine\03. Manager\DeckManager</Filter>
+    </ClCompile>
+    <ClCompile Include="DeckPokemonPanel.cpp">
+      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    </ClCompile>
+    <ClCompile Include="EasingManager.cpp">
+      <Filter>Engine\03. Manager\EasingManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneChangeBtn.cpp">
+      <Filter>Engine\04. Object\UI\FieldUI</Filter>
+    </ClCompile>
+    <ClCompile Include="IntroScene.cpp">
+      <Filter>Engine\05. Scene\IntroScene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStartBtn.cpp" />
+    <ClCompile Include="GameExitBtn.cpp" />
     <ClCompile Include="Battle_CancelBtn.cpp">
       <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
     </ClCompile>

@@ -3,6 +3,7 @@
 #include "FieldDeckPanel.h"
 #include "TimeMgr.h"
 #include "Texture.h"
+#include "EasingManager.h"
 
 FieldDeckBtn::FieldDeckBtn(Vec2 pos, Vec2 scale) : UIButton(L"DeckBtn", L"Texture\\Field\\PkBtn.bmp", pos, scale)
 {
@@ -12,6 +13,7 @@ FieldDeckBtn::FieldDeckBtn(Vec2 pos, Vec2 scale) : UIButton(L"DeckBtn", L"Textur
 	_per = 0;
 	_origin = pos;
 	m_vScale = scale;
+	originScale = scale;
 
 }
 
@@ -24,19 +26,38 @@ void FieldDeckBtn::Update()
 
 	UIButton::Update();
 
-	if (!_isClick) return;
+	if (isHover && _isFold) {
 
-	_per += fDT * 3;
-
-	if (_per < 1) {
-
-
-		SetPos(Lerp(_origin, _end, _per));
-		_panel->SetPos(Lerp(_panelOrigin, _panelEnd, _per));
+		_hoverPer += fDT * 2.f;
 
 	}
 	else {
 
+		_hoverPer -= fDT * 2.f;
+
+	}
+
+	_hoverPer = std::clamp(_hoverPer, 0.f, 1.f);
+
+	m_vScale = EasingManager::GetInst()->EasingVec(originScale, originScale + Vec2(20, 20), _hoverPer, Ease::InOutBack);
+
+	if (!_isClick) return;
+
+	_per += fDT * 2;
+
+	float ePer = EasingManager::GetInst()->Easing(_per, Ease::InOutBack);
+
+	if (_per < 1) {
+
+
+		SetPos(Lerp(_origin, _end, ePer));
+		_panel->SetPos(Lerp(_panelOrigin, _panelEnd, ePer));
+
+	}
+	else {
+
+		_panel->SetPos(_panelEnd);
+		SetPos(_end);
 		_isClick = false;
 
 	}

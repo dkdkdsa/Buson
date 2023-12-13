@@ -4,6 +4,8 @@
 #include "Game_Scene.h"
 #include "FieldScene.h"
 #include "BattleScene.h"
+#include "IntroScene.h"
+
 void SceneMgr::Init()
 {
 
@@ -13,9 +15,10 @@ void SceneMgr::Init()
 	RegisterScene(L"Game_Scene", std::make_shared<Game_Scene>());
 	RegisterScene(L"Field_Scene", std::make_shared<FieldScene>());
 	RegisterScene(L"Battle_Scene", std::make_shared<BattleScene>());
+	RegisterScene(L"Intro_Scene", std::make_shared<IntroScene>());
 
 	// √π æ¿ ¡ˆ¡§
-	LoadScene(L"Battle_Scene");
+	LoadScene(L"Intro_Scene");
 
 }
 
@@ -32,6 +35,9 @@ void SceneMgr::Render(HDC _dc)
 
 void SceneMgr::LoadScene(const wstring& _scenename)
 {
+
+	wstring name = _scenename;
+
 	// æ¿¿Ã ¿÷¿∏∏È
 	if (m_pCurScene != nullptr)
 	{
@@ -39,7 +45,7 @@ void SceneMgr::LoadScene(const wstring& _scenename)
 		m_pCurScene = nullptr;
 	}
 
-	auto iter = m_mapScenes.find(_scenename);
+	auto iter = m_mapScenes.find(name);
 
 	if (iter != m_mapScenes.end())
 	{

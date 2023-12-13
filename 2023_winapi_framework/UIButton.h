@@ -14,10 +14,12 @@ public:
     void Update() override;
     void Render(HDC _dc) override;
     virtual void OnClick() = 0;
+    void CheckHover();
 
 protected:
     Texture* _mainTex;
     RECT _btnRt;
+    bool isHover;
 
 };
 

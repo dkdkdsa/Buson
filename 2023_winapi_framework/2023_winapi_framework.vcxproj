@@ -184,7 +184,10 @@
     <ClInclude Include="Collider.h" />
     <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="Core.h" />
+    <ClInclude Include="DeckManager.h" />
+    <ClInclude Include="DeckPokemonPanel.h" />
     <ClInclude Include="define.h" />
+    <ClInclude Include="EasingManager.h" />
     <ClInclude Include="enums.h" />
     <ClInclude Include="EventMgr.h" />
     <ClInclude Include="Field.h" />
@@ -194,7 +197,10 @@
     <ClInclude Include="FieldScene.h" />
     <ClInclude Include="FightBtn.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="GameExitBtn.h" />
+    <ClInclude Include="GameStartBtn.h" />
     <ClInclude Include="Game_Scene.h" />
+    <ClInclude Include="IntroScene.h" />
     <ClInclude Include="KeyMgr.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Object.h" />
@@ -214,6 +220,7 @@
     <ClInclude Include="RunBtn.h" />
     <ClInclude Include="RunUI.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneChangeBtn.h" />
     <ClInclude Include="SceneMgr.h" />
     <ClInclude Include="SelectGDI.h" />
     <ClInclude Include="Skill.h" />
@@ -244,6 +251,9 @@
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="CollisionMgr.cpp" />
     <ClCompile Include="Core.cpp" />
+    <ClCompile Include="DeckManager.cpp" />
+    <ClCompile Include="DeckPokemonPanel.cpp" />
+    <ClCompile Include="EasingManager.cpp" />
     <ClCompile Include="EventMgr.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="FieldDeckBtn.cpp" />
@@ -251,7 +261,10 @@
     <ClCompile Include="FieldObject.cpp" />
     <ClCompile Include="FieldScene.cpp" />
     <ClCompile Include="FightBtn.cpp" />
+    <ClCompile Include="GameExitBtn.cpp" />
+    <ClCompile Include="GameStartBtn.cpp" />
     <ClCompile Include="Game_Scene.cpp" />
+    <ClCompile Include="IntroScene.cpp" />
     <ClCompile Include="KeyMgr.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Monster.cpp" />
@@ -270,6 +283,7 @@
     <ClCompile Include="RunBtn.cpp" />
     <ClCompile Include="RunUI.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneChangeBtn.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
     <ClCompile Include="SelectGDI.cpp" />
     <ClCompile Include="Skill.cpp" />

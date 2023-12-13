@@ -40,6 +40,8 @@ void UIButton::Update()
 
 	}
 
+	CheckHover();
+
 }
 
 void UIButton::Render(HDC _dc)
@@ -67,4 +69,20 @@ void UIButton::Render(HDC _dc)
 			RGB(255, 0, 255));
 
 	}
+}
+
+void UIButton::CheckHover()
+{
+
+	if (PtInRect(&_btnRt, KeyMgr::GetInst()->GetMousePos())) {
+
+		isHover = true;
+
+	}
+	else {
+
+		isHover = false;
+
+	}
+
 }
