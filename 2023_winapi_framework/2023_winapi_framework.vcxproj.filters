@@ -297,6 +297,15 @@
     </ClInclude>
     <ClInclude Include="GameStartBtn.h" />
     <ClInclude Include="GameExitBtn.h" />
+    <ClInclude Include="Battle_CancelBtn.h">
+      <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillSelectBtn.h">
+      <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
+    </ClInclude>
+    <ClInclude Include="PokemonSelectCancelBtn.h">
+      <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2023_winapi_framework.rc">
@@ -479,5 +488,14 @@
     </ClCompile>
     <ClCompile Include="GameStartBtn.cpp" />
     <ClCompile Include="GameExitBtn.cpp" />
+    <ClCompile Include="Battle_CancelBtn.cpp">
+      <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillSelectBtn.cpp">
+      <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
+    </ClCompile>
+    <ClCompile Include="PokemonSelectCancelBtn.cpp">
+      <Filter>Engine\04. Object\UI\Button\BattleBtn</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
