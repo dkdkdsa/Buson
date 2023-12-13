@@ -1,24 +1,24 @@
 #include "pch.h"
-#include "FightBtn.h"
+#include "Battle_CancelBtn.h"
 #include "BattleUIMgr.h"
-#include "Core.h"
 #include "Texture.h"
-
-FightBtn::FightBtn() : UIButton(L"Battle_FightBtn.bmp", L"Texture\\Battle\\Button\\Battle_FightBtn.bmp", Vec2({ 0, 0 }), Vec2({ 512, 406 }))
+#include "Core.h"
+Battle_CancelBtn::Battle_CancelBtn() : UIButton(L"Battle_CancelBtn.bmp", L"Texture\\Battle\\Button\\Battle_CancelBtn.bmp", { 0, 0 }, { 512, 406 })
 {
-	m_strName = L"FightBtn";
+	m_strName = L"Battle_CancelBtn";
 	m_vScale = Vec2({ _mainTex->GetWidth() * 2, _mainTex->GetHeight() * 2 });
 	auto screenPoint = Core::GetInst()->GetResolution();
 	SetPos(Vec2(
 		{ (long)(256 - (m_vScale.x / 2))
-		, (long)((screenPoint.y / 4) * 2.28f) }));
+		, (long)(screenPoint.y - m_vScale.y - 16) }
+	));
 }
 
-FightBtn::~FightBtn()
+Battle_CancelBtn::~Battle_CancelBtn()
 {
 }
 
-void FightBtn::Render(HDC _dc)
+void Battle_CancelBtn::Render(HDC _dc)
 {
 
 	int w = _mainTex->GetWidth();
@@ -39,7 +39,7 @@ void FightBtn::Render(HDC _dc)
 
 }
 
-void FightBtn::OnClick()
+void Battle_CancelBtn::OnClick()
 {
-	BattleUIMgr::GetInst()->ChangeBattleUI(BattleUIType::SkillSelect);
+	BattleUIMgr::GetInst()->ChangeBattleUI(BattleUIType::ActionSelect);
 }

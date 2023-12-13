@@ -7,6 +7,7 @@ public:
     RunBtn();
     ~RunBtn();
 public:
+    void Render(HDC _dc) override;
     void OnClick() override;
 };
 

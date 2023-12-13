@@ -7,7 +7,9 @@ class BagUI :
 public:
     BagUI();
     ~BagUI();
+public:
+    void Update();
 private:
-    std::vector<UIButton*> _buttons;
+    std::vector<UIButton*> _pokemonBtns;
 };
 
