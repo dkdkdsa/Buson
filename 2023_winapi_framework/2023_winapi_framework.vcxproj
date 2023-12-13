@@ -196,6 +196,8 @@
     <ClInclude Include="FieldScene.h" />
     <ClInclude Include="FightBtn.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="GameExitBtn.h" />
+    <ClInclude Include="GameStartBtn.h" />
     <ClInclude Include="Game_Scene.h" />
     <ClInclude Include="IntroScene.h" />
     <ClInclude Include="KeyMgr.h" />
@@ -255,6 +257,8 @@
     <ClCompile Include="FieldObject.cpp" />
     <ClCompile Include="FieldScene.cpp" />
     <ClCompile Include="FightBtn.cpp" />
+    <ClCompile Include="GameExitBtn.cpp" />
+    <ClCompile Include="GameStartBtn.cpp" />
     <ClCompile Include="Game_Scene.cpp" />
     <ClCompile Include="IntroScene.cpp" />
     <ClCompile Include="KeyMgr.cpp" />

@@ -11,6 +11,7 @@ public:
     PokemonMakeBtn();
     void Update() override;
     void OnClick() override;
+    void Render(HDC _dc) override;
     void SetFieldScene(FieldScene* scene) { _fieldScene = scene; }
 
 private:

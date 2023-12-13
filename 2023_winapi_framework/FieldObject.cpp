@@ -5,6 +5,7 @@
 #include "ResMgr.h"
 #include "KeyMgr.h"
 #include "Core.h"
+#include "EasingManager.h"
 
 FieldObject::FieldObject(Pokemon pokemon)
 {
@@ -13,9 +14,13 @@ FieldObject::FieldObject(Pokemon pokemon)
 	_pokemon = pokemon;
 
 	m_vScale = Vec2({ _texture->GetWidth(), _texture->GetHeight() });
+	originScale = m_vScale;
 
 	_flipBm = CreateCompatibleBitmap(_texture->GetDC(), _texture->GetWidth(), _texture->GetHeight());
 	_flipDc = CreateCompatibleDC(_texture->GetDC());
+
+	_outLineBM = CreateCompatibleBitmap(_texture->GetDC(), _texture->GetWidth(), _texture->GetHeight());
+	_outLineDc = CreateCompatibleDC(_texture->GetDC());
 
 	SelectObject(_flipDc, _flipBm);
 	_coolTime = rand() % 3;
@@ -34,6 +39,21 @@ void FieldObject::Update()
 {
 
 	_objRect = RECT_MAKE((int)m_vPos.x, (int)m_vPos.y, (int)m_vScale.x, (int)m_vScale.y);
+
+	if (_isDrag) {
+
+		per += fDT * 5;
+
+	}
+	else {
+
+		per -= fDT * 5;
+
+	}
+
+	per = std::clamp(per, 0.f, 1.f);
+
+	m_vScale = EasingManager::GetInst()->EasingVec(originScale, originScale + Vec2({ 10, 10 }), per, Ease::InOutCubic);
 
 	if (_isDrag) {
 
@@ -87,22 +107,24 @@ void FieldObject::Update()
 void FieldObject::Render(HDC _dc)
 {
 
-	auto width = _texture->GetWidth();
-	auto height = _texture->GetHeight();
+	auto width = m_vScale.x;
+	auto height = m_vScale.y;
+
+
 
 	if (_flip) {
 
 		StretchBlt(
 			_flipDc,
-			width - 1,
+			originScale.x - 1,
 			0,
-			-width,
-			height,
+			-originScale.x,
+			originScale.y,
 			_texture->GetDC(),
 			0,
 			0,
-			width,
-			height,
+			originScale.x,
+			originScale.y,
 			SRCCOPY);
 
 		TransparentBlt(
@@ -114,8 +136,8 @@ void FieldObject::Render(HDC _dc)
 			_flipDc,
 			0,
 			0,
-			width,
-			height,
+			originScale.x,
+			originScale.y,
 			RGB(255, 0, 255));
 
 	}
@@ -130,8 +152,8 @@ void FieldObject::Render(HDC _dc)
 			_texture->GetDC(),
 			0,
 			0,
-			width,
-			height,
+			originScale.x,
+			originScale.y,
 			RGB(255, 0, 255));
 
 	}

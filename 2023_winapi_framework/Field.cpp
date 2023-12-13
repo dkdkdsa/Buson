@@ -176,6 +176,8 @@ void Field::ReleaseDrag()
 
 			}
 
+			_dragObject->SetIsDrag(false);
+
 		}
 		else {
 

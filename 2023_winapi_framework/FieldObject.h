@@ -33,12 +33,16 @@ private:
     RECT _fieldRect;
     HBITMAP _flipBm;
     HDC _flipDc;
+    HDC _outLineDc;
+    HBITMAP _outLineBM;
     float _coolTime;
     float _curTime;
     bool _flip;
     bool _isMove;
     bool _isDrag;
     Vec2 _origin, _end;
+    float per;
+    Vec2 originScale;
 
 };
 

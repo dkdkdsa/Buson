@@ -107,6 +107,9 @@
     <Filter Include="Engine\05. Scene\IntroScene">
       <UniqueIdentifier>{d694d139-a56f-4193-ac9c-8f99b3e55393}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\04. Object\UI\IntroScene">
+      <UniqueIdentifier>{c931cfcc-e2d0-4adc-ad5a-acdaa7597c3d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -292,6 +295,8 @@
     <ClInclude Include="IntroScene.h">
       <Filter>Engine\05. Scene\IntroScene</Filter>
     </ClInclude>
+    <ClInclude Include="GameStartBtn.h" />
+    <ClInclude Include="GameExitBtn.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2023_winapi_framework.rc">
@@ -472,5 +477,7 @@
     <ClCompile Include="IntroScene.cpp">
       <Filter>Engine\05. Scene\IntroScene</Filter>
     </ClCompile>
+    <ClCompile Include="GameStartBtn.cpp" />
+    <ClCompile Include="GameExitBtn.cpp" />
   </ItemGroup>
 </Project>
