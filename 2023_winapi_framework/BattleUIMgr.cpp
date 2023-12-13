@@ -19,9 +19,9 @@ void BattleUIMgr::Init()
 void BattleUIMgr::ChangeBattleUI(BattleUIType uiType)
 {
 	// Current UI Rendering end
-	_curBattleUI->SetEnable(true);
+	_curBattleUI->SetEnable(false);
 	// Change current UI to Selected UI
 	SetCurUI(uiType);
 	// Start changed UI Rendering
-	_curBattleUI->SetEnable(false);
+	_curBattleUI->SetEnable(true);
 }

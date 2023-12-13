@@ -67,9 +67,8 @@ void UIButton::Render(HDC _dc)
 			m_vScale.x,
 			m_vScale.y,
 			RGB(255, 0, 255));
+
 	}
-
-
 }
 
 void UIButton::CheckHover()

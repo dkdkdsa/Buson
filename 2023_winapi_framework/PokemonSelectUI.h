@@ -7,6 +7,8 @@ class PokemonSelectUI :
 public:
     PokemonSelectUI();
     ~PokemonSelectUI();
+public:
+    void Update() override;
 private:
-    std::vector<UIButton*> _buttons;
+    std::vector<UIButton*> _pokemonBtns;
 };

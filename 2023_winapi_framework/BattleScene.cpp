@@ -33,15 +33,18 @@ void BattleScene::Init()
 	BattleUIMgr::GetInst()->SetBattleUI(bagUI);
 	BattleUIMgr::GetInst()->SetBattleUI(runUI);
 
-	AddObject(BattleUIMgr::GetInst()->GetBattleUI(BattleUIType::ActionSelect), OBJECT_GROUP::Battle_UI);
+	/*AddObject(BattleUIMgr::GetInst()->GetBattleUI(BattleUIType::ActionSelect), OBJECT_GROUP::Battle_UI);
 	AddObject(BattleUIMgr::GetInst()->GetBattleUI(BattleUIType::SkillSelect), OBJECT_GROUP::Battle_UI);
 	AddObject(BattleUIMgr::GetInst()->GetBattleUI(BattleUIType::PokemonSelect), OBJECT_GROUP::Battle_UI);
 	AddObject(BattleUIMgr::GetInst()->GetBattleUI(BattleUIType::Bag), OBJECT_GROUP::Battle_UI);
-	AddObject(BattleUIMgr::GetInst()->GetBattleUI(BattleUIType::Run), OBJECT_GROUP::Battle_UI);
+	AddObject(BattleUIMgr::GetInst()->GetBattleUI(BattleUIType::Run), OBJECT_GROUP::Battle_UI);*/
+
+	BattleUIMgr::GetInst()->SetCurUI(BattleUIType::ActionSelect);
 }
 
 void BattleScene::Update()
 {
+	BattleUIMgr::GetInst()->GetCurBattleUI()->Update();
 	Scene::Update();
 }
 
@@ -55,6 +58,7 @@ void BattleScene::Render(HDC _dc)
 		, (int)(_bgPos.y - _bgScale.y / 2)
 		, _bgScale.x, _bgScale.y, _bgTex->GetDC()
 		, 0, 0, width, height, SRCCOPY);
+	BattleUIMgr::GetInst()->GetCurBattleUI()->Render(_dc);
 	Scene::Render(_dc);
 }
 
