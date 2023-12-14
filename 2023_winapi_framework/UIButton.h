@@ -16,10 +16,16 @@ public:
     virtual void OnClick() = 0;
     void CheckHover();
 
+    void RenderBtnSelector(HDC _dc);
+
 protected:
     Texture* _mainTex;
     RECT _btnRt;
     bool isHover;
 
+    Texture* _btnSelectorLT;
+    Texture* _btnSelectorLB;
+    Texture* _btnSelectorRT;
+    Texture* _btnSelectorRB;
 };
 

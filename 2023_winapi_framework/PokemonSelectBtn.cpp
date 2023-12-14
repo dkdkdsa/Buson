@@ -27,6 +27,10 @@ void PokemonSelectBtn::Update()
 
 		OnClick();
 	}
+
+	CheckHover();
+
+	
 }
 
 void PokemonSelectBtn::Render(HDC _dc)
@@ -145,14 +149,7 @@ void PokemonSelectBtn::InitPos()
 		  break;
 	}
 
-	if (_pokemon->Stats.Hp == 0) {
-		if (_partyIdx == 1) {
-			_mainTex = ResMgr::GetInst()->TexLoad(L"DiedPokemon_1.bmp", L"Texture\\Battle\\Pokemon_Select\\DiedPokemon_1.bmp");
-		}
-		else {
-			_mainTex = ResMgr::GetInst()->TexLoad(L"DiedPokemon_2.bmp", L"Texture\\Battle\\Pokemon_Select\\DiedPokemon_2.bmp");
-		}
-	}
+
 }
 
 void PokemonSelectBtn::PokemonTexInit()
@@ -161,6 +158,15 @@ void PokemonSelectBtn::PokemonTexInit()
 	_pokeTexScale = Vec2({ _pokeTex->GetWidth() / 1.4f, _pokeTex->GetHeight() / 1.4f });
 	InitPos();
 	_pokeTexPos = Vec2({ m_vPos.x + 25, m_vPos.y + 10 });
+
+	if (_pokemon->Stats.Hp == 0) {
+		if (_partyIdx == 1) {
+			_mainTex = ResMgr::GetInst()->TexLoad(L"DiedPokemon_1.bmp", L"Texture\\Battle\\Pokemon_Select\\DiedPokemon_1.bmp");
+		}
+		else {
+			_mainTex = ResMgr::GetInst()->TexLoad(L"DiedPokemon_2.bmp", L"Texture\\Battle\\Pokemon_Select\\DiedPokemon_2.bmp");
+		}
+	}
 
 	if (_pokemon->Stats.Hp / _maxHp * 100 >= 51.f) {
 		_hpBarTex = ResMgr::GetInst()->TexLoad(L"HpGauge_Green.bmp", L"Texture\\Battle\\Pokemon_State\\HpGauge_Green.bmp");

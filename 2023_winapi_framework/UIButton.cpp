@@ -26,6 +26,11 @@ UIButton::UIButton(wstring textureKey, wstring path, Vec2 pos, Vec2 scale)
 
 	}
 
+	_btnSelectorLT = ResMgr::GetInst()->TexLoad(L"BtnSelectorLT.bmp", L"Texture\\Battle\\Button\\BtnSelectorLT.bmp");
+	_btnSelectorLB = ResMgr::GetInst()->TexLoad(L"BtnSelectorLB.bmp", L"Texture\\Battle\\Button\\BtnSelectorLB.bmp");
+	_btnSelectorRT = ResMgr::GetInst()->TexLoad(L"BtnSelectorRT.bmp", L"Texture\\Battle\\Button\\BtnSelectorRT.bmp");
+	_btnSelectorRB = ResMgr::GetInst()->TexLoad(L"BtnSelectorRB.bmp", L"Texture\\Battle\\Button\\BtnSelectorRB.bmp");
+
 	_btnRt = RECT_MAKE((long)pos.x, (long)pos.y, (long)scale.x, (long)scale.y);
 }
 
@@ -85,4 +90,66 @@ void UIButton::CheckHover()
 
 	}
 
+}
+
+void UIButton::RenderBtnSelector(HDC _dc)
+{
+	int w = _btnSelectorLT->GetWidth();
+	int h = _btnSelectorLT->GetHeight();
+
+	// LT
+	TransparentBlt(
+		_dc,
+		_btnRt.left - w,
+		_btnRt.top - h,
+		w,
+		h,
+		_btnSelectorLT->GetDC(),
+		0,
+		0,
+		w,
+		h,
+		RGB(255, 0, 255));
+
+	// LB
+	TransparentBlt(
+		_dc,
+		_btnRt.left - w,
+		_btnRt.bottom + h,
+		w,
+		h,
+		_btnSelectorLB->GetDC(),
+		0,
+		0,
+		w,
+		h,
+		RGB(255, 0, 255));
+
+	// RT
+	TransparentBlt(
+		_dc,
+		_btnRt.right + w,
+		_btnRt.top - h,
+		w,
+		h,
+		_btnSelectorRT->GetDC(),
+		0,
+		0,
+		w,
+		h,
+		RGB(255, 0, 255));
+
+	// RB
+	TransparentBlt(
+		_dc,
+		_btnRt.right + w,
+		_btnRt.bottom + h,
+		w,
+		h,
+		_btnSelectorRB->GetDC(),
+		0,
+		0,
+		w,
+		h,
+		RGB(255, 0, 255));
 }
