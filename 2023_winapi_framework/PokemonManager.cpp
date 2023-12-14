@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "PokemonManager.h"
-#include "pokemon.h"
 #include "SkillManager.h"
 
 void PokemonManager::Init()
@@ -10,22 +9,70 @@ void PokemonManager::Init()
 
 }
 
+Pokemon PokemonManager::GetPokemon(int encyclopediaNumber)
+{
+	
+	auto pokemon = _pokemonContainer[encyclopediaNumber];
+	pokemon.Stats = PokemonStats({
+
+			GetRealValue(pokemon.Stats.Hp, rand() % 10, rand() % 30, pokemon.EvolutionCount * 20) + 110,
+
+			GetRealValue(pokemon.Stats.Attack, rand() % 10, rand() % 30, pokemon.EvolutionCount * 20),
+
+			GetRealValue(pokemon.Stats.Defense, rand() % 10, rand() % 30, pokemon.EvolutionCount * 20),
+
+			GetRealValue(pokemon.Stats.Speed, rand() % 10, rand() % 30, pokemon.EvolutionCount * 20)
+
+		});
+
+	pokemon.SkillsKey = SkillManager::GetInst()->LearnSkill(pokemon.Type[0], pokemon.EvolutionCount);
+
+	return pokemon;
+
+}
+
+Pokemon PokemonManager::GetRamdomPokemonByLevel(int lv)
+{
+
+	int size = _levelPokemonContainer[lv].size();
+
+	int idx = rand() % size;
+
+	auto pokemon = _levelPokemonContainer[lv][idx];
+
+	pokemon.Stats = PokemonStats({
+
+		GetRealValue(pokemon.Stats.Hp, rand() % 10, (rand() % 30), pokemon.EvolutionCount * 20) + 110,
+
+		GetRealValue(pokemon.Stats.Attack, rand() % 10, rand() % 30, pokemon.EvolutionCount * 20),
+
+		GetRealValue(pokemon.Stats.Defense, rand() % 10, rand() % 30, pokemon.EvolutionCount * 20),
+
+		GetRealValue(pokemon.Stats.Speed, rand() % 10, rand() % 30, pokemon.EvolutionCount * 20)
+
+		});
+
+	pokemon.SkillsKey = SkillManager::GetInst()->LearnSkill(pokemon.Type[0], pokemon.EvolutionCount);
+
+	return pokemon;
+
+}
 void PokemonManager::CreatePokemon()
 {
 
-	Pokemon* curPokemon;
+	Pokemon curPokemon;
 
 #pragma region 이상해씨_개열
 
-	curPokemon = new Pokemon
+	curPokemon = Pokemon
 	(
 		{ PokemonType::Grass },
 			{
 
-				1, //HP
-				1, //Attack
-				1, //Defence
-				1, //Speed
+				45, //HP
+				49 + 32.5f, //Attack
+				49 + 32.5f, //Defence
+				45, //Speed
 
 			},
 			SkillManager::GetInst()->LearnSkill(PokemonType::Grass, 1),
@@ -38,16 +85,16 @@ void PokemonManager::CreatePokemon()
 	_pokemonContainer[1] = curPokemon;
 	_levelPokemonContainer[1].push_back(curPokemon);
 
-	curPokemon = new Pokemon
+	curPokemon = Pokemon
 	(
 
 		{ PokemonType::Grass },
 			{
 
-				1, //HP
-				1, //Attack
-				1, //Defence
-				1, //Speed
+				60, //HP
+				62 + 40, //Attack
+				63 + 40, //Defence
+				60, //Speed
 
 			},
 			SkillManager::GetInst()->LearnSkill(PokemonType::Grass, 1),
@@ -60,16 +107,16 @@ void PokemonManager::CreatePokemon()
 	_pokemonContainer[2] = curPokemon;
 	_levelPokemonContainer[2].push_back(curPokemon);
 
-	curPokemon = new Pokemon
+	curPokemon = Pokemon
 	(
 
 		{ PokemonType::Grass },
 			{
 
-				1, //HP
-				1, //Attack
-				1, //Defence
-				1, //Speed
+				80, //HP
+				82 + 50, //Attack
+				83 + 50, //Defence
+				80, //Speed
 
 			},
 			SkillManager::GetInst()->LearnSkill(PokemonType::Grass, 1),
@@ -85,4 +132,9 @@ void PokemonManager::CreatePokemon()
 #pragma endregion
 
 
+}
+
+float PokemonManager::GetRealValue(float groupValue, float objectVel, float effortValue, float lv)
+{
+	return ((groupValue * 2) + objectVel + (effortValue / 4)) * lv / 100 + 5;
 }

@@ -16,6 +16,7 @@ private:
 	int _currentAbleField;
 	vector<Field*> _fieldList;
 	Texture* bgTex;
+	Texture* panelTex;
 
 };
 

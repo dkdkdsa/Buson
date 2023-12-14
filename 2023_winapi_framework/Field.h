@@ -1,10 +1,11 @@
 #pragma once
 #include "Object.h"
-#include "pokemon.h"
 #include <unordered_set>
 
 class FieldObject;
 class Texture;
+struct Pokemon;
+
 class Field :
     public Object
 {

@@ -16,6 +16,7 @@ void FieldScene::Init()
 	auto screenPoint = Core::GetInst()->GetResolution();
 
 	bgTex = ResMgr::GetInst()->TexLoad(L"FieldBG", L"Texture\\Field\\FieldBG.bmp");
+	panelTex = ResMgr::GetInst()->TexLoad(L"FieldPanel", L"Texture\\Field\\FieldPanel.bmp");
 
 #pragma region Field
 
@@ -35,7 +36,7 @@ void FieldScene::Init()
 	addBtn->SetFieldScene(this);
 	AddObject(addBtn, OBJECT_GROUP::DEFAULT);
 
-	auto* pokemonBox = new PokemonBox(uiCenter + Vec2({ 300, -275 }), Vec2({ 450, 150 }), this);
+	auto* pokemonBox = new PokemonBox(uiCenter + Vec2({ 300, -270 }), Vec2({ 450, 100 }), this);
 	AddObject(pokemonBox, OBJECT_GROUP::DEFAULT);
 
 	auto* fieldDeckPanel = new FieldDeckPanel(Vec2({ -250, 450 }), Vec2({ 500, 500 }), field_1);
@@ -65,7 +66,10 @@ void FieldScene::Render(HDC _dc)
 	int w = bgTex->GetWidth();
 	int h = bgTex->GetHeight();
 
-	TransparentBlt(
+	int pw = panelTex->GetWidth();
+	int ph = panelTex->GetHeight();
+
+	BitBlt(
 		_dc,
 		0,
 		0,
@@ -74,8 +78,19 @@ void FieldScene::Render(HDC _dc)
 		bgTex->GetDC(),
 		0,
 		0,
-		w,
-		h,
+		SRCCOPY);
+
+	TransparentBlt(
+		_dc,
+		0,
+		15,
+		1280,
+		150,
+		panelTex->GetDC(),
+		0,
+		0,
+		pw,
+		ph,
 		RGB(255, 0, 255));
 
 	_fieldList[_currentAbleField]->Render(_dc);

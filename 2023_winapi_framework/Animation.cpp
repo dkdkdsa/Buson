@@ -45,11 +45,12 @@ void Animation::Render(HDC _dc)
 
 	// 오프셋 적용
 	vPos = vPos + m_vecAnimFrame[m_CurFrame].vOffset;
+	auto reSize = m_vecAnimFrame[m_CurFrame].reSize;
 	TransparentBlt(_dc
-		,(int)(vPos.x - m_vecAnimFrame[m_CurFrame].vSlice.x /2.f)
-		,(int)(vPos.y - m_vecAnimFrame[m_CurFrame].vSlice.y / 2.f)
-		,(int)(m_vecAnimFrame[m_CurFrame].vSlice.x)
-		,(int)(m_vecAnimFrame[m_CurFrame].vSlice.y)
+		,(int)(vPos.x - (m_vecAnimFrame[m_CurFrame].vSlice.x + reSize.x) /2.f)
+		,(int)(vPos.y - (m_vecAnimFrame[m_CurFrame].vSlice.y + reSize.y) / 2.f)
+		,(int)(m_vecAnimFrame[m_CurFrame].vSlice.x + reSize.x)
+		,(int)(m_vecAnimFrame[m_CurFrame].vSlice.y + reSize.y)
 		,m_pTex->GetDC()
 		,(int)(m_vecAnimFrame[m_CurFrame].vLT.x)
 		,(int)(m_vecAnimFrame[m_CurFrame].vLT.y)
@@ -58,13 +59,13 @@ void Animation::Render(HDC _dc)
 		,RGB(255,0,255));
 }
 
-void Animation::Create(Texture* _pTex, Vec2 _vLT, Vec2 _vSliceSize, Vec2 _vStep, int _framecount, float _fDuration)
+void Animation::Create(Texture* _pTex, Vec2 _vLT, Vec2 _vSliceSize, Vec2 _vStep, int _framecount, float _fDuration, Vec2 reSize)
 {
 	m_pTex = _pTex;
 	for (int i = 0; i < _framecount; ++i)
 	{
 		m_vecAnimFrame.push_back(tAnimFrame({ _vLT + _vStep * i,
-			_vSliceSize, _fDuration,{0.f,0.f} }));
+			_vSliceSize, _fDuration,{0.f,0.f}, reSize}));
 	}
 
 }

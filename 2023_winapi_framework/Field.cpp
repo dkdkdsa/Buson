@@ -7,6 +7,11 @@
 #include "ResMgr.h"
 #include "Texture.h"
 #include "DeckManager.h"
+#include "FieldDataManager.h"
+#include "pokemon.h"
+#include "DustEffect.h"
+#include "SceneMgr.h"
+#include "Scene.h"
 //#define RENDER_DEBUG
 
 Field::Field(Vec2 center, Vec2 fieldSize)
@@ -15,6 +20,17 @@ Field::Field(Vec2 center, Vec2 fieldSize)
 	m_vPos = center;
 	m_vScale = fieldSize;
 	_tex = ResMgr::GetInst()->TexLoad(L"FieldBg", L"Texture\\Field\\BoxField.bmp");
+
+	auto savedPokemon = FieldDataManager::GetInst()->GetAllPokemon();
+	
+	
+	for (auto p : savedPokemon) {
+	
+		AddPokemon(p);
+	
+	}
+	
+	FieldDataManager::GetInst()->ReleasePokemon();
 
 }
 
@@ -26,6 +42,8 @@ Field::~Field()
 
 		if (!_thisFieldObject[i]->GetIsDead()) {
 
+
+			FieldDataManager::GetInst()->AddPokemon(_thisFieldObject[i]->GetPokemon());
 			delete _thisFieldObject[i];
 
 		}
@@ -169,7 +187,20 @@ void Field::ReleaseDrag()
 			if (boundObj->GetPokemon().SpriteKey == _dragObject->GetPokemon().SpriteKey 
 				&& _dragObject->GetPokemon().EvolutionNumber != 0) {
 
-				AddPokemon(*PokemonManager::GetInst()->GetPokemon(_dragObject->GetPokemon().EvolutionNumber))->SetPos(Vec2({mPos.x, mPos.y}));
+				AddPokemon(PokemonManager::GetInst()->GetPokemon(_dragObject->GetPokemon().EvolutionNumber))->SetPos(Vec2({mPos.x, mPos.y}));
+
+				auto* dust = new DustEffect();
+
+				auto* tex = ResMgr::GetInst()->
+					FindPokemonTexture(
+						PokemonManager::GetInst()->
+						GetPokemon(_dragObject->GetPokemon().EvolutionNumber).SpriteKey, 
+						PokemonSprite_Type::Field);
+
+				dust->SetPos(Vec2({ mPos.x + tex->GetWidth() / 4, mPos.y + tex->GetHeight() / 4}));
+				dust->SetScale(Vec2({ 64, 64 }));
+
+				SceneMgr::GetInst()->GetCurScene()->AddObject(dust, OBJECT_GROUP::DEFAULT);
 
 				EventMgr::GetInst()->DeleteObject(boundObj);
 				EventMgr::GetInst()->DeleteObject(_dragObject);

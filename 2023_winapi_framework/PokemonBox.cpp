@@ -8,6 +8,8 @@
 #include "Field.h"
 #include "FieldObject.h"
 #include "FieldScene.h"
+#include "TimeMgr.h"
+#include "EasingManager.h"
 #include <string>
 
 PokemonBox::PokemonBox(Vec2 pos, Vec2 size, FieldScene* field)
@@ -15,6 +17,7 @@ PokemonBox::PokemonBox(Vec2 pos, Vec2 size, FieldScene* field)
 
 	_tex = ResMgr::GetInst()->TexLoad(L"PokemonBox", L"Texture\\Field\\PokemonBox.bmp");
 	_fieldScene = field;
+	origin = size;
 
 	SetPos(pos);
 	SetScale(size);
@@ -31,11 +34,27 @@ PokemonBox::~PokemonBox()
 void PokemonBox::Update()
 {
 
+
 	if (_fieldScene) {
 
 		_field = _fieldScene->GetAbleField();
 
 	}
+
+	if (_curPokemon == nullptr) {
+
+		per -= fDT * 2.f;
+
+	}
+	else {
+
+		per += fDT * 2.f;
+
+	}
+
+	per = std::clamp(per, 0.f, 1.f);
+
+	m_vScale = EasingManager::GetInst()->EasingVec(origin, origin + Vec2({ 20, 20 }), per, Ease::InOutCubic);
 
 	if (_curPokemon && _curPokemon->Type.size() == 0) {
 
@@ -93,8 +112,8 @@ void PokemonBox::Render(HDC _dc)
 
 	TransparentBlt(
 		_dc,
-		(int)(m_vPos.x - m_vScale.x / 2) + 45,
-		(int)(m_vPos.y - m_vScale.y / 2) + 30,
+		(int)(m_vPos.x - origin.x / 2) + 45,
+		(int)(m_vPos.y - origin.y / 2),
 		75,
 		75,
 		pokemonTex->GetDC(),

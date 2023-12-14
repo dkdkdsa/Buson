@@ -17,7 +17,9 @@ void SkillManager::CreateSkill()
 	map<int, vector<wstring>> grass
 	{
 
-		{1, {L"ex1", L"ex2", L"ex3", L"ex4"}}
+		{1, {L"ex1", L"ex2", L"ex3", L"ex4"}},
+		{2, {L"ex1", L"ex2", L"ex3", L"ex4"}},
+		{3, {L"ex1", L"ex2", L"ex3", L"ex4"}}
 
 	};
 

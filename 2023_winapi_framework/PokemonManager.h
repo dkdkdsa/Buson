@@ -1,5 +1,7 @@
 #pragma once
-struct Pokemon;
+
+#include "pokemon.h"
+
 class PokemonManager
 {
 
@@ -7,26 +9,16 @@ class PokemonManager
 
 public:
 	void Init();
-	Pokemon* GetPokemon(int encyclopediaNumber) {
+	Pokemon GetPokemon(int encyclopediaNumber);
 
-		return _pokemonContainer[encyclopediaNumber];
-
-	}
-
-	Pokemon* GetRamdomPokemonByLevel(int lv) {
-
-		int size = _levelPokemonContainer[lv].size();
-
-		int idx = rand() % size;
-
-		return _levelPokemonContainer[lv][idx];
-
-	}
+	Pokemon GetRamdomPokemonByLevel(int lv);
 
 	void CreatePokemon();
 
+	float GetRealValue(float groupValue, float objectVel, float effortValue, float lv);
+
 private:
-	map<int, Pokemon*> _pokemonContainer;
-	map<int, vector<Pokemon*>> _levelPokemonContainer;
+	map<int, Pokemon> _pokemonContainer;
+	map<int, vector<Pokemon>> _levelPokemonContainer;
 
 };
