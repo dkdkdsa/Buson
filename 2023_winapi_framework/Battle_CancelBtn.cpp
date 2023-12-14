@@ -3,6 +3,7 @@
 #include "BattleUIMgr.h"
 #include "Texture.h"
 #include "Core.h"
+#include "KeyMgr.h"
 Battle_CancelBtn::Battle_CancelBtn() : UIButton(L"Battle_CancelBtn.bmp", L"Texture\\Battle\\Button\\Battle_CancelBtn.bmp", { 0, 0 }, { 512, 406 })
 {
 	m_strName = L"Battle_CancelBtn";
@@ -16,6 +17,16 @@ Battle_CancelBtn::Battle_CancelBtn() : UIButton(L"Battle_CancelBtn.bmp", L"Textu
 
 Battle_CancelBtn::~Battle_CancelBtn()
 {
+}
+
+void Battle_CancelBtn::Update()
+{
+	_btnRt = RECT_MAKE((long)m_vPos.x, (long)m_vPos.y, (long)m_vScale.x * 2, (long)m_vScale.y * 2);
+
+	if (KEY_DOWN(KEY_TYPE::LBUTTON) && PtInRect(&_btnRt, KeyMgr::GetInst()->GetMousePos())) {
+
+		OnClick();
+	}
 }
 
 void Battle_CancelBtn::Render(HDC _dc)

@@ -3,6 +3,7 @@
 #include "BattleUIMgr.h"
 #include "Texture.h"
 #include "Core.h"
+#include "KeyMgr.h"
 RunBtn::RunBtn() : UIButton(L"Battle_RunBtn.bmp", L"Texture\\Battle\\Button\\Battle_RunBtn.bmp", { 0, 0 }, { 512, 406 })
 {
 	m_strName = L"RunBtn";
@@ -15,6 +16,16 @@ RunBtn::RunBtn() : UIButton(L"Battle_RunBtn.bmp", L"Texture\\Battle\\Button\\Bat
 
 RunBtn::~RunBtn()
 {
+}
+
+void RunBtn::Update()
+{
+	_btnRt = RECT_MAKE((long)m_vPos.x, (long)m_vPos.y, (long)m_vScale.x * 2, (long)m_vScale.y * 2);
+
+	if (KEY_DOWN(KEY_TYPE::LBUTTON) && PtInRect(&_btnRt, KeyMgr::GetInst()->GetMousePos())) {
+
+		OnClick();
+	}
 }
 
 void RunBtn::Render(HDC _dc)

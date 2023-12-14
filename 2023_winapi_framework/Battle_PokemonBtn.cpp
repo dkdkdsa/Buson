@@ -3,6 +3,7 @@
 #include "BattleUIMgr.h"
 #include "Texture.h"
 #include "Core.h"
+#include "KeyMgr.h"
 Battle_PokemonBtn::Battle_PokemonBtn() : UIButton(L"Battle_PokemonBtn.bmp", L"Texture\\Battle\\Button\\Battle_PokemonBtn.bmp", { 0, 0 }, { 512, 406 })
 {
 	m_strName = L"Battle_PokemonBtn";
@@ -15,6 +16,16 @@ Battle_PokemonBtn::Battle_PokemonBtn() : UIButton(L"Battle_PokemonBtn.bmp", L"Te
 
 Battle_PokemonBtn::~Battle_PokemonBtn()
 {
+}
+
+void Battle_PokemonBtn::Update()
+{
+	_btnRt = RECT_MAKE((long)m_vPos.x, (long)m_vPos.y, (long)m_vScale.x * 2, (long)m_vScale.y * 2);
+
+	if (KEY_DOWN(KEY_TYPE::LBUTTON) && PtInRect(&_btnRt, KeyMgr::GetInst()->GetMousePos())) {
+
+		OnClick();
+	}
 }
 
 void Battle_PokemonBtn::Render(HDC _dc)
