@@ -3,6 +3,7 @@
 #include "BattleUIMgr.h"
 #include "Texture.h"
 #include "Core.h"
+#include "KeyMgr.h"
 BagBtn::BagBtn() : UIButton(L"Battle_BagBtn.bmp", L"Texture\\Battle\\Button\\Battle_BagBtn.bmp", { 0, 0 }, { 512, 406 })
 {
 	m_strName = L"BagBtn";
@@ -14,6 +15,16 @@ BagBtn::BagBtn() : UIButton(L"Battle_BagBtn.bmp", L"Texture\\Battle\\Button\\Bat
 }
 BagBtn::~BagBtn()
 {
+}
+
+void BagBtn::Update()
+{
+	_btnRt = RECT_MAKE((long)m_vPos.x, (long)m_vPos.y, (long)m_vScale.x * 2, (long)m_vScale.y * 2);
+
+	if (KEY_DOWN(KEY_TYPE::LBUTTON) && PtInRect(&_btnRt, KeyMgr::GetInst()->GetMousePos())) {
+
+		OnClick();
+	}
 }
 
 void BagBtn::Render(HDC _dc)

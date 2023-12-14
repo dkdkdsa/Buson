@@ -15,6 +15,7 @@ public:
     SkillSelectBtn();
     ~SkillSelectBtn();
 public:
+    void Update() override;
     void Render(HDC _dc) override;
     void OnClick() override;
     void PosInit(BtnPos _btnpos);

@@ -92,6 +92,6 @@ struct Pokemon {
 		/*Steel*/		{ 1, 0.5f, 0.5f, 0.5f, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 0.5f }
 	};
 
-	void UseSkill(Pokemon* enemyPokemon, Skill* usedSkill);
+	void UseSkill(Pokemon enemyPokemon, Skill usedSkill);
 };
 

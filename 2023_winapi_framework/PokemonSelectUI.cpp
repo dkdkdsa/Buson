@@ -4,14 +4,15 @@
 #include "Core.h"
 #include "PokemonSelectBtn.h"
 #include "PokemonSelectCancelBtn.h"
-PokemonSelectUI::PokemonSelectUI() : BattleUI(L"BattleSceneBackground.bpm", L"Texture\\Battle\\Pokemon_Select\\SelectMenuBackground.bmp", { 256, 1209 }, { 512, 406 })
+#include "DeckManager.h"
+PokemonSelectUI::PokemonSelectUI() : BattleUI(L"PokemonSelectMenu.bmp", L"Texture\\Battle\\Pokemon_Select\\PokemonSelectMenu.bmp", { 256, 1209 }, { 512, 406 })
 {
 	m_strName = L"PokemonSelectUI";
 	auto screenPoint = Core::GetInst()->GetResolution();
-	SetEnable(false);
 
-	for (int i = 0; i < 6; ++i) {
+	for (int i = 0; i < DeckManager::GetInst()->GetPokemon().size(); ++i) {
 		_pokemonBtns.push_back(new PokemonSelectBtn());
+		static_cast<PokemonSelectBtn*>(_pokemonBtns[i])->PokemonTexInit(i + 1);
 		SetBtnVec(_pokemonBtns[i]);
 	}
 
@@ -29,4 +30,8 @@ PokemonSelectUI::~PokemonSelectUI()
 
 void PokemonSelectUI::Update()
 {
+	for (int i = 0; i < GetBtnVec().size(); ++i) {
+		GetBtnVec()[i]->Update();
+	}
+	Object::Update();
 }

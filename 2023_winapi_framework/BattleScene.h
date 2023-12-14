@@ -1,7 +1,7 @@
 #pragma once
 #include "Scene.h"
-#include "pokemon.h"
 #include "BattleUI.h"
+#include "pokemon.h"
 
 class Texture;
 class BattleScene : public Scene
@@ -14,12 +14,12 @@ public:
 	void Render(HDC _dc) override;
 	void Release() override;
 	void PlayEnterBattleIntro();
-	void BattleCycle(Skill* selectedSkill);
+	void BattleCycle(Skill selectedSkill);
 	void SetCurUI();
 private:
 	// Pokemons
-	std::vector<Pokemon*> _playerPokemons;
-	std::vector<Pokemon*> _wildPokemons;
+	std::vector<Pokemon> _playerPokemons;
+	std::vector<Pokemon> _wildPokemons;
 
 	// Background
 	Texture* _bgTex;

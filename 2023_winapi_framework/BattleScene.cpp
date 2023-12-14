@@ -1,4 +1,6 @@
 #include "pch.h"
+#include "pokemon.h"
+#include "Skill.h"
 #include "BattleScene.h"
 #include "Core.h"
 #include "ActionSelectUI.h"
@@ -72,21 +74,21 @@ void BattleScene::PlayEnterBattleIntro()
 {
 }
 
-void BattleScene::BattleCycle(Skill* selectedSkill)
+void BattleScene::BattleCycle(Skill selectedSkill)
 {
 	// Player skill select
 
 	// Wild_Pokemon skill random select
 
-	Pokemon* firstActionPokemon;
-	Pokemon* secondActionPokemon;
+	Pokemon firstActionPokemon;
+	Pokemon secondActionPokemon;
 
 	// Speed Calculation
-	if (_playerPokemons[0]->Stats.Speed > _wildPokemons[0]->Stats.Speed) {			// Player first
+	if (_playerPokemons[0].Stats.Speed > _wildPokemons[0].Stats.Speed) {			// Player first
 		firstActionPokemon = _playerPokemons.front();
 		secondActionPokemon = _wildPokemons.front();
 	}
-	else if (_playerPokemons[0]->Stats.Speed < _wildPokemons[0]->Stats.Speed) {		// Wild frist
+	else if (_playerPokemons[0].Stats.Speed < _wildPokemons[0].Stats.Speed) {		// Wild frist
 		firstActionPokemon = _wildPokemons.front();
 		secondActionPokemon = _playerPokemons.front();
 	}
@@ -103,8 +105,8 @@ void BattleScene::BattleCycle(Skill* selectedSkill)
 	} // Speed Calculation End
 
 	// First action process
-	firstActionPokemon->UseSkill(secondActionPokemon, selectedSkill);				// First action pokemon attack
+	firstActionPokemon.UseSkill(secondActionPokemon, selectedSkill);				// First action pokemon attack
 
 	// Second action process
-	secondActionPokemon->UseSkill(firstActionPokemon, selectedSkill);				// Second action pokemon attack
+	secondActionPokemon.UseSkill(firstActionPokemon, selectedSkill);				// Second action pokemon attack
 }

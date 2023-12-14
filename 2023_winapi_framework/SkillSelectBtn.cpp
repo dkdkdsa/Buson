@@ -3,7 +3,7 @@
 #include "BattleUIMgr.h"
 #include "Texture.h"
 #include "Core.h"
-
+#include "KeyMgr.h"
 
 
 SkillSelectBtn::SkillSelectBtn() : UIButton(L"NormalBtn.bmp", L"Texture\\Battle\\Button\\NormalBtn.bmp", { 256, 1209 }, { 512, 406 })
@@ -14,6 +14,17 @@ SkillSelectBtn::SkillSelectBtn() : UIButton(L"NormalBtn.bmp", L"Texture\\Battle\
 
 SkillSelectBtn::~SkillSelectBtn()
 {
+}
+
+void SkillSelectBtn::Update()
+{
+
+	_btnRt = RECT_MAKE((long)m_vPos.x, (long)m_vPos.y, (long)m_vScale.x * 2, (long)m_vScale.y * 2);
+
+	if (KEY_DOWN(KEY_TYPE::LBUTTON) && PtInRect(&_btnRt, KeyMgr::GetInst()->GetMousePos())) {
+
+		OnClick();
+	}
 }
 
 void SkillSelectBtn::Render(HDC _dc)

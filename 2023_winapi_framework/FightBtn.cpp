@@ -3,6 +3,7 @@
 #include "BattleUIMgr.h"
 #include "Core.h"
 #include "Texture.h"
+#include "KeyMgr.h"
 
 FightBtn::FightBtn() : UIButton(L"Battle_FightBtn.bmp", L"Texture\\Battle\\Button\\Battle_FightBtn.bmp", Vec2({ 0, 0 }), Vec2({ 512, 406 }))
 {
@@ -16,6 +17,16 @@ FightBtn::FightBtn() : UIButton(L"Battle_FightBtn.bmp", L"Texture\\Battle\\Butto
 
 FightBtn::~FightBtn()
 {
+}
+
+void FightBtn::Update()
+{
+	_btnRt = RECT_MAKE((long)m_vPos.x, (long)m_vPos.y, (long)m_vScale.x * 2, (long)m_vScale.y * 2);
+
+	if (KEY_DOWN(KEY_TYPE::LBUTTON) && PtInRect(&_btnRt, KeyMgr::GetInst()->GetMousePos())) {
+
+		OnClick();
+	}
 }
 
 void FightBtn::Render(HDC _dc)
