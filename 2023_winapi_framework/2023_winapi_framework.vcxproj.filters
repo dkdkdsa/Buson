@@ -110,6 +110,9 @@
     <Filter Include="Engine\04. Object\UI\IntroScene">
       <UniqueIdentifier>{c931cfcc-e2d0-4adc-ad5a-acdaa7597c3d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Manager\FieldDataManager">
+      <UniqueIdentifier>{da4066cb-853d-48bf-af0e-02a046522aa1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -295,8 +298,16 @@
     <ClInclude Include="IntroScene.h">
       <Filter>Engine\05. Scene\IntroScene</Filter>
     </ClInclude>
-    <ClInclude Include="GameStartBtn.h" />
-    <ClInclude Include="GameExitBtn.h" />
+    <ClInclude Include="GameExitBtn.h">
+      <Filter>Engine\04. Object\UI\IntroScene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStartBtn.h">
+      <Filter>Engine\04. Object\UI\IntroScene</Filter>
+    </ClInclude>
+    <ClInclude Include="FieldDataManager.h">
+      <Filter>Engine\03. Manager\FieldDataManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DustEffect.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2023_winapi_framework.rc">
@@ -477,7 +488,15 @@
     <ClCompile Include="IntroScene.cpp">
       <Filter>Engine\05. Scene\IntroScene</Filter>
     </ClCompile>
-    <ClCompile Include="GameStartBtn.cpp" />
-    <ClCompile Include="GameExitBtn.cpp" />
+    <ClCompile Include="GameExitBtn.cpp">
+      <Filter>Engine\04. Object\UI\IntroScene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStartBtn.cpp">
+      <Filter>Engine\04. Object\UI\IntroScene</Filter>
+    </ClCompile>
+    <ClCompile Include="FieldDataManager.cpp">
+      <Filter>Engine\03. Manager\FieldDataManager</Filter>
+    </ClCompile>
+    <ClCompile Include="DustEffect.cpp" />
   </ItemGroup>
 </Project>

@@ -6,6 +6,7 @@ struct tAnimFrame
 	Vec2 vSlice;
 	float fDuration;
 	Vec2 vOffset;
+	Vec2 reSize;
 };
 
 class Animation
@@ -18,7 +19,7 @@ public:
 	void Render(HDC _dc);
 public:
 	void Create(Texture* _pTex, Vec2 _vLT, Vec2 _vSliceSize, 
-		Vec2 _vStep, int _framecount, float _fDuration);
+		Vec2 _vStep, int _framecount, float _fDuration, Vec2 reSize = {});
 public:
 	const wstring& GetName() const { return m_strName; }
 	void SetName(wstring _name) { m_strName = _name; }

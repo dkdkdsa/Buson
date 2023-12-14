@@ -7,6 +7,7 @@
 #include "EasingManager.h"
 #include "TimeMgr.h"
 #include "Texture.h"
+#include "pokemon.h"
 
 PokemonMakeBtn::PokemonMakeBtn() : UIButton(L"PC", L"Texture\\Field\\PokemonCreateBtn.bmp", Vec2({ 300, 100 }), Vec2({300, 75}))
 {

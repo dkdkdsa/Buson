@@ -186,10 +186,12 @@
     <ClInclude Include="DeckManager.h" />
     <ClInclude Include="DeckPokemonPanel.h" />
     <ClInclude Include="define.h" />
+    <ClInclude Include="DustEffect.h" />
     <ClInclude Include="EasingManager.h" />
     <ClInclude Include="enums.h" />
     <ClInclude Include="EventMgr.h" />
     <ClInclude Include="Field.h" />
+    <ClInclude Include="FieldDataManager.h" />
     <ClInclude Include="FieldDeckBtn.h" />
     <ClInclude Include="FieldDeckPanel.h" />
     <ClInclude Include="FieldObject.h" />
@@ -249,9 +251,11 @@
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="DeckManager.cpp" />
     <ClCompile Include="DeckPokemonPanel.cpp" />
+    <ClCompile Include="DustEffect.cpp" />
     <ClCompile Include="EasingManager.cpp" />
     <ClCompile Include="EventMgr.cpp" />
     <ClCompile Include="Field.cpp" />
+    <ClCompile Include="FieldDataManager.cpp" />
     <ClCompile Include="FieldDeckBtn.cpp" />
     <ClCompile Include="FieldDeckPanel.cpp" />
     <ClCompile Include="FieldObject.cpp" />
