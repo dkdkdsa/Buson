@@ -63,7 +63,7 @@ void PokemonSelectBtn::Render(HDC _dc)
 		w,
 		h,
 		RGB(255, 0, 255));
-	  
+
 	w = _hpBarTex->GetWidth();
 	h = _hpBarTex->GetHeight();
 
@@ -80,6 +80,21 @@ void PokemonSelectBtn::Render(HDC _dc)
 		h,
 		RGB(255, 0, 255));
 
+	HFONT font = ResMgr::GetInst()->LoadFont(L"Font\\neodgm.ttf", L"NeoµÕ±Ù¸ð", 23);
+	HFONT oldFont = (HFONT)SelectObject(_dc, font);
+
+	wstring hpText = std::to_wstring((int)_pokemon->Stats.Hp);
+	wstring maxHpText = std::to_wstring((int)_maxHp);
+	wstring lvText = std::to_wstring(_pokemon->EvolutionCount * 20);
+	COLORREF oldColor = SetTextColor(_dc, RGB(255, 255, 255));
+	SetBkMode(_dc, 1);
+	TextOut(_dc, _hpTxtPos.x, _hpTxtPos.y, hpText.c_str(), hpText.length());
+	TextOut(_dc, _maxHpTxtPos.x, _maxHpTxtPos.y, maxHpText.c_str(), maxHpText.length());
+	TextOut(_dc, _lvPos.x, _lvPos.y, lvText.c_str(), lvText.length());
+
+	SelectObject(_dc, oldFont);
+	SetTextColor(_dc, oldColor);
+	DeleteObject(font);
 }
 
 void PokemonSelectBtn::OnClick()
@@ -129,12 +144,19 @@ void PokemonSelectBtn::InitPos()
 	}
 		  break;
 	}
+
+	if (_pokemon->Stats.Hp == 0) {
+		if (_partyIdx == 1) {
+			_mainTex = ResMgr::GetInst()->TexLoad(L"DiedPokemon_1.bmp", L"Texture\\Battle\\Pokemon_Select\\DiedPokemon_1.bmp");
+		}
+		else {
+			_mainTex = ResMgr::GetInst()->TexLoad(L"DiedPokemon_2.bmp", L"Texture\\Battle\\Pokemon_Select\\DiedPokemon_2.bmp");
+		}
+	}
 }
 
-void PokemonSelectBtn::PokemonTexInit(int idx)
+void PokemonSelectBtn::PokemonTexInit()
 {
-	_partyIdx = idx;
-	_pokemon = DeckManager::GetInst()->GetPokemonByIdx(_partyIdx - 1);
 	_pokeTex = ResMgr::GetInst()->FindPokemonTexture(_pokemon->SpriteKey, PokemonSprite_Type::Field);
 	_pokeTexScale = Vec2({ _pokeTex->GetWidth() / 1.4f, _pokeTex->GetHeight() / 1.4f });
 	InitPos();
@@ -151,5 +173,10 @@ void PokemonSelectBtn::PokemonTexInit(int idx)
 	}
 
 	_hpBarPos = Vec2({ _pokeTexPos.x + 100, _pokeTexPos.y + 36 });
-	_hpBarScale = Vec2({ 100, 10 });
+	_hpBarScale = Vec2({ (int)(_pokemon->Stats.Hp / _maxHp * 100), 10 });
+
+	_hpTxtPos = Vec2({ _hpBarPos.x + 4, _hpBarPos.y + 16 });
+	_maxHpTxtPos = Vec2({ _hpTxtPos.x + 55, _hpTxtPos.y });
+
+	_lvPos = Vec2({ _pokeTexPos.x + 19, _pokeTexPos.y + 52 });
 }

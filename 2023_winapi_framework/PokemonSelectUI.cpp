@@ -12,7 +12,8 @@ PokemonSelectUI::PokemonSelectUI() : BattleUI(L"PokemonSelectMenu.bmp", L"Textur
 
 	for (int i = 0; i < DeckManager::GetInst()->GetPokemon().size(); ++i) {
 		_pokemonBtns.push_back(new PokemonSelectBtn());
-		static_cast<PokemonSelectBtn*>(_pokemonBtns[i])->PokemonTexInit(i + 1);
+		static_cast<PokemonSelectBtn*>(_pokemonBtns[i])->PokemonSetting(i + 1);
+		static_cast<PokemonSelectBtn*>(_pokemonBtns[i])->PokemonTexInit();
 		SetBtnVec(_pokemonBtns[i]);
 	}
 
