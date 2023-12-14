@@ -8,11 +8,13 @@
 #include "TimeMgr.h"
 #include "Texture.h"
 #include "pokemon.h"
+#include "FieldObject.h"
+#include "DustEffect.h"
 
-PokemonMakeBtn::PokemonMakeBtn() : UIButton(L"PC", L"Texture\\Field\\PokemonCreateBtn.bmp", Vec2({ 300, 100 }), Vec2({300, 75}))
+PokemonMakeBtn::PokemonMakeBtn() : UIButton(L"PC", L"Texture\\Field\\PokemonCreateBtn.bmp", Vec2({ 500, 90 }), Vec2({300, 75}))
 {
 
-	m_vScale = Vec2({ 72 * 4, 24 * 4 });
+	m_vScale = Vec2({ 340, 100 });
 	originScale = m_vScale;
 
 }
@@ -43,7 +45,12 @@ void PokemonMakeBtn::OnClick()
 {
 
 	auto* field = _fieldScene->GetAbleField();
-	field->AddPokemon(*PokemonManager::GetInst()->GetRamdomPokemonByLevel(1));
+	auto pos = field->AddPokemon(PokemonManager::GetInst()->GetRamdomPokemonByLevel(1))->GetPos();
+	
+	auto* dust = new DustEffect();
+	dust->SetPos(pos);
+
+	_fieldScene->AddObject(dust, OBJECT_GROUP::DEFAULT);
 
 }
 

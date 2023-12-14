@@ -21,5 +21,7 @@ private:
     Pokemon* _curPokemon;
     Field* _field;
     FieldScene* _fieldScene;
+    Vec2 origin;
+    float per;
 
 };
