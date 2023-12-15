@@ -187,14 +187,32 @@ void Field::ReleaseDrag()
 			if (boundObj->GetPokemon().SpriteKey == _dragObject->GetPokemon().SpriteKey 
 				&& _dragObject->GetPokemon().EvolutionNumber != 0) {
 
-				AddPokemon(PokemonManager::GetInst()->GetPokemon(_dragObject->GetPokemon().EvolutionNumber))->SetPos(Vec2({mPos.x, mPos.y}));
+				int curNum = 0;
+
+				if (_dragObject->GetPokemon().EvolutionNumber == -1) {
+					
+					curNum = rand() % (136 - 134 + 1) + 134;
+					
+				}
+				else if (_dragObject->GetPokemon().EvolutionNumber == -2) {
+
+					curNum = (rand() % 151) + 1;
+				}
+				else
+				{
+
+					curNum = _dragObject->GetPokemon().EvolutionNumber;
+					 
+				}
+
+				AddPokemon(PokemonManager::GetInst()->GetPokemon(curNum))->SetPos(Vec2({ mPos.x, mPos.y }));
 
 				auto* dust = new DustEffect();
 
 				auto* tex = ResMgr::GetInst()->
 					FindPokemonTexture(
 						PokemonManager::GetInst()->
-						GetPokemon(_dragObject->GetPokemon().EvolutionNumber).SpriteKey, 
+						GetPokemon(curNum).SpriteKey, 
 						PokemonSprite_Type::Field);
 
 				dust->SetPos(Vec2({ mPos.x + tex->GetWidth() / 4, mPos.y + tex->GetHeight() / 4}));
