@@ -4,6 +4,7 @@
 #include "Core.h"
 #include "Texture.h"
 #include "KeyMgr.h"
+#include "ResMgr.h"
 
 FightBtn::FightBtn() : UIButton(L"Battle_FightBtn.bmp", L"Texture\\Battle\\Button\\Battle_FightBtn.bmp", Vec2({ 0, 0 }), Vec2({ 512, 406 }))
 {
@@ -53,4 +54,5 @@ void FightBtn::Render(HDC _dc)
 void FightBtn::OnClick()
 {
 	BattleUIMgr::GetInst()->ChangeBattleUI(BattleUIType::SkillSelect);
+	ResMgr::GetInst()->Play(L"ButtonClick");
 }

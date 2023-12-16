@@ -4,6 +4,7 @@
 #include "Core.h"
 #include "KeyMgr.h"
 #include "BattleUIMgr.h"
+#include "ResMgr.h"
 PokemonShiftCancelBtn::PokemonShiftCancelBtn() : UIButton(L"Battle_CancelBtn.bmp", L"Texture\\Battle\\Button\\Battle_CancelBtn.bmp", { 0, 0 }, { 512, 406 })
 {
 	m_strName = L"PokemonShiftCancelBtn";
@@ -48,4 +49,5 @@ void PokemonShiftCancelBtn::Render(HDC _dc)
 void PokemonShiftCancelBtn::OnClick()
 {
 	BattleUIMgr::GetInst()->ChangeBattleUI(BattleUIType::PokemonSelect);
+	ResMgr::GetInst()->Play(L"ButtonClick");
 }

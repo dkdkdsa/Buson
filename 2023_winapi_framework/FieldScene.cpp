@@ -19,6 +19,9 @@ void FieldScene::Init()
 	bgTex = ResMgr::GetInst()->TexLoad(L"FieldBG", L"Texture\\Field\\FieldBG.bmp");
 	panelTex = ResMgr::GetInst()->TexLoad(L"FieldPanel", L"Texture\\Field\\FieldPanel.bmp");
 
+
+	ResMgr::GetInst()->LoadSound(L"Field", L"Sound\\Field.mp3", true);
+
 #pragma region Field
 
 	Vec2 fieldSize = Vec2({ screenPoint.x * 0.9f, screenPoint.y / 1.5f });
@@ -49,7 +52,7 @@ void FieldScene::Init()
 
 #pragma endregion
 
-
+	ResMgr::GetInst()->Play(L"Field");
 
 }
 
@@ -109,6 +112,5 @@ void FieldScene::Release()
 		delete _fieldList[i];
 
 	}
-
 	_fieldList.clear();
 }

@@ -4,6 +4,8 @@
 #include "Texture.h"
 #include "Core.h"
 #include "KeyMgr.h"
+#include "ResMgr.h"
+
 Battle_PokemonBtn::Battle_PokemonBtn() : UIButton(L"Battle_PokemonBtn.bmp", L"Texture\\Battle\\Button\\Battle_PokemonBtn.bmp", { 0, 0 }, { 512, 406 })
 {
 	m_strName = L"Battle_PokemonBtn";
@@ -52,4 +54,5 @@ void Battle_PokemonBtn::Render(HDC _dc)
 void Battle_PokemonBtn::OnClick()
 {
 	BattleUIMgr::GetInst()->ChangeBattleUI(BattleUIType::PokemonSelect);
+	ResMgr::GetInst()->Play(L"ButtonClick");
 }

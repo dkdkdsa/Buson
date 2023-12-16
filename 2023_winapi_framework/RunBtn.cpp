@@ -6,6 +6,8 @@
 #include "KeyMgr.h"
 #include "SceneMgr.h"
 #include "EventMgr.h"
+#include "ResMgr.h"
+
 RunBtn::RunBtn() : UIButton(L"Battle_RunBtn.bmp", L"Texture\\Battle\\Button\\Battle_RunBtn.bmp", { 0, 0 }, { 512, 406 })
 {
 	m_strName = L"RunBtn";
@@ -57,6 +59,7 @@ void RunBtn::OnClick()
 	//BattleUIMgr::GetInst()->ChangeBattleUI(BattleUIType::Run);
 	//SceneMgr::GetInst()->LoadScene(L"Field_Scene");
 
+	ResMgr::GetInst()->Play(L"ButtonClick");
 	EventMgr::GetInst()->ChangeScene(L"Field_Scene");
 
 }

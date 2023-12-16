@@ -7,6 +7,7 @@
 #include "Core.h"
 #include "BattleMgr.h"
 #include "BattleUIMgr.h"
+#include "ResMgr.h"
 PokemonShiftBtn::PokemonShiftBtn() : UIButton(L"ShiftPokemonBtn.bmp", L"Texture\\Battle\\Button\\ShiftPokemonBtn.bmp", { 0, 0 }, { 512, 406 })
 {
 	m_strName = L"PokemonShiftBtn";
@@ -84,6 +85,7 @@ void PokemonShiftBtn::OnClick()
 {
 	BattleMgr::GetInst()->ChangeCurPokemon(_pokemon);
 	BattleUIMgr::GetInst()->ChangeBattleUI(BattleUIType::ActionSelect);
+	ResMgr::GetInst()->Play(L"ButtonClick");
 }
 
 void PokemonShiftBtn::SetPokemon(Pokemon* pokemon)

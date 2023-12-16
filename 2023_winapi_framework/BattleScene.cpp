@@ -27,6 +27,10 @@ void BattleScene::Init()
 	Core::GetInst()->ResizeWindow(528, 816);
 	auto screenPoint = Core::GetInst()->GetResolution();
 
+
+	ResMgr::GetInst()->LoadSound(L"Battle", L"Sound\\Battle.mp3", true);
+	ResMgr::GetInst()->Play(L"Battle");
+
 	_bgPos = Vec2({ 256, 197 });
 	_bgScale = Vec2({ 512, 394 });
 	_bgTex = ResMgr::GetInst()->TexLoad(
@@ -276,6 +280,7 @@ void BattleScene::Release()
 	_playerPokemons = playerPokemons;
 	BattleUIMgr::GetInst()->ReleaseBattleUI();
 	Scene::Release();
+
 }
 
 void BattleScene::PlayEnterBattleIntro()

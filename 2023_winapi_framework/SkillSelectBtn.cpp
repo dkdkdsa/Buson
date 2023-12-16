@@ -168,6 +168,7 @@ void SkillSelectBtn::OnClick()
 
 	if (curPP <= 0) return;
 	curPP--;
+	ResMgr::GetInst()->Play(L"ButtonClick");
 
 }
 

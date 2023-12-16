@@ -4,6 +4,7 @@
 #include "Texture.h"
 #include "Core.h"
 #include "KeyMgr.h"
+#include "ResMgr.h"
 Battle_CancelBtn::Battle_CancelBtn() : UIButton(L"Battle_CancelBtn.bmp", L"Texture\\Battle\\Button\\Battle_CancelBtn.bmp", { 0, 0 }, { 512, 406 })
 {
 	m_strName = L"Battle_CancelBtn";
@@ -53,4 +54,5 @@ void Battle_CancelBtn::Render(HDC _dc)
 void Battle_CancelBtn::OnClick()
 {
 	BattleUIMgr::GetInst()->ChangeBattleUI(BattleUIType::ActionSelect);
+	ResMgr::GetInst()->Play(L"ButtonClick");
 }

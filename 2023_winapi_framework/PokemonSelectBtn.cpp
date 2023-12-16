@@ -134,6 +134,7 @@ void PokemonSelectBtn::OnClick()
 {
 	static_cast<PokemonShiftUI*>(BattleUIMgr::GetInst()->GetBattleUI(BattleUIType::PokemonShiftUI))->SetPokemon(_pokemon);
 	BattleUIMgr::GetInst()->ChangeBattleUI(BattleUIType::PokemonShiftUI);
+	ResMgr::GetInst()->Play(L"ButtonClick");
 }
 
 void PokemonSelectBtn::InitPos()

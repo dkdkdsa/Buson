@@ -4,6 +4,7 @@
 #include "Core.h"
 #include "BattleUIMgr.h"
 #include "KeyMgr.h"
+#include "ResMgr.h"
 PokemonSelectCancelBtn::PokemonSelectCancelBtn() : UIButton(L"SelectCancelBtn.bmp", L"Texture\\Battle\\Pokemon_Select\\SelectCancelBtn.bmp", { 0, 0 }, { 300, 75 })
 {
 	m_strName = L"PokemonSelectCancel";
@@ -53,4 +54,5 @@ void PokemonSelectCancelBtn::Render(HDC _dc)
 void PokemonSelectCancelBtn::OnClick()
 {
 	BattleUIMgr::GetInst()->ChangeBattleUI(BattleUIType::ActionSelect);
+	ResMgr::GetInst()->Play(L"ButtonClick");
 }
