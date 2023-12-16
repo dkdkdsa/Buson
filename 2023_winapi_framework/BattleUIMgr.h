@@ -27,6 +27,7 @@ public:
 	}
 	void SetCurUI(BattleUIType uiType) {
 		_curBattleUI = _battleUIContainer[(int)uiType];
+		_curBattleUI->Init();
 	}
 	void ReleaseBattleUI() {
 		for (int i = 0; i < _battleUIContainer.size(); ++i) {

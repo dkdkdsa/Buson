@@ -55,5 +55,8 @@ void RunBtn::OnClick()
 {
 
 	//BattleUIMgr::GetInst()->ChangeBattleUI(BattleUIType::Run);
+	//SceneMgr::GetInst()->LoadScene(L"Field_Scene");
+
 	EventMgr::GetInst()->ChangeScene(L"Field_Scene");
+
 }

@@ -1,6 +1,5 @@
 #pragma once
 #include "UIButton.h"
-#include "Skill.h"
 
 enum class BtnPos {
     LT = 0,
@@ -8,6 +7,8 @@ enum class BtnPos {
     RT,
     RB
 };
+
+class Skill;
 
 class SkillSelectBtn :
     public UIButton
@@ -23,4 +24,7 @@ public:
     void PosInit(BtnPos _btnpos);
 private:
     int _idx;
+    int curPP;
+    Skill* curSkill;
+
 };
