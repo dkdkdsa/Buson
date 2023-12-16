@@ -8,6 +8,7 @@ enum class BattleUIType {
 	Bag,
 	Run,
 	PokemonShiftUI,
+	NullUI,
 	End
 };
 

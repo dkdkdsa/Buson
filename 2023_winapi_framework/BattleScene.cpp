@@ -9,6 +9,7 @@
 #include "BagUI.h"
 #include "RunUI.h"
 #include "PokemonShiftUI.h"
+#include "NullUI.h"
 #include "BattleUIMgr.h"
 #include "ResMgr.h"
 #include "Texture.h"
@@ -16,7 +17,6 @@
 #include "TimeMgr.h"
 #include "PokemonManager.h"
 #include "Texture.h"
-
 BattleScene::BattleScene()
 {
 	
@@ -72,6 +72,7 @@ void BattleScene::Init()
 	BagUI* bagUI = new BagUI();
 	RunUI* runUI = new RunUI();
 	PokemonShiftUI* pokemonShiftUI = new PokemonShiftUI();
+	NullUI* nullUI = new NullUI();
 
 	BattleUIMgr::GetInst()->SetBattleUI(actionSelectUI);
 	BattleUIMgr::GetInst()->SetBattleUI(skillSelectUI);
@@ -79,6 +80,7 @@ void BattleScene::Init()
 	BattleUIMgr::GetInst()->SetBattleUI(bagUI);
 	BattleUIMgr::GetInst()->SetBattleUI(runUI);
 	BattleUIMgr::GetInst()->SetBattleUI(pokemonShiftUI);
+	BattleUIMgr::GetInst()->SetBattleUI(nullUI);
 	
 	
 
@@ -310,8 +312,8 @@ void BattleScene::BattleCycle(Skill selectedSkill)
 	} // Speed Calculation End
 
 	// First action process
-	firstActionPokemon->UseSkill(secondActionPokemon, selectedSkill);				// First action pokemon attack
+	//firstActionPokemon->UseSkill(secondActionPokemon, selectedSkill);				// First action pokemon attack
 
-	// Second action process
-	secondActionPokemon->UseSkill(firstActionPokemon, selectedSkill);				// Second action pokemon attack
+	//// Second action process
+	//secondActionPokemon->UseSkill(firstActionPokemon, selectedSkill);				// Second action pokemon attack
 }
