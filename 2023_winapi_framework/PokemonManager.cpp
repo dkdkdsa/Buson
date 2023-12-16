@@ -61,6 +61,13 @@ Pokemon PokemonManager::GetRamdomPokemonByLevel(int lv)
 
 	pokemon.SkillsKey = SkillManager::GetInst()->LearnSkill(pokemon.Type, pokemon.EvolutionCount);
 
+	for (auto var : pokemon.SkillsKey)
+	{
+
+		pokemon.Skills.push_back(SkillManager::GetInst()->GetSkill(var));
+
+	}
+
 	return pokemon;
 
 }
