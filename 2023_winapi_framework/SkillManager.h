@@ -19,7 +19,7 @@ public:
 		return _skillContainer[key];
 
 	}
-	vector<wstring> LearnSkill(vector<PokemonType> type, int evolutionCount);
+	vector<wstring> LearnSkill(vector<PokemonType> types, int evolutionCount);
 
 private:
 	void CreateSkill();

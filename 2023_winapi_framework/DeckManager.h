@@ -13,6 +13,7 @@ public:
 	bool AddPokemon(Pokemon pokemon);
 	vector<Pokemon>& GetPokemon() { return decks; }
 
+
 private:
 	vector<Pokemon> decks;
 
