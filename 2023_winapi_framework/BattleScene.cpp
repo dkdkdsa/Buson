@@ -243,7 +243,7 @@ void BattleScene::Render(HDC _dc)
 	// Wild Pokemon
 	wstring wLvText = std::to_wstring(_wildPokemon->EvolutionCount * 20);
 
-	wstring actionText = L"무엇을 할까?";
+	
 	COLORREF oldColor = SetTextColor(_dc, RGB(0, 0, 0));
 	SetBkMode(_dc, 1);
 	// Player HP
@@ -258,13 +258,10 @@ void BattleScene::Render(HDC _dc)
 	// Wild Lv & Name
 	TextOut(_dc, _wildPokeHpBarTexPos.x + 168, _wildPokeHpBarTexPos.y + 12, wLvText.c_str(), wLvText.length());
 	TextOut(_dc, _wildPokeHpBarTexPos.x + 10, _wildPokeHpBarTexPos.y + 10, _wildPokemon->PokemonName.c_str(), _wildPokemon->PokemonName.length());
-	HFONT newfont = ResMgr::GetInst()->LoadFont(L"Font\\neodgm.ttf", L"Neo둥근모", 30);
-	(HFONT)SelectObject(_dc, newfont);
-	TextOut(_dc, 30, 305, actionText.c_str(), actionText.length());
+	
 	SelectObject(_dc, oldFont);
 	SetTextColor(_dc, oldColor);
 	DeleteObject(font);
-	DeleteObject(newfont);
 	DeleteObject(namefont);
 
 	Scene::Render(_dc);

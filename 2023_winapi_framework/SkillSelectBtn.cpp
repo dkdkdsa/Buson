@@ -6,6 +6,7 @@
 #include "KeyMgr.h"
 #include "ResMgr.h"
 #include "SkillManager.h"
+#include "BattleMgr.h"
 
 #define stringify( name ) #name
 
@@ -141,6 +142,8 @@ void SkillSelectBtn::OnClick()
 	// 추후 배틀 씬 배틀 사이클하고 연결해서
 	// 여기서 선택을 하면 배틀 사이클 실행해서
 	// 한 턴 돌아가도록 해줘야함
+
+	//BattleMgr::GetInst()->StartBattle()
 }
 
 void SkillSelectBtn::PosInit(BtnPos _btnpos)
