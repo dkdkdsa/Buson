@@ -8,6 +8,5 @@ public:
     RunUI();
     ~RunUI();
 private:
-    std::vector<UIButton*> _buttons;
 };
 

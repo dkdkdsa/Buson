@@ -1,25 +1,22 @@
 #include "pch.h"
-#include "Battle_CancelBtn.h"
-#include "BattleUIMgr.h"
+#include "PokemonShiftCancelBtn.h"
 #include "Texture.h"
 #include "Core.h"
 #include "KeyMgr.h"
-Battle_CancelBtn::Battle_CancelBtn() : UIButton(L"Battle_CancelBtn.bmp", L"Texture\\Battle\\Button\\Battle_CancelBtn.bmp", { 0, 0 }, { 512, 406 })
+#include "BattleUIMgr.h"
+PokemonShiftCancelBtn::PokemonShiftCancelBtn() : UIButton(L"Battle_CancelBtn.bmp", L"Texture\\Battle\\Button\\Battle_CancelBtn.bmp", { 0, 0 }, { 512, 406 })
 {
-	m_strName = L"Battle_CancelBtn";
+	m_strName = L"PokemonShiftCancelBtn";
 	m_vScale = Vec2({ _mainTex->GetWidth() * 2, _mainTex->GetHeight() });
 	auto screenPoint = Core::GetInst()->GetResolution();
-	SetPos(Vec2(
-		{ (long)(256 - (m_vScale.x / 2))
-		, (long)(screenPoint.y - m_vScale.y * 2 - 16) }
-	));
+	SetPos(Vec2({ (int)(256 - (m_vScale.x / 2)), (int)(screenPoint.y - m_vScale.y * 2 - 16) }));
 }
 
-Battle_CancelBtn::~Battle_CancelBtn()
+PokemonShiftCancelBtn::~PokemonShiftCancelBtn()
 {
 }
 
-void Battle_CancelBtn::Update()
+void PokemonShiftCancelBtn::Update()
 {
 	_btnRt = RECT_MAKE((long)m_vPos.x, (long)(m_vPos.y + m_vScale.y), (long)m_vScale.x * 2, (long)m_vScale.y);
 
@@ -29,9 +26,8 @@ void Battle_CancelBtn::Update()
 	}
 }
 
-void Battle_CancelBtn::Render(HDC _dc)
+void PokemonShiftCancelBtn::Render(HDC _dc)
 {
-
 	int w = _mainTex->GetWidth();
 	int h = _mainTex->GetHeight();
 
@@ -47,10 +43,9 @@ void Battle_CancelBtn::Render(HDC _dc)
 		w,
 		h,
 		RGB(255, 0, 255));
-
 }
 
-void Battle_CancelBtn::OnClick()
+void PokemonShiftCancelBtn::OnClick()
 {
-	BattleUIMgr::GetInst()->ChangeBattleUI(BattleUIType::ActionSelect);
+	BattleUIMgr::GetInst()->ChangeBattleUI(BattleUIType::PokemonSelect);
 }

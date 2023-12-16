@@ -23,6 +23,7 @@ public:
 
 private:
 	void CreateSkill();
+	void InitSkillContainer();
 
 };
 

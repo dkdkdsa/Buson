@@ -71,6 +71,7 @@ struct Pokemon {
 	std::wstring PokemonName;
 	int EvolutionCount;
 	int EvolutionNumber;//다음 진화 도감번호 0이면 진화불가능
+	int MaxHp;
 
 	float TypeSheet[(int)PokemonType::End][(int)PokemonType::End] = {
 		/*Normal*/		{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5f, 0, 1, 1, 0.5f },
@@ -92,6 +93,6 @@ struct Pokemon {
 		/*Steel*/		{ 1, 0.5f, 0.5f, 0.5f, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 0.5f }
 	};
 
-	void UseSkill(Pokemon enemyPokemon, Skill usedSkill);
+	void UseSkill(Pokemon* enemyPokemon, Skill usedSkill);
 };
 

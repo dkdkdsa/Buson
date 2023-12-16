@@ -32,7 +32,11 @@ BattleUI::BattleUI(wstring textureKey, wstring path, Vec2 pos, Vec2 scale)
 
 BattleUI::~BattleUI()
 {
+	Release();
+}
 
+void BattleUI::Init()
+{
 }
 
 void BattleUI::Update()
@@ -67,3 +71,4 @@ void BattleUI::Render(HDC _dc)
 		_buttons[i]->Render(_dc);
 	}
 }
+

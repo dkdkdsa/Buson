@@ -18,3 +18,11 @@ BagUI::~BagUI()
 void BagUI::Update()
 {
 }
+
+void BagUI::Release()
+{
+	for (int i = 0; i < _pokemonBtns.size(); ++i) {
+		delete _pokemonBtns[i];
+	}
+	BattleUI::Release();
+}

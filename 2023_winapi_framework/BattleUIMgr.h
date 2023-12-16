@@ -6,7 +6,9 @@ enum class BattleUIType {
 	SkillSelect,
 	PokemonSelect,
 	Bag,
-	Run
+	Run,
+	PokemonShiftUI,
+	End
 };
 
 class BattleUIMgr
@@ -25,6 +27,13 @@ public:
 	}
 	void SetCurUI(BattleUIType uiType) {
 		_curBattleUI = _battleUIContainer[(int)uiType];
+	}
+	void ReleaseBattleUI() {
+		for (int i = 0; i < _battleUIContainer.size(); ++i) {
+			_battleUIContainer[i]->Release();
+			delete _battleUIContainer[i];
+		}
+		_battleUIContainer.clear();
 	}
 	void ChangeBattleUI(BattleUIType uiType);
 private:

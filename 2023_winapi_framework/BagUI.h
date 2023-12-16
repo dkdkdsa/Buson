@@ -8,7 +8,8 @@ public:
     BagUI();
     ~BagUI();
 public:
-    void Update();
+    void Update() override;
+    void Release() override;
 private:
     std::vector<UIButton*> _pokemonBtns;
 };
