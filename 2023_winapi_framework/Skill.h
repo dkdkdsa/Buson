@@ -29,11 +29,18 @@ enum class BattleEffectGroup
 	MyDEFDown,  // 내 방어다운
 	MySPEDown,  // 내 속도다운
 	Recoil,		// 반동
-	DamageRecoil,//데미지 반동
+	DamageRecoil,// 데미지 반동
 	MyAtkUp,	// 내 공격 업
 	MyDEFUp,	// 내 방어 업
 	MySEPUp,	// 내 속도 업
 	ActionPriority, // 우선도
+	DeadRecoil,	// 대폭발용 반동
+	MyA_DDown,  // 내 공수 다운
+	AccuracyDown, // 명중률 다운
+	MyStatAllUp, // 내 스탯 전부 1랭 업
+	MyA_SUp,	// 용춤용 스탯업
+	MyConfusion, // 내 혼란
+	LvDamage,	// 레벨만큼 데미지
 
 };
 
