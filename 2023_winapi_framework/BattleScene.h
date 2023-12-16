@@ -19,6 +19,16 @@ public:
 	void Release() override;
 	void PlayEnterBattleIntro();
 	void BattleCycle(Skill selectedSkill);
+	Pokemon GetCurPokemon() {
+
+		return *_curPokemon;
+
+	}
+	Pokemon GetWildPokemon() {
+
+		return *_wildPokemon;
+
+	}
 	void SetCurPokemon(Pokemon* pokemon) {
 		_curPokemon = pokemon;
 		_curPokemonTex = ResMgr::GetInst()->FindPokemonTexture(_curPokemon->SpriteKey, PokemonSprite_Type::Battle_Back);

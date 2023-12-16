@@ -330,6 +330,7 @@
     <ClInclude Include="BattleMgr.h">
       <Filter>Engine\03. Manager\BattleMgr</Filter>
     </ClInclude>
+    <ClInclude Include="SnowParticle.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2023_winapi_framework.rc">
@@ -536,5 +537,6 @@
     <ClCompile Include="BattleMgr.cpp">
       <Filter>Engine\03. Manager\BattleMgr</Filter>
     </ClCompile>
+    <ClCompile Include="SnowParticle.cpp" />
   </ItemGroup>
 </Project>

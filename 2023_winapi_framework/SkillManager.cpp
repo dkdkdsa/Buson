@@ -6,6 +6,7 @@ void SkillManager::Init()
 {
 
 	CreateSkill();
+	InitSkillContainer();
 
 }
 

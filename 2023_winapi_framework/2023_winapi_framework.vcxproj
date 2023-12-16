@@ -234,6 +234,7 @@
     <ClInclude Include="SkillManager.h" />
     <ClInclude Include="SkillSelectBtn.h" />
     <ClInclude Include="SkillSelectUI.h" />
+    <ClInclude Include="SnowParticle.h" />
     <ClInclude Include="Start_Scene.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Texture.h" />
@@ -304,6 +305,7 @@
     <ClCompile Include="SkillManager.cpp" />
     <ClCompile Include="SkillSelectBtn.cpp" />
     <ClCompile Include="SkillSelectUI.cpp" />
+    <ClCompile Include="SnowParticle.cpp" />
     <ClCompile Include="Start_Scene.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TimeMgr.cpp" />

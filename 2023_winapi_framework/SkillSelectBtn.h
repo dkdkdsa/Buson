@@ -16,7 +16,7 @@ public:
     SkillSelectBtn();
     ~SkillSelectBtn();
 public:
-    void InitSkill(Skill* skill);
+    void InitSkill(wstring skillKey);
     void Update() override;
     void Render(HDC _dc) override;
     void OnClick() override;

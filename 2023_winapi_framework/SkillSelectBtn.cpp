@@ -5,6 +5,7 @@
 #include "Core.h"
 #include "KeyMgr.h"
 #include "ResMgr.h"
+#include "SkillManager.h"
 
 #define stringify( name ) #name
 
@@ -18,8 +19,17 @@ SkillSelectBtn::~SkillSelectBtn()
 {
 }
 
-void SkillSelectBtn::InitSkill(Skill* skill)
+void SkillSelectBtn::InitSkill(wstring skillKey)
 {
+
+	Skill* skill = SkillManager::GetInst()->GetSkill(skillKey);
+
+	if (skill == nullptr) {
+
+		return;
+
+	}
+
 	switch (skill->SkillType)
 	{
 	case PokemonType::Normal: {
@@ -102,6 +112,7 @@ void SkillSelectBtn::Update()
 
 		OnClick();
 	}
+
 }
 
 void SkillSelectBtn::Render(HDC _dc)
