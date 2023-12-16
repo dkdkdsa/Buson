@@ -148,7 +148,7 @@ void SkillManager::CreateSkill()
 		{3, {L"독침", L"용해액", L"독엄니", L"포이즌테일", L"크로스포이즌", L"오물폭탄", L"오물웨이브", L"트림", L"더스트슈트"}}
 	};
 
-	_learnSkillContainer.insert({ PokemonType::Dragon, poison });
+	_learnSkillContainer.insert({ PokemonType::Poison, poison });
 
 	map<int, vector<wstring>> ghost
 	{
