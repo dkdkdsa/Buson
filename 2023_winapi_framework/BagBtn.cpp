@@ -21,10 +21,10 @@ void BagBtn::Update()
 {
 	_btnRt = RECT_MAKE((long)m_vPos.x, (long)m_vPos.y, (long)m_vScale.x * 2, (long)m_vScale.y * 2);
 
-	if (KEY_DOWN(KEY_TYPE::LBUTTON) && PtInRect(&_btnRt, KeyMgr::GetInst()->GetMousePos())) {
+	//if (KEY_DOWN(KEY_TYPE::LBUTTON) && PtInRect(&_btnRt, KeyMgr::GetInst()->GetMousePos())) {
 
-		OnClick();
-	}
+	//	OnClick();
+	//}
 }
 
 void BagBtn::Render(HDC _dc)
@@ -50,5 +50,5 @@ void BagBtn::Render(HDC _dc)
 
 void BagBtn::OnClick()
 {
-	BattleUIMgr::GetInst()->ChangeBattleUI(BattleUIType::Bag);
+	//BattleUIMgr::GetInst()->ChangeBattleUI(BattleUIType::Bag);
 }

@@ -11,6 +11,7 @@
 #include "PokemonManager.h"
 #include <time.h>
 #include "BattleUIMgr.h"
+#include "BattleMgr.h"
 
 bool Core::Init(HWND _hWnd, POINT _ptResolution)
 {
@@ -46,6 +47,7 @@ bool Core::Init(HWND _hWnd, POINT _ptResolution)
 	PokemonManager::GetInst()->Init();
 	BattleUIMgr::GetInst()->Init();
 	SceneMgr::GetInst()->Init();
+	BattleMgr::GetInst()->Init();
 
 	return true;
 }

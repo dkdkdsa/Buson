@@ -6,6 +6,7 @@
 #include "RunBtn.h"
 #include "Battle_PokemonBtn.h"
 #include "Core.h"
+#include "Texture.h"
 ActionSelectUI::ActionSelectUI() : BattleUI(L"BattleSceneBackground.bmp", L"Texture\\Battle\\BattleSceneBackground.bmp", { 256, 1209 }, { 512, 406 })
 {
 	m_strName = L"ActionSelectUI";
@@ -45,12 +46,43 @@ ActionSelectUI::~ActionSelectUI()
 
 }
 
+void ActionSelectUI::Init()
+{
+
+}
+
 void ActionSelectUI::Update()
 {
 	for (int i = 0; i < GetBtnVec().size(); ++i) {
 		GetBtnVec()[i]->Update();
 	}
 	Object::Update();
+}
+
+void ActionSelectUI::Render(HDC _dc)
+{
+	if (_mainTex == nullptr) {
+		RECT_RENDER(m_vPos.x, m_vPos.y, m_vScale.x, m_vScale.y, _dc);
+	}
+	else {
+		TransparentBlt(
+			_dc,
+			m_vPos.x - m_vScale.x / 2,
+			m_vPos.y - m_vScale.y * 2,
+			m_vScale.x,
+			m_vScale.y,
+			_mainTex->GetDC(),
+			0,
+			0,
+			_mainTex->GetWidth(),
+			_mainTex->GetHeight(),
+			RGB(255, 0, 255));
+	}
+	for (int i = 0; i < _buttons.size(); ++i) {
+		_buttons[i]->Render(_dc);
+	}
+
+
 }
 
 //void ActionSelectUI::Render(HDC _dc)
