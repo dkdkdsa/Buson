@@ -29,7 +29,9 @@ SkillSelectUI::~SkillSelectUI()
 
 void SkillSelectUI::Init()
 {
-	
+	for (int i = 0; i < 4; ++i) {
+		_skillBtns[i]->InitSkill(std::dynamic_pointer_cast<BattleScene>(SceneMgr::GetInst()->GetCurScene())->GetCurPokemon().SkillsKey[i]);
+	}
 }
 
 void SkillSelectUI::Update()
