@@ -32,6 +32,8 @@ Field::Field(Vec2 center, Vec2 fieldSize)
 	
 	FieldDataManager::GetInst()->ReleasePokemon();
 
+	ResMgr::GetInst()->LoadSound(L"Marge", L"Sound\\Field\\MargeSound.wav", false);
+
 }
 
 Field::~Field()
@@ -143,6 +145,8 @@ FieldObject* Field::AddPokemon(Pokemon pokemon)
 	_thisFieldObject.push_back(fieldObject);
 
 	fieldObject->SetFieldRect(RECT_MAKE((int)m_vPos.x, (int)m_vPos.y, (int)m_vScale.x, (int)m_vScale.y));
+
+	ResMgr::GetInst()->Play(L"Marge");
 
 	return fieldObject;
 	
@@ -296,6 +300,7 @@ void Field::AddDeck()
 
 		if (DeckManager::GetInst()->AddPokemon(obj->GetPokemon())) {
 
+			ResMgr::GetInst()->Play(L"ButtonClick");
 			EventMgr::GetInst()->DeleteObject(obj);
 
 		}

@@ -5,6 +5,7 @@
 #include "TimeMgr.h"
 #include "EasingManager.h"
 
+
 GameExitBtn::GameExitBtn(Vec2 pos, Vec2 scale) : UIButton(L"ExitBt", L"Texture\\Intro\\ExitBtn.bmp", pos, scale)
 {
 

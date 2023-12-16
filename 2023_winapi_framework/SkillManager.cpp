@@ -188,26 +188,34 @@ void SkillManager::CreateSkill()
 
 }
 
-vector<wstring> SkillManager::LearnSkill(PokemonType type, int evolutionCount)
+vector<wstring> SkillManager::LearnSkill(vector<PokemonType> types, int evolutionCount)
 {
 
-	//복사로 가져오기
-	auto container = _learnSkillContainer[type][evolutionCount];
+	int len = 4 / types.size();
 	vector<wstring> result;
 
-	for (int i = 0; i < 1000; i++) {
+	for (int k = 0; k < types.size(); k++) {
 
-		int idx1 = rand() % container.size();
-		int idx2 = rand() % container.size();
+		auto type = types[k];
 
-		std::swap(container[idx1], container[idx2]);
+		//복사로 가져오기
+		auto container = _learnSkillContainer[type][evolutionCount];
 
-	}
+		for (int i = 0; i < 1000; i++) {
 
-	for (int i = 0; i < 4; i++) {
+			int idx1 = rand() % container.size();
+			int idx2 = rand() % container.size();
+
+			std::swap(container[idx1], container[idx2]);
+
+		}
+
+		for (int i = 0; i < len; i++) {
 
 
-		result.push_back(container[i]);
+			result.push_back(container[i]);
+
+		}
 
 	}
 

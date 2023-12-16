@@ -25,7 +25,7 @@ Pokemon PokemonManager::GetPokemon(int encyclopediaNumber)
 
 		});
 
-	pokemon.SkillsKey = SkillManager::GetInst()->LearnSkill(pokemon.Type[0], pokemon.EvolutionCount);
+	pokemon.SkillsKey = SkillManager::GetInst()->LearnSkill(pokemon.Type, pokemon.EvolutionCount);
 
 	return pokemon;
 
@@ -52,7 +52,7 @@ Pokemon PokemonManager::GetRamdomPokemonByLevel(int lv)
 
 		});
 
-	pokemon.SkillsKey = SkillManager::GetInst()->LearnSkill(pokemon.Type[0], pokemon.EvolutionCount);
+	pokemon.SkillsKey = SkillManager::GetInst()->LearnSkill(pokemon.Type, pokemon.EvolutionCount);
 
 	return pokemon;
 
@@ -75,7 +75,7 @@ void PokemonManager::CreatePokemon()
 				45, //Speed
 
 			},
-			SkillManager::GetInst()->LearnSkill(PokemonType::Grass, 1),
+			{},
 			L"001",
 			L"이상해씨",
 			1,
@@ -97,7 +97,7 @@ void PokemonManager::CreatePokemon()
 				60, //Speed
 
 			},
-			SkillManager::GetInst()->LearnSkill(PokemonType::Grass, 1),
+		{},
 			L"002",
 			L"이상해풀",
 			2,
@@ -119,7 +119,7 @@ void PokemonManager::CreatePokemon()
 				80, //Speed
 
 			},
-			SkillManager::GetInst()->LearnSkill(PokemonType::Grass, 1),
+		{},
 			L"003",
 			L"이상해꽃",
 			3,
@@ -144,7 +144,7 @@ void PokemonManager::CreatePokemon()
 				65, //Speed
 
 			},
-			SkillManager::GetInst()->LearnSkill(PokemonType::Fire, 1),
+		{},
 			L"004",
 			L"파이리",
 			1,
@@ -214,7 +214,7 @@ void PokemonManager::CreatePokemon()
 				43, //Speed
 
 			},
-			SkillManager::GetInst()->LearnSkill(PokemonType::Water, 1),
+		{},
 			L"007",
 			L"꼬부기",
 			1,
@@ -235,7 +235,7 @@ void PokemonManager::CreatePokemon()
 				58, //Speed
 
 			},
-			SkillManager::GetInst()->LearnSkill(PokemonType::Water, 2),
+		{},
 			L"008",
 			L"어니부기",
 			2,

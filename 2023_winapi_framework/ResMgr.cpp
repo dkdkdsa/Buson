@@ -74,6 +74,8 @@ void ResMgr::Init()
     if (m_pSystem != nullptr)
         m_pSystem->init((int)SOUND_CHANNEL::END, FMOD_INIT_NORMAL, nullptr);
 
+    LoadSound(L"ButtonClick", L"Sound\\UI\\ButtonClick.wav", false);
+
     CreatePokemonTexture();
 
 }

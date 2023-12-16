@@ -4,6 +4,7 @@
 #include "TimeMgr.h"
 #include "Texture.h"
 #include "EasingManager.h"
+#include "ResMgr.h"
 
 FieldDeckBtn::FieldDeckBtn(Vec2 pos, Vec2 scale) : UIButton(L"DeckBtn", L"Texture\\Field\\PkBtn.bmp", pos, scale)
 {
@@ -66,6 +67,8 @@ void FieldDeckBtn::Update()
 
 void FieldDeckBtn::OnClick()
 {
+
+	ResMgr::GetInst()->Play(L"ButtonClick");
 
 	if (_isClick) return;
 

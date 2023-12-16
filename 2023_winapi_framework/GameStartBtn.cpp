@@ -4,6 +4,7 @@
 #include "EventMgr.h"
 #include "TimeMgr.h"
 #include "EasingManager.h"
+#include "ResMgr.h"
 
 GameStartBtn::GameStartBtn(Vec2 pos, Vec2 scale) : UIButton(L"StartBt", L"Texture\\Intro\\StartBtn.bmp", pos, scale)
 {
@@ -65,6 +66,7 @@ void GameStartBtn::Render(HDC _dc)
 void GameStartBtn::OnClick()
 {
 
+	ResMgr::GetInst()->Play(L"ButtonClick");
 	EventMgr::GetInst()->ChangeScene(L"Field_Scene");
 
 }
