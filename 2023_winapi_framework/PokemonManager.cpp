@@ -3571,6 +3571,8 @@ void PokemonManager::CreatePokemon()
 #pragma endregion
 
 
+	//8시간 걸림
+
 }
 
 float PokemonManager::GetRealValue(float groupValue, float objectVel, float effortValue, float lv)
