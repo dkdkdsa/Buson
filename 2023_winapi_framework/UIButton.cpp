@@ -100,56 +100,57 @@ void UIButton::RenderBtnSelector(HDC _dc)
 	// LT
 	TransparentBlt(
 		_dc,
-		_btnRt.left - w,
-		_btnRt.top - h,
-		w,
-		h,
+		_btnRt.left - 3,
+		_btnRt.top - 3,
+		12,
+		12,
 		_btnSelectorLT->GetDC(),
 		0,
 		0,
-		w,
-		h,
+		12,
+		12,
 		RGB(255, 0, 255));
 
 	// LB
 	TransparentBlt(
 		_dc,
-		_btnRt.left - w,
-		_btnRt.bottom + h,
-		w,
-		h,
+		_btnRt.left - 3,
+		_btnRt.bottom + 3,
+		12,
+		12,
 		_btnSelectorLB->GetDC(),
 		0,
 		0,
-		w,
-		h,
+		12,
+		12,
 		RGB(255, 0, 255));
 
 	// RT
 	TransparentBlt(
 		_dc,
-		_btnRt.right + w,
-		_btnRt.top - h,
-		w,
-		h,
+		_btnRt.right + 3,
+		_btnRt.top - 3,
+		12,
+		12,
 		_btnSelectorRT->GetDC(),
 		0,
 		0,
-		w,
-		h,
+		12,
+		12,
 		RGB(255, 0, 255));
 
 	// RB
 	TransparentBlt(
 		_dc,
-		_btnRt.right + w,
-		_btnRt.bottom + h,
-		w,
-		h,
+		_btnRt.right + 3,
+		_btnRt.bottom + 3,
+		6,
+		6,
 		_btnSelectorRB->GetDC(),
 		0,
 		0,
-		w,
-		h,
+		6,
+		6,
 		RGB(255, 0, 255));
+
 }

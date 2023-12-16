@@ -113,6 +113,12 @@
     <Filter Include="Engine\03. Manager\FieldDataManager">
       <UniqueIdentifier>{da4066cb-853d-48bf-af0e-02a046522aa1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Manager\BattleManager">
+      <UniqueIdentifier>{d947c0b6-2216-4023-bcd2-35fbe78df588}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Manager\BattleMgr">
+      <UniqueIdentifier>{579e8dfc-80f7-46f0-9570-edf660ec4c93}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -317,6 +323,13 @@
       <Filter>Engine\03. Manager\FieldDataManager</Filter>
     </ClInclude>
     <ClInclude Include="DustEffect.h" />
+    <ClInclude Include="PokemonStatusUI.h" />
+    <ClInclude Include="PokemonShiftUI.h" />
+    <ClInclude Include="PokemonShiftBtn.h" />
+    <ClInclude Include="PokemonShiftCancelBtn.h" />
+    <ClInclude Include="BattleMgr.h">
+      <Filter>Engine\03. Manager\BattleMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2023_winapi_framework.rc">
@@ -516,5 +529,12 @@
       <Filter>Engine\03. Manager\FieldDataManager</Filter>
     </ClCompile>
     <ClCompile Include="DustEffect.cpp" />
+    <ClCompile Include="PokemonStatusUI.cpp" />
+    <ClCompile Include="PokemonShiftUI.cpp" />
+    <ClCompile Include="PokemonShiftBtn.cpp" />
+    <ClCompile Include="PokemonShiftCancelBtn.cpp" />
+    <ClCompile Include="BattleMgr.cpp">
+      <Filter>Engine\03. Manager\BattleMgr</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

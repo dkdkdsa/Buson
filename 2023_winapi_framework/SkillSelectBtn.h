@@ -1,5 +1,6 @@
 #pragma once
 #include "UIButton.h"
+#include "Skill.h"
 
 enum class BtnPos {
     LT = 0,
@@ -15,6 +16,7 @@ public:
     SkillSelectBtn();
     ~SkillSelectBtn();
 public:
+    void InitSkill(Skill* skill);
     void Update() override;
     void Render(HDC _dc) override;
     void OnClick() override;

@@ -4,7 +4,9 @@
 #include "Texture.h"
 #include "Core.h"
 #include "KeyMgr.h"
+#include "ResMgr.h"
 
+#define stringify( name ) #name
 
 SkillSelectBtn::SkillSelectBtn() : UIButton(L"NormalBtn.bmp", L"Texture\\Battle\\Button\\NormalBtn.bmp", { 256, 1209 }, { 512, 406 })
 {
@@ -14,6 +16,81 @@ SkillSelectBtn::SkillSelectBtn() : UIButton(L"NormalBtn.bmp", L"Texture\\Battle\
 
 SkillSelectBtn::~SkillSelectBtn()
 {
+}
+
+void SkillSelectBtn::InitSkill(Skill* skill)
+{
+	switch (skill->SkillType)
+	{
+	case PokemonType::Normal: {
+		_mainTex = ResMgr::GetInst()->TexLoad(L"NormalBtn.bmp", L"Texture\\Battle\\Button\\NormalBtn.bmp");
+	}
+		break;
+	case PokemonType::Fire: {
+		_mainTex = ResMgr::GetInst()->TexLoad(L"FireBtn.bmp", L"Texture\\Battle\\Button\\FireBtn.bmp");
+	}
+		break;
+	case PokemonType::Water: {
+		_mainTex = ResMgr::GetInst()->TexLoad(L"WaterBtn.bmp", L"Texture\\Battle\\Button\\WaterBtn.bmp");
+	}
+		break;
+	case PokemonType::Electric: {
+		_mainTex = ResMgr::GetInst()->TexLoad(L"ElectricBtn.bmp", L"Texture\\Battle\\Button\\ElectricBtn.bmp");
+	}
+		break;
+	case PokemonType::Grass: {
+		_mainTex = ResMgr::GetInst()->TexLoad(L"GrassBtn.bmp", L"Texture\\Battle\\Button\\GrassBtn.bmp");
+	}
+		break;
+	case PokemonType::Ice: {
+		_mainTex = ResMgr::GetInst()->TexLoad(L"IceBtn.bmp", L"Texture\\Battle\\Button\\IceBtn.bmp");
+	}
+		break;
+	case PokemonType::Fighting: {
+		_mainTex = ResMgr::GetInst()->TexLoad(L"FightingBtn.bmp", L"Texture\\Battle\\Button\\FightingBtn.bmp");
+	}
+		break;
+	case PokemonType::Poison: {
+		_mainTex = ResMgr::GetInst()->TexLoad(L"PoisonBtn.bmp", L"Texture\\Battle\\Button\\PoisonBtn.bmp");
+	}
+		break;
+	case PokemonType::Ground: {
+		_mainTex = ResMgr::GetInst()->TexLoad(L"GroundBtn.bmp", L"Texture\\Battle\\Button\\GroundBtn.bmp");
+	}
+		break;
+	case PokemonType::Flying: {
+		_mainTex = ResMgr::GetInst()->TexLoad(L"FlyingBtn.bmp", L"Texture\\Battle\\Button\\FlyingBtn.bmp");
+	}
+		break;
+	case PokemonType::Psychic: {
+		_mainTex = ResMgr::GetInst()->TexLoad(L"PsychicBtn.bmp", L"Texture\\Battle\\Button\\PsychicBtn.bmp");
+	}
+		break;
+	case PokemonType::Bug: {
+		_mainTex = ResMgr::GetInst()->TexLoad(L"BugBtn.bmp", L"Texture\\Battle\\Button\\BugBtn.bmp");
+	}
+		break;
+	case PokemonType::Rock: {
+		_mainTex = ResMgr::GetInst()->TexLoad(L"RockBtn.bmp", L"Texture\\Battle\\Button\\RockBtn.bmp");
+	}
+		break;
+	case PokemonType::Ghost: {
+		_mainTex = ResMgr::GetInst()->TexLoad(L"GhostBtn.bmp", L"Texture\\Battle\\Button\\GhostBtn.bmp");
+	}
+		break;
+	case PokemonType::Dragon: {
+		_mainTex = ResMgr::GetInst()->TexLoad(L"DragonBtn.bmp", L"Texture\\Battle\\Button\\DragonBtn.bmp");
+	}
+		break;
+	case PokemonType::Dark: {
+		_mainTex = ResMgr::GetInst()->TexLoad(L"DarkBtn.bmp", L"Texture\\Battle\\Button\\DarkBtn.bmp");
+	}
+		break;
+	case PokemonType::Steel: {
+		_mainTex = ResMgr::GetInst()->TexLoad(L"SteelBtn.bmp", L"Texture\\Battle\\Button\\SteelBtn.bmp");
+	}
+		break;
+	}
 }
 
 void SkillSelectBtn::Update()

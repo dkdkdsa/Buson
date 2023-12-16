@@ -38,9 +38,9 @@ void TimeMgr::Update()
 		m_accFrameTime = 0.f;
 		m_frameCount = 0;
 		static wchar_t titlebuf[50] = {};		
-		swprintf_s(titlebuf, L"FPS: %d, DT: %f", m_fps, m_dT);
+		swprintf_s(titlebuf, L"FPS: %d, DT: %f, Pokemon.ºÎ¼ºVer", m_fps, m_dT);
 		//wsprintf();
-		//SetWindowText(Core::GetInst()->GetHwnd(), titlebuf);
+		SetWindowText(Core::GetInst()->GetHwnd(), titlebuf);
 	}
 
 

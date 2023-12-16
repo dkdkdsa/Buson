@@ -169,6 +169,19 @@ void ResMgr::CreatePokemonTexture()
     _pokemonTextureContainer[L"002"][PokemonSprite_Type::Field] = L"002_Field";
     _pokemonTextureContainer[L"003"][PokemonSprite_Type::Field] = L"003_Field";
 
+    TexLoad(L"001_Battle_Front", L"Texture\\Pokemon\\001_Battle_Front.bmp");
+    TexLoad(L"001_Battle_Back", L"Texture\\Pokemon\\001_Battle_Back.bmp");
+    TexLoad(L"002_Battle_Front", L"Texture\\Pokemon\\002_Battle_Front.bmp");
+    TexLoad(L"002_Battle_Back", L"Texture\\Pokemon\\002_Battle_Back.bmp");
+    TexLoad(L"003_Battle_Front", L"Texture\\Pokemon\\003_Battle_Front.bmp");
+    TexLoad(L"003_Battle_Back", L"Texture\\Pokemon\\003_Battle_Back.bmp");
+    _pokemonTextureContainer[L"001"][PokemonSprite_Type::Battle_Back] = L"001_Battle_Back";
+    _pokemonTextureContainer[L"001"][PokemonSprite_Type::Battle_Front] = L"001_Battle_Front";
+    _pokemonTextureContainer[L"002"][PokemonSprite_Type::Battle_Back] = L"002_Battle_Back";
+    _pokemonTextureContainer[L"002"][PokemonSprite_Type::Battle_Front] = L"002_Battle_Front";
+    _pokemonTextureContainer[L"003"][PokemonSprite_Type::Battle_Back] = L"003_Battle_Back";
+    _pokemonTextureContainer[L"003"][PokemonSprite_Type::Battle_Front] = L"003_Battle_Front";
+
 #pragma endregion
 
 

@@ -175,6 +175,7 @@
     <ClInclude Include="BagUI.h" />
     <ClInclude Include="BaseWindow.h" />
     <ClInclude Include="BattleEffect.h" />
+    <ClInclude Include="BattleMgr.h" />
     <ClInclude Include="BattleScene.h" />
     <ClInclude Include="BattleUI.h" />
     <ClInclude Include="BattleUIMgr.h" />
@@ -216,6 +217,10 @@
     <ClInclude Include="PokemonSelectBtn.h" />
     <ClInclude Include="PokemonSelectCancelBtn.h" />
     <ClInclude Include="PokemonSelectUI.h" />
+    <ClInclude Include="PokemonShiftBtn.h" />
+    <ClInclude Include="PokemonShiftCancelBtn.h" />
+    <ClInclude Include="PokemonShiftUI.h" />
+    <ClInclude Include="PokemonStatusUI.h" />
     <ClInclude Include="Res.h" />
     <ClInclude Include="ResMgr.h" />
     <ClInclude Include="Resource.h" />
@@ -244,6 +249,7 @@
     <ClCompile Include="BagUI.cpp" />
     <ClCompile Include="BaseWindow.cpp" />
     <ClCompile Include="BattleEffect.cpp" />
+    <ClCompile Include="BattleMgr.cpp" />
     <ClCompile Include="BattleScene.cpp" />
     <ClCompile Include="BattleUI.cpp" />
     <ClCompile Include="BattleUIMgr.cpp" />
@@ -282,6 +288,10 @@
     <ClCompile Include="PokemonSelectBtn.cpp" />
     <ClCompile Include="PokemonSelectCancelBtn.cpp" />
     <ClCompile Include="PokemonSelectUI.cpp" />
+    <ClCompile Include="PokemonShiftBtn.cpp" />
+    <ClCompile Include="PokemonShiftCancelBtn.cpp" />
+    <ClCompile Include="PokemonShiftUI.cpp" />
+    <ClCompile Include="PokemonStatusUI.cpp" />
     <ClCompile Include="Res.cpp" />
     <ClCompile Include="ResMgr.cpp" />
     <ClCompile Include="RunBtn.cpp" />

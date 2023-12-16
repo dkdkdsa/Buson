@@ -2,6 +2,7 @@
 #include "UIButton.h"
 #include "pokemon.h"
 #include "DeckManager.h"
+#include "BattleScene.h"
 class Texture;
 class PokemonSelectBtn :
     public UIButton
@@ -10,9 +11,9 @@ public:
     PokemonSelectBtn();
     ~PokemonSelectBtn();
 public:
-    void PokemonSetting(int idx) {
+    void PokemonSetting(int idx, Pokemon* pokemon) {
         _partyIdx = idx;
-        _pokemon = DeckManager::GetInst()->GetPokemonByIdx(_partyIdx - 1);
+        _pokemon = pokemon;
         _maxHp = _pokemon->Stats.Hp;
     }
     void Update() override;

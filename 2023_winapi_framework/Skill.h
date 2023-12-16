@@ -19,13 +19,51 @@ enum class BattleEffectGroup
 	Freeze,		// 얼음
 	Confusion,	// 혼란
 	Flinch,		// 풀죽음
+	Drain,		// 체력 흡수
+	Continue,	// 연속
+	Critical,	// 급소
+	AtkRankDown,// 공격랭크다운
+	DEFRankDown,// 방어랭크다운
+	SPERankDown,// 속도랭크다운
+	MyAtkDown,	// 내 공격다운
+	MyDEFDown,  // 내 방어다운
+	MySPEDown,  // 내 속도다운
+	Recoil,		// 반동
+	DamageRecoil,//데미지 반동
+	MyAtkUp,	// 내 공격 업
+	MyDEFUp,	// 내 방어 업
+	MySEPUp,	// 내 속도 업
+	ActionPriority, // 우선도
 
 };
 
 class Skill
 {
 public:
-	Skill();
+	Skill() {
+
+	}
+	Skill(
+		wstring name,
+		SkillGroup skillGroup,
+		int damage,
+		int accuracy,
+		int pp,
+		PokemonType skillType,
+		BattleEffectGroup battleEffectGruop,
+		int effectCnt,
+		int percentage)
+	{
+		Name = name;
+		SkillGroup = skillGroup;
+		Damage = damage;
+		Accuracy = accuracy;
+		PP = pp;
+		SkillType = skillType;
+		BattleEffectGroup = battleEffectGruop;
+		EffectCnt = effectCnt;
+		Percentage = percentage;
+	}
 	~Skill();
 public:
 	void BattleEffect();
@@ -34,6 +72,10 @@ public:
 	SkillGroup			SkillGroup;				// 기술 분류
 	int					Damage;					// 위력
 	int					Accuracy;				// 명중률
-	PokemonType			SkillType;					// 기술 타입
+	int					PP;						// 사용가능 횟수
+	PokemonType			SkillType;				// 기술 타입
 	BattleEffectGroup	BattleEffectGroup;		// 부가효과
+	int					EffectCnt;				// 부가효과 계수
+	int					Percentage;				// 부가효과발동 확률
+
 };
