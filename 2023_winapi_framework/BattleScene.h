@@ -5,7 +5,7 @@
 #include "ResMgr.h"
 #include "PokemonManager.h"
 #include "DeckManager.h"
-
+#include "TimeMgr.h"
 class Texture;
 class BattleScene : public Scene
 {
@@ -19,14 +19,14 @@ public:
 	void Release() override;
 	void PlayEnterBattleIntro();
 	void BattleCycle(Skill selectedSkill);
-	Pokemon GetCurPokemon() {
+	Pokemon* GetCurPokemon() {
 
-		return *_curPokemon;
+		return _curPokemon;
 
 	}
-	Pokemon GetWildPokemon() {
+	Pokemon* GetWildPokemon() {
 
-		return *_wildPokemon;
+		return _wildPokemon;
 
 	}
 	void SetCurPokemon(Pokemon* pokemon) {
@@ -54,6 +54,29 @@ public:
 		_wildPokemon = &_tempPokemon;
 		_wildPokemon->MaxHp = _wildPokemon->Stats.Hp;
 	}
+	/*void PokemonDie(bool isWildPokemon) {
+		int timer = 1;
+		Vec2 originPos;
+		if (isWildPokemon) {
+			originPos = _wildPokeTexPos;
+		}
+		else {
+			originPos = _curPokeTexPos;
+		}
+		if (isWildPokemon) {
+			while (timer > 0) {
+				timer -= fDT;
+				_wildPokeTexPos.y -= fDT;
+			}
+			_wildPokeTexPos = originPos;
+		}
+		else {
+			while (timer > 0) {
+				timer -= fDT;
+				_curPokeTexPos.y -= fDT;
+			}
+		}
+	}*/
 	void SetCurUI();
 private:
 	// Pokemons

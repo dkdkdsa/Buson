@@ -14,7 +14,7 @@ SkillSelectUI::SkillSelectUI() : BattleUI(L"BattleSceneBackground.bmp", L"Textur
 
 	for (int i = 0; i < 4; ++i) {
 		_skillBtns.push_back(new SkillSelectBtn());
-		_skillBtns[i]->InitSkill(std::dynamic_pointer_cast<BattleScene>(SceneMgr::GetInst()->GetCurScene())->GetCurPokemon().SkillsKey[i]);
+		_skillBtns[i]->InitSkill(std::dynamic_pointer_cast<BattleScene>(SceneMgr::GetInst()->GetCurScene())->GetCurPokemon()->SkillsKey[i]);
 		_skillBtns[i]->PosInit((BtnPos)i);
 		SetBtnVec(_skillBtns[i]);
 	}
@@ -30,7 +30,7 @@ SkillSelectUI::~SkillSelectUI()
 void SkillSelectUI::Init()
 {
 	for (int i = 0; i < 4; ++i) {
-		_skillBtns[i]->InitSkill(std::dynamic_pointer_cast<BattleScene>(SceneMgr::GetInst()->GetCurScene())->GetCurPokemon().SkillsKey[i]);
+		_skillBtns[i]->InitSkill(std::dynamic_pointer_cast<BattleScene>(SceneMgr::GetInst()->GetCurScene())->GetCurPokemon()->SkillsKey[i]);
 	}
 }
 

@@ -9,6 +9,7 @@
 #include "BagUI.h"
 #include "RunUI.h"
 #include "PokemonShiftUI.h"
+#include "NullUI.h"
 #include "BattleUIMgr.h"
 #include "ResMgr.h"
 #include "Texture.h"
@@ -16,7 +17,6 @@
 #include "TimeMgr.h"
 #include "PokemonManager.h"
 #include "Texture.h"
-
 BattleScene::BattleScene()
 {
 	
@@ -76,6 +76,7 @@ void BattleScene::Init()
 	BagUI* bagUI = new BagUI();
 	RunUI* runUI = new RunUI();
 	PokemonShiftUI* pokemonShiftUI = new PokemonShiftUI();
+	NullUI* nullUI = new NullUI();
 
 	BattleUIMgr::GetInst()->SetBattleUI(actionSelectUI);
 	BattleUIMgr::GetInst()->SetBattleUI(skillSelectUI);
@@ -83,6 +84,7 @@ void BattleScene::Init()
 	BattleUIMgr::GetInst()->SetBattleUI(bagUI);
 	BattleUIMgr::GetInst()->SetBattleUI(runUI);
 	BattleUIMgr::GetInst()->SetBattleUI(pokemonShiftUI);
+	BattleUIMgr::GetInst()->SetBattleUI(nullUI);
 	
 	
 
@@ -247,7 +249,7 @@ void BattleScene::Render(HDC _dc)
 	// Wild Pokemon
 	wstring wLvText = std::to_wstring(_wildPokemon->EvolutionCount * 20);
 
-	wstring actionText = L"무엇을 할까?";
+	
 	COLORREF oldColor = SetTextColor(_dc, RGB(0, 0, 0));
 	SetBkMode(_dc, 1);
 	// Player HP
@@ -262,13 +264,10 @@ void BattleScene::Render(HDC _dc)
 	// Wild Lv & Name
 	TextOut(_dc, _wildPokeHpBarTexPos.x + 168, _wildPokeHpBarTexPos.y + 12, wLvText.c_str(), wLvText.length());
 	TextOut(_dc, _wildPokeHpBarTexPos.x + 10, _wildPokeHpBarTexPos.y + 10, _wildPokemon->PokemonName.c_str(), _wildPokemon->PokemonName.length());
-	HFONT newfont = ResMgr::GetInst()->LoadFont(L"Font\\neodgm.ttf", L"Neo둥근모", 30);
-	(HFONT)SelectObject(_dc, newfont);
-	TextOut(_dc, 30, 305, actionText.c_str(), actionText.length());
+	
 	SelectObject(_dc, oldFont);
 	SetTextColor(_dc, oldColor);
 	DeleteObject(font);
-	DeleteObject(newfont);
 	DeleteObject(namefont);
 
 	Scene::Render(_dc);
@@ -318,8 +317,8 @@ void BattleScene::BattleCycle(Skill selectedSkill)
 	} // Speed Calculation End
 
 	// First action process
-	firstActionPokemon->UseSkill(secondActionPokemon, selectedSkill);				// First action pokemon attack
+	//firstActionPokemon->UseSkill(secondActionPokemon, selectedSkill);				// First action pokemon attack
 
-	// Second action process
-	secondActionPokemon->UseSkill(firstActionPokemon, selectedSkill);				// Second action pokemon attack
+	//// Second action process
+	//secondActionPokemon->UseSkill(firstActionPokemon, selectedSkill);				// Second action pokemon attack
 }

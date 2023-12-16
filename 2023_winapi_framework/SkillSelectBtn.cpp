@@ -9,7 +9,7 @@
 #include "SelectGDI.h"
 #include "Skill.h"
 #include <string>
-
+#include "BattleMgr.h"
 #define stringify( name ) #name
 
 SkillSelectBtn::SkillSelectBtn() : UIButton(L"NormalBtn.bmp", L"Texture\\Battle\\Button\\NormalBtn.bmp", { 256, 1209 }, { 512, 406 })
@@ -168,6 +168,8 @@ void SkillSelectBtn::OnClick()
 
 	if (curPP <= 0) return;
 	curPP--;
+	ResMgr::GetInst()->Play(L"ButtonClick");
+	BattleMgr::GetInst()->StartOneTurn(curSkill);
 	ResMgr::GetInst()->Play(L"ButtonClick");
 
 }

@@ -206,6 +206,7 @@
     <ClInclude Include="IntroScene.h" />
     <ClInclude Include="KeyMgr.h" />
     <ClInclude Include="Monster.h" />
+    <ClInclude Include="NullUI.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="PathMgr.h" />
     <ClInclude Include="pch.h" />
@@ -279,6 +280,7 @@
     <ClCompile Include="KeyMgr.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Monster.cpp" />
+    <ClCompile Include="NullUI.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="PathMgr.cpp" />
     <ClCompile Include="Player.cpp" />

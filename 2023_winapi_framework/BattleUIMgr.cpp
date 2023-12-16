@@ -5,6 +5,7 @@
 #include "PokemonSelectUI.h"
 #include "BagUI.h"
 #include "RunUI.h"
+#include "NullUI.h"
 
 void BattleUIMgr::Init()
 {
