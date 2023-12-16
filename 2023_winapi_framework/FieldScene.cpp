@@ -8,7 +8,7 @@
 #include "FieldDeckPanel.h"
 #include "Texture.h"
 #include "ResMgr.h"
-
+#include "SnowParticle.h"
 
 void FieldScene::Init()
 {
@@ -29,6 +29,9 @@ void FieldScene::Init()
 
 	auto* field_1 = new Field(fieldCenter, fieldSize);
 	_fieldList.push_back(field_1);
+
+	auto* s1 = new SnowParticle(fieldCenter);
+	AddObject(s1, OBJECT_GROUP::Battle_UI);
 
 #pragma endregion
 

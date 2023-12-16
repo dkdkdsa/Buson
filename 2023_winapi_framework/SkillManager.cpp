@@ -2517,6 +2517,12 @@ void SkillManager::InitSkillContainer()
 vector<wstring> SkillManager::LearnSkill(vector<PokemonType> types, int evolutionCount)
 {
 
+	if (evolutionCount == 4) {
+
+		evolutionCount = 3;
+
+	}
+
 	int len = 4 / types.size();
 	vector<wstring> result;
 

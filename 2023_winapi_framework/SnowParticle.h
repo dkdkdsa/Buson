@@ -3,7 +3,7 @@
 
 class Texture;
 
-class SnowParticle : Object
+class SnowParticle : public Object
 {
 
 public:

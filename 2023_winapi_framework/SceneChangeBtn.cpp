@@ -6,6 +6,8 @@
 #include "ResMgr.h"
 #include "EasingManager.h"
 #include "TimeMgr.h"
+#include "DeckManager.h"
+#include "pokemon.h"
 
 SceneChangeBtn::SceneChangeBtn(Vec2 pos, Vec2 scale, wstring texKey, wstring path, wstring sceneName)
 	:UIButton(texKey, path, pos ,scale)
@@ -53,6 +55,8 @@ void SceneChangeBtn::Update()
 
 void SceneChangeBtn::OnClick()
 {
+
+	if (DeckManager::GetInst()->GetPokemon().size() == 0) return;
 
 	EventMgr::GetInst()->ChangeScene(sceneName);
 

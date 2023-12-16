@@ -13,11 +13,16 @@ void IntroScene::Init()
 
 	bg = ResMgr::GetInst()->TexLoad(L"IntroBG", L"Texture\\Intro\\IntroBG.bmp");
 
+
+	ResMgr::GetInst()->LoadSound(L"Field", L"Sound\\Field.mp3", true);
+
 	auto* gsB = new GameStartBtn(Vec2({ 800 / 2 }, 680 / 2 + 100), Vec2({ 72 * 6, 30 * 4 }));
 	AddObject(gsB, OBJECT_GROUP::DEFAULT);
 
 	auto* exB = new GameExitBtn(Vec2({ 800 / 2 }, 680 / 2 + 230), Vec2({ 72 * 6, 30 * 4 }));
 	AddObject(exB, OBJECT_GROUP::DEFAULT);
+
+	ResMgr::GetInst()->Play(L"Field");
 
 }
 
