@@ -63,6 +63,7 @@ void BattleMgr::StartOneTurn(Skill* usedSkill)
 	std::mt19937 gen(_rd());
 	std::uniform_int_distribution<int> dis(0, 3);
 	int wildSkillIdx = dis(gen);
+
 	wstring text = L"¾ß»ý "
 		+ std::dynamic_pointer_cast<BattleScene>(SceneMgr::GetInst()->GetCurScene())
 		->GetWildPokemon()->PokemonName;
